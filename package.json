@@ -1,0 +1,38 @@
+{
+  "name": "aopends",
+  "version": "0.1.1",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./base.css": "./dist/tokens/base.css",
+    "./themes/light": "./dist/themes/light.css",
+    "./themes/dark": "./dist/themes/dark.css",
+    "./themes/high-contrast": "./dist/themes/high-contrast.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup && cp -r src/themes dist/themes && cp -r src/tokens dist/tokens",
+    "dev": "tsup --watch"
+  },
+  "peerDependencies": {
+    "lucide-react": ">=0.300.0",
+    "react": ">=18",
+    "react-dom": ">=18",
+    "recharts": ">=2.0.0"
+  },
+  "devDependencies": {
+    "lucide-react": "^0.577.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "recharts": "^3.8.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.9.3"
+  }
+}

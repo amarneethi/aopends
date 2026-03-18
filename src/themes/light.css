@@ -1,0 +1,92 @@
+/* ============================================================
+   SEMANTIC TOKENS — LIGHT THEME (default)
+   These map primitives to semantic roles.
+   Components reference ONLY semantic tokens.
+   ============================================================ */
+[data-theme="light"], :root {
+  /* Background */
+  --ds-bg-primary: var(--ds-gray-0);
+  --ds-bg-secondary: var(--ds-gray-50);
+  --ds-bg-tertiary: var(--ds-gray-100);
+  --ds-bg-inverse: var(--ds-gray-900);
+  --ds-bg-brand: var(--ds-blue-600);
+  --ds-bg-brand-hover: var(--ds-blue-700);
+  --ds-bg-danger: var(--ds-red-600);
+  --ds-bg-danger-hover: var(--ds-red-700);
+  --ds-bg-success: var(--ds-green-50);
+  --ds-bg-warning: var(--ds-amber-50);
+  --ds-bg-info: var(--ds-teal-50);
+  --ds-bg-error: var(--ds-red-50);
+  --ds-bg-overlay: rgb(0 0 0 / 0.5);
+  --ds-bg-hover: var(--ds-gray-100);
+  --ds-bg-active: var(--ds-gray-200);
+  --ds-bg-selected: var(--ds-blue-50);
+  --ds-bg-disabled: var(--ds-gray-100);
+
+  /* Text */
+  --ds-text-primary: var(--ds-gray-900);
+  --ds-text-secondary: var(--ds-gray-600);
+  --ds-text-tertiary: var(--ds-gray-400);
+  --ds-text-inverse: var(--ds-gray-0);
+  --ds-text-brand: var(--ds-blue-600);
+  --ds-text-danger: var(--ds-red-600);
+  --ds-text-success: var(--ds-green-700);
+  --ds-text-warning: var(--ds-amber-700);
+  --ds-text-info: var(--ds-teal-700);
+  --ds-text-disabled: var(--ds-gray-400);
+  --ds-text-placeholder: var(--ds-gray-400);
+  --ds-text-on-brand: var(--ds-gray-0);
+  --ds-text-link: var(--ds-blue-600);
+  --ds-text-link-hover: var(--ds-blue-700);
+
+  /* Border */
+  --ds-border-primary: var(--ds-gray-200);
+  --ds-border-secondary: var(--ds-gray-300);
+  --ds-border-focus: var(--ds-blue-500);
+  --ds-border-error: var(--ds-red-500);
+  --ds-border-success: var(--ds-green-500);
+  --ds-border-warning: var(--ds-amber-500);
+  --ds-border-info: var(--ds-teal-500);
+  --ds-border-disabled: var(--ds-gray-200);
+  --ds-border-brand: var(--ds-blue-600);
+  --ds-border-inverse: var(--ds-gray-700);
+
+  /* Icon */
+  --ds-icon-primary: var(--ds-gray-700);
+  --ds-icon-secondary: var(--ds-gray-500);
+  --ds-icon-inverse: var(--ds-gray-0);
+  --ds-icon-brand: var(--ds-blue-600);
+  --ds-icon-danger: var(--ds-red-500);
+  --ds-icon-success: var(--ds-green-500);
+  --ds-icon-warning: var(--ds-amber-500);
+  --ds-icon-info: var(--ds-teal-500);
+  --ds-icon-disabled: var(--ds-gray-300);
+
+  /* Focus ring */
+  --ds-focus-ring-color: var(--ds-blue-500);
+
+  /* Specific component tokens */
+  --ds-input-bg: var(--ds-gray-0);
+  --ds-input-border: var(--ds-gray-300);
+  --ds-input-border-hover: var(--ds-gray-400);
+
+  --ds-table-header-bg: var(--ds-gray-50);
+  --ds-table-row-hover: var(--ds-gray-50);
+  --ds-table-row-selected: var(--ds-blue-50);
+  --ds-table-border: var(--ds-gray-200);
+
+  --ds-sidebar-bg: var(--ds-gray-50);
+  --ds-sidebar-text: var(--ds-gray-600);
+  --ds-sidebar-text-active: var(--ds-gray-900);
+  --ds-sidebar-hover: var(--ds-gray-100);
+  --ds-sidebar-active: var(--ds-gray-200);
+  --ds-sidebar-border: var(--ds-gray-200);
+
+  --ds-header-bg: var(--ds-gray-0);
+  --ds-header-border: var(--ds-gray-200);
+
+  /* Scrollbar */
+  --ds-scrollbar-track: var(--ds-gray-100);
+  --ds-scrollbar-thumb: var(--ds-gray-300);
+  --ds-scrollbar-thumb-hover: var(--ds-gray-400);
+}
