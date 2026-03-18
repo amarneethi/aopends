@@ -3,6 +3,7 @@
 // src/components/Button/Button.js
 var _react = require('react');
 var _lucidereact = require('lucide-react');
+var _jsxruntime = require('react/jsx-runtime');
 var variants = {
   primary: "bg-[var(--ds-bg-brand)] text-[color:var(--ds-text-on-brand)] hover:bg-[var(--ds-bg-brand-hover)] active:brightness-90",
   secondary: "bg-transparent text-[color:var(--ds-text-brand)] border border-[var(--ds-border-brand)] hover:bg-[var(--ds-bg-selected)] active:bg-[var(--ds-bg-active)]",
@@ -29,7 +30,7 @@ var Button = _react.forwardRef.call(void 0, function Button2({
   ...props
 }, ref) {
   const isDisabled = disabled || loading;
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
     "button",
     {
       ref,
@@ -44,18 +45,21 @@ var Button = _react.forwardRef.call(void 0, function Button2({
         isDisabled ? "opacity-50 cursor-not-allowed pointer-events-none" : "cursor-pointer",
         className
       ].filter(Boolean).join(" "),
-      ...props
-    },
-    loading && /* @__PURE__ */ React.createElement(_lucidereact.Loader2, { className: "animate-spin", size: size === "sm" ? 14 : size === "lg" ? 20 : 16 }),
-    !loading && icon && iconPosition === "left" && /* @__PURE__ */ React.createElement("span", { className: "shrink-0" }, icon),
-    children && /* @__PURE__ */ React.createElement(React.Fragment, null, children),
-    !loading && icon && iconPosition === "right" && /* @__PURE__ */ React.createElement("span", { className: "shrink-0" }, icon)
+      ...props,
+      children: [
+        loading && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.Loader2, { className: "animate-spin", size: size === "sm" ? 14 : size === "lg" ? 20 : 16 }),
+        !loading && icon && iconPosition === "left" && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "shrink-0", children: icon }),
+        children && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _jsxruntime.Fragment, { children }),
+        !loading && icon && iconPosition === "right" && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "shrink-0", children: icon })
+      ]
+    }
   );
 });
 Button.displayName = "Button";
 var Button_default = Button;
 
 // src/components/TextInput/TextInput.js
+
 
 
 var sizeStyles = {
@@ -84,57 +88,69 @@ var TextInput = _react.forwardRef.call(void 0, function TextInput2({
   const stateMessage = errorText || successText || helperText;
   const stateColor = hasError ? "var(--ds-text-danger)" : hasSuccess ? "var(--ds-text-success)" : "var(--ds-text-secondary)";
   const borderColor = hasError ? "var(--ds-border-error)" : hasSuccess ? "var(--ds-border-success)" : "var(--ds-input-border)";
-  return /* @__PURE__ */ React.createElement("div", { className: ["flex flex-col gap-1.5", wrapperClassName].filter(Boolean).join(" ") }, label && /* @__PURE__ */ React.createElement(
-    "label",
-    {
-      htmlFor: id,
-      className: "text-[length:var(--ds-text-sm)] font-medium text-[var(--ds-text-primary)]"
-    },
-    label,
-    required && /* @__PURE__ */ React.createElement("span", { className: "text-[var(--ds-text-danger)] ml-0.5" }, "*")
-  ), /* @__PURE__ */ React.createElement("div", { className: "relative" }, icon && /* @__PURE__ */ React.createElement("span", { className: "absolute left-3 top-1/2 -translate-y-1/2 text-[var(--ds-icon-secondary)] pointer-events-none" }, icon), /* @__PURE__ */ React.createElement(
-    "input",
-    {
-      ref,
-      id,
-      disabled,
-      required,
-      "aria-invalid": hasError,
-      "aria-describedby": stateMessage ? `${id}-message` : void 0,
-      className: [
-        "ds-focus-ring w-full rounded-[var(--ds-radius-md)] bg-[var(--ds-input-bg)] text-[var(--ds-text-primary)]",
-        "placeholder:text-[var(--ds-text-placeholder)]",
-        "transition-colors duration-[var(--ds-duration-normal)]",
-        `border border-[${borderColor}]`,
-        `hover:border-[var(--ds-input-border-hover)]`,
-        sizeStyles[size],
-        icon ? "pl-10" : "",
-        disabled ? "opacity-50 cursor-not-allowed bg-[var(--ds-bg-disabled)]" : "",
-        className
-      ].filter(Boolean).join(" "),
-      style: { borderColor },
-      ...props
-    }
-  ), hasError && /* @__PURE__ */ React.createElement(
-    _lucidereact.AlertCircle,
-    {
-      size: 16,
-      className: "absolute right-3 top-1/2 -translate-y-1/2",
-      style: { color: "var(--ds-icon-danger)" }
-    }
-  ), hasSuccess && !hasError && /* @__PURE__ */ React.createElement(
-    _lucidereact.CheckCircle2,
-    {
-      size: 16,
-      className: "absolute right-3 top-1/2 -translate-y-1/2",
-      style: { color: "var(--ds-icon-success)" }
-    }
-  )), stateMessage && /* @__PURE__ */ React.createElement("p", { id: `${id}-message`, className: "text-[length:var(--ds-text-xs)]", style: { color: stateColor } }, stateMessage));
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: ["flex flex-col gap-1.5", wrapperClassName].filter(Boolean).join(" "), children: [
+    label && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+      "label",
+      {
+        htmlFor: id,
+        className: "text-[length:var(--ds-text-sm)] font-medium text-[var(--ds-text-primary)]",
+        children: [
+          label,
+          required && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "text-[var(--ds-text-danger)] ml-0.5", children: "*" })
+        ]
+      }
+    ),
+    /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "relative", children: [
+      icon && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "absolute left-3 top-1/2 -translate-y-1/2 text-[var(--ds-icon-secondary)] pointer-events-none", children: icon }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        "input",
+        {
+          ref,
+          id,
+          disabled,
+          required,
+          "aria-invalid": hasError,
+          "aria-describedby": stateMessage ? `${id}-message` : void 0,
+          className: [
+            "ds-focus-ring w-full rounded-[var(--ds-radius-md)] bg-[var(--ds-input-bg)] text-[var(--ds-text-primary)]",
+            "placeholder:text-[var(--ds-text-placeholder)]",
+            "transition-colors duration-[var(--ds-duration-normal)]",
+            "border",
+            `hover:border-[var(--ds-input-border-hover)]`,
+            sizeStyles[size],
+            icon ? "pl-10" : "",
+            disabled ? "opacity-50 cursor-not-allowed bg-[var(--ds-bg-disabled)]" : "",
+            className
+          ].filter(Boolean).join(" "),
+          style: { borderColor },
+          ...props
+        }
+      ),
+      hasError && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        _lucidereact.AlertCircle,
+        {
+          size: 16,
+          className: "absolute right-3 top-1/2 -translate-y-1/2",
+          style: { color: "var(--ds-icon-danger)" }
+        }
+      ),
+      hasSuccess && !hasError && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        _lucidereact.CheckCircle2,
+        {
+          size: 16,
+          className: "absolute right-3 top-1/2 -translate-y-1/2",
+          style: { color: "var(--ds-icon-success)" }
+        }
+      )
+    ] }),
+    stateMessage && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "p", { id: `${id}-message`, className: "text-[length:var(--ds-text-xs)]", style: { color: stateColor }, children: stateMessage })
+  ] });
 });
 TextInput.displayName = "TextInput";
 var TextInput_default = TextInput;
 
 // src/components/Checkbox/Checkbox.js
+
 
 
 var Checkbox = _react.forwardRef.call(void 0, function Checkbox2({
@@ -153,7 +169,7 @@ var Checkbox = _react.forwardRef.call(void 0, function Checkbox2({
   const boxSize = size === "sm" ? "w-4 h-4" : size === "lg" ? "w-6 h-6" : "w-5 h-5";
   const iconSize = size === "sm" ? 12 : size === "lg" ? 18 : 14;
   const isChecked = indeterminate || checked;
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
     "label",
     {
       htmlFor: id,
@@ -161,41 +177,47 @@ var Checkbox = _react.forwardRef.call(void 0, function Checkbox2({
         "inline-flex items-center gap-2 cursor-pointer select-none",
         disabled ? "opacity-50 cursor-not-allowed" : "",
         className
-      ].filter(Boolean).join(" ")
-    },
-    /* @__PURE__ */ React.createElement("span", { className: "relative inline-flex items-center justify-center" }, /* @__PURE__ */ React.createElement(
-      "input",
-      {
-        ref,
-        type: "checkbox",
-        id,
-        checked,
-        disabled,
-        onChange,
-        className: "ds-sr-only peer",
-        "aria-checked": indeterminate ? "mixed" : checked,
-        ...props
-      }
-    ), /* @__PURE__ */ React.createElement(
-      "span",
-      {
-        className: [
-          boxSize,
-          "rounded-[var(--ds-radius-sm)] border-2 transition-all duration-[var(--ds-duration-normal)]",
-          "flex items-center justify-center",
-          isChecked ? "bg-[var(--ds-bg-brand)] border-[var(--ds-bg-brand)] text-[var(--ds-text-on-brand)]" : "bg-[var(--ds-input-bg)] border-[var(--ds-input-border)]",
-          "peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-[var(--ds-focus-ring-color)] peer-focus-visible:outline-offset-2"
-        ].join(" ")
-      },
-      indeterminate ? /* @__PURE__ */ React.createElement(_lucidereact.Minus, { size: iconSize, strokeWidth: 3 }) : checked ? /* @__PURE__ */ React.createElement(_lucidereact.Check, { size: iconSize, strokeWidth: 3 }) : null
-    )),
-    label && /* @__PURE__ */ React.createElement("span", { className: "text-[length:var(--ds-text-sm)] text-[var(--ds-text-primary)]" }, label)
+      ].filter(Boolean).join(" "),
+      children: [
+        /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "span", { className: "relative inline-flex items-center justify-center", children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "input",
+            {
+              ref,
+              type: "checkbox",
+              id,
+              checked,
+              disabled,
+              onChange,
+              className: "ds-sr-only peer",
+              "aria-checked": indeterminate ? "mixed" : checked,
+              ...props
+            }
+          ),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "span",
+            {
+              className: [
+                boxSize,
+                "rounded-[var(--ds-radius-sm)] border-2 transition-all duration-[var(--ds-duration-normal)]",
+                "flex items-center justify-center",
+                isChecked ? "bg-[var(--ds-bg-brand)] border-[var(--ds-bg-brand)] text-[var(--ds-text-on-brand)]" : "bg-[var(--ds-input-bg)] border-[var(--ds-input-border)]",
+                "peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-[var(--ds-focus-ring-color)] peer-focus-visible:outline-offset-2"
+              ].join(" "),
+              children: indeterminate ? /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.Minus, { size: iconSize, strokeWidth: 3 }) : checked ? /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.Check, { size: iconSize, strokeWidth: 3 }) : null
+            }
+          )
+        ] }),
+        label && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "text-[length:var(--ds-text-sm)] text-[var(--ds-text-primary)]", children: label })
+      ]
+    }
   );
 });
 Checkbox.displayName = "Checkbox";
 var Checkbox_default = Checkbox;
 
 // src/components/Toggle/Toggle.js
+
 
 var sizes2 = {
   sm: { track: "w-8 h-4", thumb: "w-3 h-3", translate: "translate-x-4" },
@@ -215,7 +237,7 @@ var Toggle = _react.forwardRef.call(void 0, function Toggle2({
   const autoId = _react.useId.call(void 0, );
   const id = idProp || autoId;
   const s = sizes2[size];
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
     "label",
     {
       htmlFor: id,
@@ -223,49 +245,56 @@ var Toggle = _react.forwardRef.call(void 0, function Toggle2({
         "inline-flex items-center gap-3 cursor-pointer select-none",
         disabled ? "opacity-50 cursor-not-allowed" : "",
         className
-      ].filter(Boolean).join(" ")
-    },
-    /* @__PURE__ */ React.createElement("span", { className: "relative inline-flex items-center" }, /* @__PURE__ */ React.createElement(
-      "input",
-      {
-        ref,
-        type: "checkbox",
-        role: "switch",
-        id,
-        checked,
-        disabled,
-        onChange,
-        className: "ds-sr-only peer",
-        ...props
-      }
-    ), /* @__PURE__ */ React.createElement(
-      "span",
-      {
-        className: [
-          s.track,
-          "rounded-full transition-colors duration-[var(--ds-duration-normal)]",
-          "peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-[var(--ds-focus-ring-color)] peer-focus-visible:outline-offset-2",
-          checked ? "bg-[var(--ds-bg-brand)]" : "bg-[var(--ds-border-secondary)]"
-        ].join(" ")
-      }
-    ), /* @__PURE__ */ React.createElement(
-      "span",
-      {
-        className: [
-          s.thumb,
-          "absolute left-0.5 top-1/2 -translate-y-1/2 rounded-full bg-white shadow-sm",
-          "transition-transform duration-[var(--ds-duration-normal)]",
-          checked ? s.translate : "translate-x-0"
-        ].join(" ")
-      }
-    )),
-    label && /* @__PURE__ */ React.createElement("span", { className: "text-[length:var(--ds-text-sm)] text-[var(--ds-text-primary)]" }, label)
+      ].filter(Boolean).join(" "),
+      children: [
+        /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "span", { className: "relative inline-flex items-center", children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "input",
+            {
+              ref,
+              type: "checkbox",
+              role: "switch",
+              id,
+              checked,
+              disabled,
+              onChange,
+              className: "ds-sr-only peer",
+              ...props
+            }
+          ),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "span",
+            {
+              className: [
+                s.track,
+                "rounded-full transition-colors duration-[var(--ds-duration-normal)]",
+                "peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-[var(--ds-focus-ring-color)] peer-focus-visible:outline-offset-2",
+                checked ? "bg-[var(--ds-bg-brand)]" : "bg-[var(--ds-border-secondary)]"
+              ].join(" ")
+            }
+          ),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "span",
+            {
+              className: [
+                s.thumb,
+                "absolute left-0.5 top-1/2 -translate-y-1/2 rounded-full bg-white shadow-sm",
+                "transition-transform duration-[var(--ds-duration-normal)]",
+                checked ? s.translate : "translate-x-0"
+              ].join(" ")
+            }
+          )
+        ] }),
+        label && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "text-[length:var(--ds-text-sm)] text-[var(--ds-text-primary)]", children: label })
+      ]
+    }
   );
 });
 Toggle.displayName = "Toggle";
 var Toggle_default = Toggle;
 
 // src/components/Select/Select.js
+
 
 
 var sizeStyles2 = {
@@ -293,61 +322,73 @@ var Select = _react.forwardRef.call(void 0, function Select2({
   const id = idProp || autoId;
   const hasError = !!errorText;
   const borderColor = hasError ? "var(--ds-border-error)" : "var(--ds-input-border)";
-  return /* @__PURE__ */ React.createElement("div", { className: ["flex flex-col gap-1.5", wrapperClassName].filter(Boolean).join(" ") }, label && /* @__PURE__ */ React.createElement(
-    "label",
-    {
-      htmlFor: id,
-      className: "text-[length:var(--ds-text-sm)] font-medium text-[var(--ds-text-primary)]"
-    },
-    label,
-    required && /* @__PURE__ */ React.createElement("span", { className: "text-[var(--ds-text-danger)] ml-0.5" }, "*")
-  ), /* @__PURE__ */ React.createElement("div", { className: "relative" }, /* @__PURE__ */ React.createElement(
-    "select",
-    {
-      ref,
-      id,
-      disabled,
-      required,
-      value,
-      onChange,
-      "aria-invalid": hasError,
-      className: [
-        "ds-focus-ring w-full rounded-[var(--ds-radius-md)] bg-[var(--ds-input-bg)] text-[var(--ds-text-primary)]",
-        "appearance-none cursor-pointer",
-        "transition-colors duration-[var(--ds-duration-normal)]",
-        sizeStyles2[size],
-        disabled ? "opacity-50 cursor-not-allowed bg-[var(--ds-bg-disabled)]" : "",
-        className
-      ].filter(Boolean).join(" "),
-      style: { borderColor, border: `1px solid ${borderColor}` },
-      ...props
-    },
-    placeholder && /* @__PURE__ */ React.createElement("option", { value: "", disabled: true }, placeholder),
-    options.map((opt) => {
-      const val = typeof opt === "string" ? opt : opt.value;
-      const lbl = typeof opt === "string" ? opt : opt.label;
-      return /* @__PURE__ */ React.createElement("option", { key: val, value: val }, lbl);
-    })
-  ), /* @__PURE__ */ React.createElement(
-    _lucidereact.ChevronDown,
-    {
-      size: 16,
-      className: "absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none",
-      style: { color: "var(--ds-icon-secondary)" }
-    }
-  )), (errorText || helperText) && /* @__PURE__ */ React.createElement(
-    "p",
-    {
-      className: "text-[length:var(--ds-text-xs)]",
-      style: { color: hasError ? "var(--ds-text-danger)" : "var(--ds-text-secondary)" }
-    },
-    errorText || helperText
-  ));
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: ["flex flex-col gap-1.5", wrapperClassName].filter(Boolean).join(" "), children: [
+    label && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+      "label",
+      {
+        htmlFor: id,
+        className: "text-[length:var(--ds-text-sm)] font-medium text-[var(--ds-text-primary)]",
+        children: [
+          label,
+          required && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "text-[var(--ds-text-danger)] ml-0.5", children: "*" })
+        ]
+      }
+    ),
+    /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "relative", children: [
+      /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+        "select",
+        {
+          ref,
+          id,
+          disabled,
+          required,
+          value,
+          onChange,
+          "aria-invalid": hasError,
+          className: [
+            "ds-focus-ring w-full rounded-[var(--ds-radius-md)] bg-[var(--ds-input-bg)] text-[var(--ds-text-primary)]",
+            "appearance-none cursor-pointer",
+            "transition-colors duration-[var(--ds-duration-normal)]",
+            sizeStyles2[size],
+            disabled ? "opacity-50 cursor-not-allowed bg-[var(--ds-bg-disabled)]" : "",
+            className
+          ].filter(Boolean).join(" "),
+          style: { borderColor, border: `1px solid ${borderColor}` },
+          ...props,
+          children: [
+            placeholder && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "option", { value: "", disabled: true, children: placeholder }),
+            options.map((opt) => {
+              const val = typeof opt === "string" ? opt : opt.value;
+              const lbl = typeof opt === "string" ? opt : opt.label;
+              return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "option", { value: val, children: lbl }, val);
+            })
+          ]
+        }
+      ),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        _lucidereact.ChevronDown,
+        {
+          size: 16,
+          className: "absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none",
+          style: { color: "var(--ds-icon-secondary)" }
+        }
+      )
+    ] }),
+    (errorText || helperText) && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "p",
+      {
+        className: "text-[length:var(--ds-text-xs)]",
+        style: { color: hasError ? "var(--ds-text-danger)" : "var(--ds-text-secondary)" },
+        children: errorText || helperText
+      }
+    )
+  ] });
 });
 Select.displayName = "Select";
 var Select_default = Select;
 
 // src/components/Tag/Tag.js
+
 
 
 var colorMap = {
@@ -399,7 +440,7 @@ var Tag = _react.forwardRef.call(void 0, function Tag2({
   ...props
 }, ref) {
   const c = colorMap[color] || colorMap.default;
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
     "span",
     {
       ref,
@@ -414,26 +455,29 @@ var Tag = _react.forwardRef.call(void 0, function Tag2({
         color: c.text,
         border: outline ? `1px solid ${c.border}` : "none"
       },
-      ...props
-    },
-    icon && /* @__PURE__ */ React.createElement("span", { className: "shrink-0 flex items-center" }, icon),
-    /* @__PURE__ */ React.createElement("span", null, children),
-    dismissible && /* @__PURE__ */ React.createElement(
-      "button",
-      {
-        type: "button",
-        onClick: onDismiss,
-        className: "shrink-0 rounded-full p-0.5 hover:bg-black/10 transition-colors cursor-pointer",
-        "aria-label": "Remove"
-      },
-      /* @__PURE__ */ React.createElement(_lucidereact.X, { size: size === "sm" ? 10 : 12 })
-    )
+      ...props,
+      children: [
+        icon && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "shrink-0 flex items-center", children: icon }),
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { children }),
+        dismissible && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          "button",
+          {
+            type: "button",
+            onClick: onDismiss,
+            className: "shrink-0 rounded-full p-0.5 hover:bg-black/10 transition-colors cursor-pointer",
+            "aria-label": "Remove",
+            children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.X, { size: size === "sm" ? 10 : 12 })
+          }
+        )
+      ]
+    }
   );
 });
 Tag.displayName = "Tag";
 var Tag_default = Tag;
 
 // src/components/Notification/Notification.js
+
 
 
 var typeConfig = {
@@ -477,7 +521,7 @@ var Notification = _react.forwardRef.call(void 0, function Notification2({
 }, ref) {
   const config = typeConfig[type];
   const Icon = config.icon;
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
     "div",
     {
       ref,
@@ -493,20 +537,25 @@ var Notification = _react.forwardRef.call(void 0, function Notification2({
         borderRight: `1px solid ${config.border}`,
         borderBottom: `1px solid ${config.border}`
       },
-      ...props
-    },
-    /* @__PURE__ */ React.createElement(Icon, { size: 20, className: "shrink-0 mt-0.5", style: { color: config.iconColor } }),
-    /* @__PURE__ */ React.createElement("div", { className: "flex-1 min-w-0" }, title && /* @__PURE__ */ React.createElement("p", { className: "font-semibold text-[length:var(--ds-text-sm)]", style: { color: config.text } }, title), children && /* @__PURE__ */ React.createElement("div", { className: "text-[length:var(--ds-text-sm)] text-[var(--ds-text-secondary)] mt-1" }, children)),
-    dismissible && /* @__PURE__ */ React.createElement(
-      "button",
-      {
-        type: "button",
-        onClick: onDismiss,
-        className: "shrink-0 p-1 rounded-[var(--ds-radius-sm)] hover:bg-black/10 transition-colors cursor-pointer",
-        "aria-label": "Dismiss"
-      },
-      /* @__PURE__ */ React.createElement(_lucidereact.X, { size: 16, style: { color: config.iconColor } })
-    )
+      ...props,
+      children: [
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, Icon, { size: 20, className: "shrink-0 mt-0.5", style: { color: config.iconColor } }),
+        /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex-1 min-w-0", children: [
+          title && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "p", { className: "font-semibold text-[length:var(--ds-text-sm)]", style: { color: config.text }, children: title }),
+          children && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "text-[length:var(--ds-text-sm)] text-[var(--ds-text-secondary)] mt-1", children })
+        ] }),
+        dismissible && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          "button",
+          {
+            type: "button",
+            onClick: onDismiss,
+            className: "shrink-0 p-1 rounded-[var(--ds-radius-sm)] hover:bg-black/10 transition-colors cursor-pointer",
+            "aria-label": "Dismiss",
+            children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.X, { size: 16, style: { color: config.iconColor } })
+          }
+        )
+      ]
+    }
   );
 });
 function Toast({ type = "info", title, children, duration = 5e3, onClose, visible = true }) {
@@ -524,44 +573,49 @@ function Toast({ type = "info", title, children, duration = 5e3, onClose, visibl
     }
   }, [visible, duration, onClose]);
   if (!show) return null;
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
     "div",
     {
       role: "alert",
       className: "fixed bottom-6 right-6 max-w-sm w-full animate-in slide-in-from-right",
-      style: { zIndex: "var(--ds-z-toast)" }
-    },
-    /* @__PURE__ */ React.createElement(
-      "div",
-      {
-        className: "flex gap-3 p-4 rounded-[var(--ds-radius-lg)] shadow-[var(--ds-shadow-lg)] border",
-        style: {
-          backgroundColor: "var(--ds-bg-primary)",
-          borderColor: "var(--ds-border-primary)"
-        }
-      },
-      /* @__PURE__ */ React.createElement(Icon, { size: 20, className: "shrink-0 mt-0.5", style: { color: config.iconColor } }),
-      /* @__PURE__ */ React.createElement("div", { className: "flex-1 min-w-0" }, title && /* @__PURE__ */ React.createElement("p", { className: "font-semibold text-[length:var(--ds-text-sm)] text-[var(--ds-text-primary)]" }, title), children && /* @__PURE__ */ React.createElement("div", { className: "text-[length:var(--ds-text-sm)] text-[var(--ds-text-secondary)] mt-1" }, children)),
-      /* @__PURE__ */ React.createElement(
-        "button",
+      style: { zIndex: "var(--ds-z-toast)" },
+      children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+        "div",
         {
-          type: "button",
-          onClick: () => {
-            setShow(false);
-            onClose == null ? void 0 : onClose();
+          className: "flex gap-3 p-4 rounded-[var(--ds-radius-lg)] shadow-[var(--ds-shadow-lg)] border",
+          style: {
+            backgroundColor: "var(--ds-bg-primary)",
+            borderColor: "var(--ds-border-primary)"
           },
-          className: "shrink-0 p-1 rounded-[var(--ds-radius-sm)] hover:bg-[var(--ds-bg-hover)] transition-colors cursor-pointer",
-          "aria-label": "Close"
-        },
-        /* @__PURE__ */ React.createElement(_lucidereact.X, { size: 16, style: { color: "var(--ds-icon-secondary)" } })
+          children: [
+            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, Icon, { size: 20, className: "shrink-0 mt-0.5", style: { color: config.iconColor } }),
+            /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex-1 min-w-0", children: [
+              title && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "p", { className: "font-semibold text-[length:var(--ds-text-sm)] text-[var(--ds-text-primary)]", children: title }),
+              children && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "text-[length:var(--ds-text-sm)] text-[var(--ds-text-secondary)] mt-1", children })
+            ] }),
+            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+              "button",
+              {
+                type: "button",
+                onClick: () => {
+                  setShow(false);
+                  onClose == null ? void 0 : onClose();
+                },
+                className: "shrink-0 p-1 rounded-[var(--ds-radius-sm)] hover:bg-[var(--ds-bg-hover)] transition-colors cursor-pointer",
+                "aria-label": "Close",
+                children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.X, { size: 16, style: { color: "var(--ds-icon-secondary)" } })
+              }
+            )
+          ]
+        }
       )
-    )
+    }
   );
 }
 function Banner({ type = "info", children, dismissible = true, onDismiss, className = "" }) {
   const config = typeConfig[type];
   const Icon = config.icon;
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
     "div",
     {
       role: "alert",
@@ -569,20 +623,22 @@ function Banner({ type = "info", children, dismissible = true, onDismiss, classN
       style: {
         backgroundColor: config.bg,
         borderBottom: `1px solid ${config.border}`
-      }
-    },
-    /* @__PURE__ */ React.createElement(Icon, { size: 18, className: "shrink-0", style: { color: config.iconColor } }),
-    /* @__PURE__ */ React.createElement("div", { className: "flex-1 text-[length:var(--ds-text-sm)]", style: { color: config.text } }, children),
-    dismissible && /* @__PURE__ */ React.createElement(
-      "button",
-      {
-        type: "button",
-        onClick: onDismiss,
-        className: "shrink-0 p-1 rounded-[var(--ds-radius-sm)] hover:bg-black/10 transition-colors cursor-pointer",
-        "aria-label": "Dismiss"
       },
-      /* @__PURE__ */ React.createElement(_lucidereact.X, { size: 16, style: { color: config.iconColor } })
-    )
+      children: [
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, Icon, { size: 18, className: "shrink-0", style: { color: config.iconColor } }),
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "flex-1 text-[length:var(--ds-text-sm)]", style: { color: config.text }, children }),
+        dismissible && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          "button",
+          {
+            type: "button",
+            onClick: onDismiss,
+            className: "shrink-0 p-1 rounded-[var(--ds-radius-sm)] hover:bg-black/10 transition-colors cursor-pointer",
+            "aria-label": "Dismiss",
+            children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.X, { size: 16, style: { color: config.iconColor } })
+          }
+        )
+      ]
+    }
   );
 }
 Notification.displayName = "Notification";
@@ -593,26 +649,29 @@ var Notification_default = Notification;
 // src/components/Loading/Loading.js
 
 
+
 var Spinner = _react.forwardRef.call(void 0, function Spinner2({ size = "md", label = "Loading...", className = "", ...props }, ref) {
   const sizes4 = { sm: 16, md: 24, lg: 32, xl: 48 };
   const px = sizes4[size] || sizes4.md;
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
     "span",
     {
       ref,
       role: "status",
       className: ["inline-flex items-center gap-2", className].join(" "),
-      ...props
-    },
-    /* @__PURE__ */ React.createElement(
-      _lucidereact.Loader2,
-      {
-        size: px,
-        className: "animate-spin",
-        style: { color: "var(--ds-icon-brand)" }
-      }
-    ),
-    label && /* @__PURE__ */ React.createElement("span", { className: "ds-sr-only" }, label)
+      ...props,
+      children: [
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          _lucidereact.Loader2,
+          {
+            size: px,
+            className: "animate-spin",
+            style: { color: "var(--ds-icon-brand)" }
+          }
+        ),
+        label && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "ds-sr-only", children: label })
+      ]
+    }
   );
 });
 var Skeleton = _react.forwardRef.call(void 0, function Skeleton2({ width, height, variant = "rectangular", className = "", style: styleProp = {}, ...props }, ref) {
@@ -621,7 +680,7 @@ var Skeleton = _react.forwardRef.call(void 0, function Skeleton2({ width, height
     circular: "50%",
     text: "var(--ds-radius-sm)"
   };
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
     "div",
     {
       ref,
@@ -638,47 +697,50 @@ var Skeleton = _react.forwardRef.call(void 0, function Skeleton2({ width, height
   );
 });
 function SkeletonText({ lines = 3, className = "" }) {
-  return /* @__PURE__ */ React.createElement("div", { className: ["flex flex-col gap-2", className].join(" ") }, Array.from({ length: lines }).map((_, i) => /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: ["flex flex-col gap-2", className].join(" "), children: Array.from({ length: lines }).map((_, i) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
     Skeleton,
     {
-      key: i,
       variant: "text",
       height: "0.875rem",
       width: i === lines - 1 ? "60%" : "100%"
-    }
-  )));
+    },
+    i
+  )) });
 }
 function TableSkeleton({ rows = 5, columns = 4, className = "" }) {
-  return /* @__PURE__ */ React.createElement("div", { className: ["w-full", className].join(" ") }, /* @__PURE__ */ React.createElement(
-    "div",
-    {
-      className: "grid gap-4 p-4 border-b",
-      style: {
-        gridTemplateColumns: `repeat(${columns}, 1fr)`,
-        borderColor: "var(--ds-table-border)"
-      }
-    },
-    Array.from({ length: columns }).map((_, i) => /* @__PURE__ */ React.createElement(Skeleton, { key: i, variant: "text", height: "0.75rem", width: "70%" }))
-  ), Array.from({ length: rows }).map((_, rowIdx) => /* @__PURE__ */ React.createElement(
-    "div",
-    {
-      key: rowIdx,
-      className: "grid gap-4 p-4 border-b",
-      style: {
-        gridTemplateColumns: `repeat(${columns}, 1fr)`,
-        borderColor: "var(--ds-table-border)"
-      }
-    },
-    Array.from({ length: columns }).map((_2, colIdx) => /* @__PURE__ */ React.createElement(
-      Skeleton,
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: ["w-full", className].join(" "), children: [
+    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "div",
       {
-        key: colIdx,
-        variant: "text",
-        height: "0.875rem",
-        width: `${60 + ((rowIdx * columns + colIdx) * 17 + 7) % 30}%`
+        className: "grid gap-4 p-4 border-b",
+        style: {
+          gridTemplateColumns: `repeat(${columns}, 1fr)`,
+          borderColor: "var(--ds-table-border)"
+        },
+        children: Array.from({ length: columns }).map((_, i) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, Skeleton, { variant: "text", height: "0.75rem", width: "70%" }, i))
       }
+    ),
+    Array.from({ length: rows }).map((_, rowIdx) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "div",
+      {
+        className: "grid gap-4 p-4 border-b",
+        style: {
+          gridTemplateColumns: `repeat(${columns}, 1fr)`,
+          borderColor: "var(--ds-table-border)"
+        },
+        children: Array.from({ length: columns }).map((_2, colIdx) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          Skeleton,
+          {
+            variant: "text",
+            height: "0.875rem",
+            width: `${60 + ((rowIdx * columns + colIdx) * 17 + 7) % 30}%`
+          },
+          colIdx
+        ))
+      },
+      rowIdx
     ))
-  )));
+  ] });
 }
 Spinner.displayName = "Spinner";
 Skeleton.displayName = "Skeleton";
@@ -686,6 +748,7 @@ SkeletonText.displayName = "SkeletonText";
 TableSkeleton.displayName = "TableSkeleton";
 
 // src/components/Header/Header.js
+
 
 var Header = _react.forwardRef.call(void 0, function Header2({
   logo,
@@ -695,7 +758,7 @@ var Header = _react.forwardRef.call(void 0, function Header2({
   className = "",
   ...props
 }, ref) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
     "header",
     {
       ref,
@@ -705,31 +768,39 @@ var Header = _react.forwardRef.call(void 0, function Header2({
         className
       ].join(" "),
       style: { zIndex: "var(--ds-z-fixed)" },
-      ...props
-    },
-    /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-3 mr-8" }, logo && /* @__PURE__ */ React.createElement("span", { className: "shrink-0" }, logo), /* @__PURE__ */ React.createElement("span", { className: "text-[length:var(--ds-text-md)] font-semibold text-[var(--ds-text-primary)] whitespace-nowrap" }, productName)),
-    /* @__PURE__ */ React.createElement("nav", { className: "hidden md:flex items-center gap-1 flex-1" }, navItems.map((item) => /* @__PURE__ */ React.createElement(
-      "a",
-      {
-        key: item.label,
-        href: item.href || "#",
-        onClick: item.onClick,
-        className: [
-          "ds-focus-ring px-3 py-1.5 rounded-[var(--ds-radius-md)] text-[length:var(--ds-text-sm)] font-medium",
-          "transition-colors duration-[var(--ds-duration-normal)]",
-          item.active ? "bg-[var(--ds-bg-selected)] text-[var(--ds-text-brand)]" : "text-[var(--ds-text-secondary)] hover:text-[var(--ds-text-primary)] hover:bg-[var(--ds-bg-hover)]"
-        ].join(" ")
-      },
-      item.icon && /* @__PURE__ */ React.createElement("span", { className: "mr-1.5 inline-flex" }, item.icon),
-      item.label
-    ))),
-    actions && /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2 ml-auto" }, actions)
+      ...props,
+      children: [
+        /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex items-center gap-3 mr-8", children: [
+          logo && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "shrink-0", children: logo }),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "text-[length:var(--ds-text-md)] font-semibold text-[var(--ds-text-primary)] whitespace-nowrap", children: productName })
+        ] }),
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "nav", { className: "hidden md:flex items-center gap-1 flex-1", children: navItems.map((item) => /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+          "a",
+          {
+            href: item.href || "#",
+            onClick: item.onClick,
+            className: [
+              "ds-focus-ring px-3 py-1.5 rounded-[var(--ds-radius-md)] text-[length:var(--ds-text-sm)] font-medium",
+              "transition-colors duration-[var(--ds-duration-normal)]",
+              item.active ? "bg-[var(--ds-bg-selected)] text-[var(--ds-text-brand)]" : "text-[var(--ds-text-secondary)] hover:text-[var(--ds-text-primary)] hover:bg-[var(--ds-bg-hover)]"
+            ].join(" "),
+            children: [
+              item.icon && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "mr-1.5 inline-flex", children: item.icon }),
+              item.label
+            ]
+          },
+          item.label
+        )) }),
+        actions && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "flex items-center gap-2 ml-auto", children: actions })
+      ]
+    }
   );
 });
 Header.displayName = "Header";
 var Header_default = Header;
 
 // src/components/SideNav/SideNav.js
+
 
 
 function NavItem({ item, collapsed, depth = 0 }) {
@@ -743,34 +814,39 @@ function NavItem({ item, collapsed, depth = 0 }) {
     }
     (_a = item.onClick) == null ? void 0 : _a.call(item, e);
   };
-  return /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement(
-    "a",
-    {
-      href: item.href || "#",
-      onClick: handleClick,
-      title: collapsed ? item.label : void 0,
-      className: [
-        "ds-focus-ring flex items-center gap-3 px-3 py-2 rounded-[var(--ds-radius-md)] text-[length:var(--ds-text-sm)]",
-        "transition-colors duration-[var(--ds-duration-normal)] cursor-pointer",
-        item.active ? "bg-[var(--ds-sidebar-active)] text-[color:var(--ds-sidebar-text-active)] font-medium" : "text-[color:var(--ds-sidebar-text)] hover:bg-[var(--ds-sidebar-hover)] hover:text-[color:var(--ds-sidebar-text-active)]"
-      ].join(" "),
-      style: { paddingLeft: collapsed ? void 0 : `${12 + depth * 12}px` }
-    },
-    item.icon && /* @__PURE__ */ React.createElement("span", { className: "shrink-0 w-5 h-5 flex items-center justify-center" }, item.icon),
-    !collapsed && /* @__PURE__ */ React.createElement("span", { className: "flex-1 truncate" }, item.label),
-    !collapsed && item.badge && /* @__PURE__ */ React.createElement(
-      "span",
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "li", { children: [
+    /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+      "a",
       {
-        className: "text-[length:var(--ds-text-xs)] px-1.5 py-0.5 rounded-full font-medium",
-        style: {
-          backgroundColor: "var(--ds-bg-brand)",
-          color: "var(--ds-text-on-brand)"
-        }
-      },
-      item.badge
+        href: item.href || "#",
+        onClick: handleClick,
+        title: collapsed ? item.label : void 0,
+        className: [
+          "ds-focus-ring flex items-center gap-3 px-3 py-2 rounded-[var(--ds-radius-md)] text-[length:var(--ds-text-sm)]",
+          "transition-colors duration-[var(--ds-duration-normal)] cursor-pointer",
+          item.active ? "bg-[var(--ds-sidebar-active)] text-[color:var(--ds-sidebar-text-active)] font-medium" : "text-[color:var(--ds-sidebar-text)] hover:bg-[var(--ds-sidebar-hover)] hover:text-[color:var(--ds-sidebar-text-active)]"
+        ].join(" "),
+        style: { paddingLeft: collapsed ? void 0 : `${12 + depth * 12}px` },
+        children: [
+          item.icon && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "shrink-0 w-5 h-5 flex items-center justify-center", children: item.icon }),
+          !collapsed && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "flex-1 truncate", children: item.label }),
+          !collapsed && item.badge && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "span",
+            {
+              className: "text-[length:var(--ds-text-xs)] px-1.5 py-0.5 rounded-full font-medium",
+              style: {
+                backgroundColor: "var(--ds-bg-brand)",
+                color: "var(--ds-text-on-brand)"
+              },
+              children: item.badge
+            }
+          ),
+          !collapsed && hasChildren && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "shrink-0", children: expanded ? /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ChevronDown, { size: 14 }) : /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ChevronRight, { size: 14 }) })
+        ]
+      }
     ),
-    !collapsed && hasChildren && /* @__PURE__ */ React.createElement("span", { className: "shrink-0" }, expanded ? /* @__PURE__ */ React.createElement(_lucidereact.ChevronDown, { size: 14 }) : /* @__PURE__ */ React.createElement(_lucidereact.ChevronRight, { size: 14 }))
-  ), !collapsed && hasChildren && expanded && /* @__PURE__ */ React.createElement("ul", { className: "mt-0.5" }, item.children.map((child) => /* @__PURE__ */ React.createElement(NavItem, { key: child.label, item: child, collapsed, depth: depth + 1 }))));
+    !collapsed && hasChildren && expanded && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "ul", { className: "mt-0.5", children: item.children.map((child) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, NavItem, { item: child, collapsed, depth: depth + 1 }, child.label)) })
+  ] });
 }
 var SideNav = _react.forwardRef.call(void 0, function SideNav2({
   items = [],
@@ -780,7 +856,7 @@ var SideNav = _react.forwardRef.call(void 0, function SideNav2({
   className = "",
   ...props
 }, ref) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
     "aside",
     {
       ref,
@@ -790,16 +866,21 @@ var SideNav = _react.forwardRef.call(void 0, function SideNav2({
         collapsed ? "w-16" : "w-60",
         className
       ].join(" "),
-      ...props
-    },
-    header && /* @__PURE__ */ React.createElement("div", { className: "p-3 border-b shrink-0", style: { borderColor: "var(--ds-sidebar-border)" } }, header),
-    /* @__PURE__ */ React.createElement("nav", { className: "flex-1 p-2" }, /* @__PURE__ */ React.createElement("ul", { className: "flex flex-col gap-0.5" }, items.map((item) => {
-      if (item.divider) {
-        return /* @__PURE__ */ React.createElement("li", { key: item.label || "divider", className: "my-2" }, !collapsed && item.label && /* @__PURE__ */ React.createElement("span", { className: "px-3 text-[length:11px] font-semibold uppercase tracking-[var(--ds-tracking-widest)] text-[color:var(--ds-sidebar-text)] opacity-80" }, item.label), /* @__PURE__ */ React.createElement("div", { className: "mt-1 border-t", style: { borderColor: "var(--ds-sidebar-border)" } }));
-      }
-      return /* @__PURE__ */ React.createElement(NavItem, { key: item.label, item, collapsed });
-    }))),
-    footer && /* @__PURE__ */ React.createElement("div", { className: "p-3 border-t shrink-0", style: { borderColor: "var(--ds-sidebar-border)" } }, footer)
+      ...props,
+      children: [
+        header && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "p-3 border-b shrink-0", style: { borderColor: "var(--ds-sidebar-border)" }, children: header }),
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "nav", { className: "flex-1 p-2", children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "ul", { className: "flex flex-col gap-0.5", children: items.map((item) => {
+          if (item.divider) {
+            return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "li", { className: "my-2", children: [
+              !collapsed && item.label && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "px-3 text-[length:11px] font-semibold uppercase tracking-[var(--ds-tracking-widest)] text-[color:var(--ds-sidebar-text)] opacity-80", children: item.label }),
+              /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "mt-1 border-t", style: { borderColor: "var(--ds-sidebar-border)" } })
+            ] }, item.label || "divider");
+          }
+          return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, NavItem, { item, collapsed }, item.label);
+        }) }) }),
+        footer && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "p-3 border-t shrink-0", style: { borderColor: "var(--ds-sidebar-border)" }, children: footer })
+      ]
+    }
   );
 });
 SideNav.displayName = "SideNav";
@@ -808,34 +889,43 @@ var SideNav_default = SideNav;
 // src/components/Breadcrumb/Breadcrumb.js
 
 
+
 var Breadcrumb = _react.forwardRef.call(void 0, function Breadcrumb2({ items = [], separator, className = "", ...props }, ref) {
-  const SeparatorIcon = separator || /* @__PURE__ */ React.createElement(_lucidereact.ChevronRight, { size: 14, style: { color: "var(--ds-text-tertiary)" } });
-  return /* @__PURE__ */ React.createElement("nav", { ref, "aria-label": "Breadcrumb", className, ...props }, /* @__PURE__ */ React.createElement("ol", { className: "flex items-center gap-1.5 flex-wrap" }, items.map((item, index) => {
+  const SeparatorIcon = separator || /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ChevronRight, { size: 14, style: { color: "var(--ds-text-tertiary)" } });
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "nav", { ref, "aria-label": "Breadcrumb", className, ...props, children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "ol", { className: "flex items-center gap-1.5 flex-wrap", children: items.map((item, index) => {
     const isLast = index === items.length - 1;
-    return /* @__PURE__ */ React.createElement("li", { key: item.label, className: "flex items-center gap-1.5" }, isLast ? /* @__PURE__ */ React.createElement(
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "li", { className: "flex items-center gap-1.5", children: isLast ? /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
       "span",
       {
         className: "text-[length:var(--ds-text-sm)] font-medium text-[var(--ds-text-primary)]",
-        "aria-current": "page"
-      },
-      item.icon && /* @__PURE__ */ React.createElement("span", { className: "mr-1 inline-flex align-text-bottom" }, item.icon),
-      item.label
-    ) : /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(
-      "a",
-      {
-        href: item.href || "#",
-        onClick: item.onClick,
-        className: "ds-focus-ring text-[length:var(--ds-text-sm)] text-[var(--ds-text-link)] hover:text-[var(--ds-text-link-hover)] hover:underline transition-colors"
-      },
-      item.icon && /* @__PURE__ */ React.createElement("span", { className: "mr-1 inline-flex align-text-bottom" }, item.icon),
-      item.label
-    ), /* @__PURE__ */ React.createElement("span", { className: "flex items-center", "aria-hidden": "true" }, SeparatorIcon)));
-  })));
+        "aria-current": "page",
+        children: [
+          item.icon && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "mr-1 inline-flex align-text-bottom", children: item.icon }),
+          item.label
+        ]
+      }
+    ) : /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _jsxruntime.Fragment, { children: [
+      /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+        "a",
+        {
+          href: item.href || "#",
+          onClick: item.onClick,
+          className: "ds-focus-ring text-[length:var(--ds-text-sm)] text-[var(--ds-text-link)] hover:text-[var(--ds-text-link-hover)] hover:underline transition-colors",
+          children: [
+            item.icon && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "mr-1 inline-flex align-text-bottom", children: item.icon }),
+            item.label
+          ]
+        }
+      ),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "flex items-center", "aria-hidden": "true", children: SeparatorIcon })
+    ] }) }, item.label);
+  }) }) });
 });
 Breadcrumb.displayName = "Breadcrumb";
 var Breadcrumb_default = Breadcrumb;
 
 // src/components/Tabs/Tabs.js
+
 
 var Tabs = _react.forwardRef.call(void 0, function Tabs2({
   tabs = [],
@@ -862,67 +952,72 @@ var Tabs = _react.forwardRef.call(void 0, function Tabs2({
     lg: "text-[length:var(--ds-text-md)] px-5 py-2.5"
   };
   const activeContent = tabs.find((t) => t.id === activeTab);
-  return /* @__PURE__ */ React.createElement("div", { ref, className, ...props }, /* @__PURE__ */ React.createElement(
-    "div",
-    {
-      role: "tablist",
-      className: [
-        "flex",
-        variant === "underline" ? "border-b border-[var(--ds-border-primary)]" : "gap-1 p-1 bg-[var(--ds-bg-tertiary)] rounded-[var(--ds-radius-lg)]"
-      ].join(" ")
-    },
-    tabs.map((tab) => {
-      const isActive = tab.id === activeTab;
-      return /* @__PURE__ */ React.createElement(
-        "button",
-        {
-          key: tab.id,
-          role: "tab",
-          type: "button",
-          id: `${baseId}-tab-${tab.id}`,
-          "aria-selected": isActive,
-          "aria-controls": `${baseId}-panel-${tab.id}`,
-          disabled: tab.disabled,
-          onClick: () => handleTabClick(tab.id),
-          className: [
-            "ds-focus-ring font-medium transition-all duration-[var(--ds-duration-normal)] whitespace-nowrap cursor-pointer",
-            sizeClasses[size],
-            fullWidth ? "flex-1" : "",
-            tab.disabled ? "opacity-40 cursor-not-allowed" : "",
-            variant === "underline" ? [
-              "-mb-px border-b-2",
-              isActive ? "border-[var(--ds-border-brand)] text-[var(--ds-text-brand)]" : "border-transparent text-[var(--ds-text-secondary)] hover:text-[var(--ds-text-primary)] hover:border-[var(--ds-border-secondary)]"
-            ].join(" ") : [
-              "rounded-[var(--ds-radius-md)]",
-              isActive ? "bg-[var(--ds-bg-primary)] text-[var(--ds-text-primary)] shadow-[var(--ds-shadow-xs)]" : "text-[var(--ds-text-secondary)] hover:text-[var(--ds-text-primary)]"
-            ].join(" ")
-          ].filter(Boolean).join(" ")
-        },
-        tab.icon && /* @__PURE__ */ React.createElement("span", { className: "mr-1.5 inline-flex align-text-bottom" }, tab.icon),
-        tab.label,
-        tab.badge !== void 0 && /* @__PURE__ */ React.createElement(
-          "span",
-          {
-            className: "ml-2 text-[length:var(--ds-text-xs)] px-1.5 py-0.5 rounded-full",
-            style: {
-              backgroundColor: isActive ? "var(--ds-bg-brand)" : "var(--ds-bg-tertiary)",
-              color: isActive ? "var(--ds-text-on-brand)" : "var(--ds-text-secondary)"
-            }
-          },
-          tab.badge
-        )
-      );
-    })
-  ), activeContent && /* @__PURE__ */ React.createElement(
-    "div",
-    {
-      role: "tabpanel",
-      id: `${baseId}-panel-${activeContent.id}`,
-      "aria-labelledby": `${baseId}-tab-${activeContent.id}`,
-      className: "pt-4"
-    },
-    activeContent.content
-  ));
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { ref, className, ...props, children: [
+    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "div",
+      {
+        role: "tablist",
+        className: [
+          "flex",
+          variant === "underline" ? "border-b border-[var(--ds-border-primary)]" : "gap-1 p-1 bg-[var(--ds-bg-tertiary)] rounded-[var(--ds-radius-lg)]"
+        ].join(" "),
+        children: tabs.map((tab) => {
+          const isActive = tab.id === activeTab;
+          return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+            "button",
+            {
+              role: "tab",
+              type: "button",
+              id: `${baseId}-tab-${tab.id}`,
+              "aria-selected": isActive,
+              "aria-controls": `${baseId}-panel-${tab.id}`,
+              disabled: tab.disabled,
+              onClick: () => handleTabClick(tab.id),
+              className: [
+                "ds-focus-ring font-medium transition-all duration-[var(--ds-duration-normal)] whitespace-nowrap cursor-pointer",
+                sizeClasses[size],
+                fullWidth ? "flex-1" : "",
+                tab.disabled ? "opacity-40 cursor-not-allowed" : "",
+                variant === "underline" ? [
+                  "-mb-px border-b-2",
+                  isActive ? "border-[var(--ds-border-brand)] text-[var(--ds-text-brand)]" : "border-transparent text-[var(--ds-text-secondary)] hover:text-[var(--ds-text-primary)] hover:border-[var(--ds-border-secondary)]"
+                ].join(" ") : [
+                  "rounded-[var(--ds-radius-md)]",
+                  isActive ? "bg-[var(--ds-bg-primary)] text-[var(--ds-text-primary)] shadow-[var(--ds-shadow-xs)]" : "text-[var(--ds-text-secondary)] hover:text-[var(--ds-text-primary)]"
+                ].join(" ")
+              ].filter(Boolean).join(" "),
+              children: [
+                tab.icon && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "mr-1.5 inline-flex align-text-bottom", children: tab.icon }),
+                tab.label,
+                tab.badge !== void 0 && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                  "span",
+                  {
+                    className: "ml-2 text-[length:var(--ds-text-xs)] px-1.5 py-0.5 rounded-full",
+                    style: {
+                      backgroundColor: isActive ? "var(--ds-bg-brand)" : "var(--ds-bg-tertiary)",
+                      color: isActive ? "var(--ds-text-on-brand)" : "var(--ds-text-secondary)"
+                    },
+                    children: tab.badge
+                  }
+                )
+              ]
+            },
+            tab.id
+          );
+        })
+      }
+    ),
+    activeContent && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "div",
+      {
+        role: "tabpanel",
+        id: `${baseId}-panel-${activeContent.id}`,
+        "aria-labelledby": `${baseId}-tab-${activeContent.id}`,
+        className: "pt-4",
+        children: activeContent.content
+      }
+    )
+  ] });
 });
 Tabs.displayName = "Tabs";
 var Tabs_default = Tabs;
@@ -931,6 +1026,7 @@ var Tabs_default = Tabs;
 
 
 var _reactdom = require('react-dom');
+
 var sizeMap = {
   sm: "max-w-md",
   md: "max-w-lg",
@@ -971,7 +1067,7 @@ var Modal = _react.forwardRef.call(void 0, function Modal2({
     }
   }, [open, handleEsc]);
   if (!open) return null;
-  const modal = /* @__PURE__ */ React.createElement(
+  const modal = /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
     "div",
     {
       ref: overlayRef,
@@ -984,43 +1080,48 @@ var Modal = _react.forwardRef.call(void 0, function Modal2({
         if (closeOnOverlay && e.target === overlayRef.current) {
           onClose == null ? void 0 : onClose();
         }
-      }
-    },
-    /* @__PURE__ */ React.createElement(
-      "div",
-      {
-        ref,
-        role: "dialog",
-        "aria-modal": "true",
-        "aria-labelledby": title ? "modal-title" : void 0,
-        className: [
-          "w-full rounded-[var(--ds-radius-xl)] shadow-[var(--ds-shadow-xl)] flex flex-col max-h-[85vh]",
-          "bg-[var(--ds-bg-primary)] border border-[var(--ds-border-primary)]",
-          sizeMap[size],
-          className
-        ].join(" "),
-        ...props
       },
-      (title || showCloseButton) && /* @__PURE__ */ React.createElement("div", { className: "flex items-center justify-between px-6 py-4 border-b border-[var(--ds-border-primary)] shrink-0" }, title && /* @__PURE__ */ React.createElement(
-        "h2",
+      children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+        "div",
         {
-          id: "modal-title",
-          className: "text-[length:var(--ds-text-lg)] font-semibold text-[var(--ds-text-primary)]"
-        },
-        title
-      ), showCloseButton && /* @__PURE__ */ React.createElement(
-        "button",
-        {
-          type: "button",
-          onClick: onClose,
-          className: "ds-focus-ring p-1.5 rounded-[var(--ds-radius-md)] hover:bg-[var(--ds-bg-hover)] transition-colors ml-auto cursor-pointer",
-          "aria-label": "Close dialog"
-        },
-        /* @__PURE__ */ React.createElement(_lucidereact.X, { size: 18, style: { color: "var(--ds-icon-secondary)" } })
-      )),
-      /* @__PURE__ */ React.createElement("div", { className: "flex-1 overflow-y-auto px-6 py-4 ds-scrollbar" }, children),
-      footer && /* @__PURE__ */ React.createElement("div", { className: "flex items-center justify-end gap-3 px-6 py-4 border-t border-[var(--ds-border-primary)] shrink-0" }, footer)
-    )
+          ref,
+          role: "dialog",
+          "aria-modal": "true",
+          "aria-labelledby": title ? "modal-title" : void 0,
+          className: [
+            "w-full rounded-[var(--ds-radius-xl)] shadow-[var(--ds-shadow-xl)] flex flex-col max-h-[85vh]",
+            "bg-[var(--ds-bg-primary)] border border-[var(--ds-border-primary)]",
+            sizeMap[size],
+            className
+          ].join(" "),
+          ...props,
+          children: [
+            (title || showCloseButton) && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex items-center justify-between px-6 py-4 border-b border-[var(--ds-border-primary)] shrink-0", children: [
+              title && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                "h2",
+                {
+                  id: "modal-title",
+                  className: "text-[length:var(--ds-text-lg)] font-semibold text-[var(--ds-text-primary)]",
+                  children: title
+                }
+              ),
+              showCloseButton && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                "button",
+                {
+                  type: "button",
+                  onClick: onClose,
+                  className: "ds-focus-ring p-1.5 rounded-[var(--ds-radius-md)] hover:bg-[var(--ds-bg-hover)] transition-colors ml-auto cursor-pointer",
+                  "aria-label": "Close dialog",
+                  children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.X, { size: 18, style: { color: "var(--ds-icon-secondary)" } })
+                }
+              )
+            ] }),
+            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "flex-1 overflow-y-auto px-6 py-4 ds-scrollbar", children }),
+            footer && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "flex items-center justify-end gap-3 px-6 py-4 border-t border-[var(--ds-border-primary)] shrink-0", children: footer })
+          ]
+        }
+      )
+    }
   );
   if (typeof window === "undefined") return null;
   return _reactdom.createPortal.call(void 0, modal, document.body);
@@ -1029,6 +1130,7 @@ Modal.displayName = "Modal";
 var Modal_default = Modal;
 
 // src/components/Dropdown/Dropdown.js
+
 
 
 var sizeStyles3 = {
@@ -1075,96 +1177,110 @@ var Dropdown = _react.forwardRef.call(void 0, function Dropdown2({
   };
   const hasError = !!errorText;
   const borderColor = hasError ? "var(--ds-border-error)" : "var(--ds-input-border)";
-  return /* @__PURE__ */ React.createElement("div", { ref: containerRef, className: ["flex flex-col gap-1.5 relative", wrapperClassName].join(" ") }, label && /* @__PURE__ */ React.createElement(
-    "label",
-    {
-      htmlFor: id,
-      className: "text-[length:var(--ds-text-sm)] font-medium text-[var(--ds-text-primary)]"
-    },
-    label,
-    required && /* @__PURE__ */ React.createElement("span", { className: "text-[var(--ds-text-danger)] ml-0.5" }, "*")
-  ), /* @__PURE__ */ React.createElement(
-    "button",
-    {
-      ref,
-      type: "button",
-      id,
-      disabled,
-      onClick: () => !disabled && setIsOpen(!isOpen),
-      className: [
-        "ds-focus-ring w-full rounded-[var(--ds-radius-md)] bg-[var(--ds-input-bg)] text-left",
-        "transition-colors duration-[var(--ds-duration-normal)] relative cursor-pointer",
-        sizeStyles3[size],
-        disabled ? "opacity-50 cursor-not-allowed bg-[var(--ds-bg-disabled)]" : "",
-        selectedLabel ? "text-[var(--ds-text-primary)]" : "text-[var(--ds-text-placeholder)]",
-        className
-      ].filter(Boolean).join(" "),
-      style: { border: `1px solid ${borderColor}` },
-      "aria-haspopup": "listbox",
-      "aria-expanded": isOpen,
-      ...props
-    },
-    /* @__PURE__ */ React.createElement("span", { className: "block truncate" }, selectedLabel || placeholder),
-    /* @__PURE__ */ React.createElement(
-      _lucidereact.ChevronDown,
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { ref: containerRef, className: ["flex flex-col gap-1.5 relative", wrapperClassName].join(" "), children: [
+    label && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+      "label",
       {
-        size: 16,
+        htmlFor: id,
+        className: "text-[length:var(--ds-text-sm)] font-medium text-[var(--ds-text-primary)]",
+        children: [
+          label,
+          required && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "text-[var(--ds-text-danger)] ml-0.5", children: "*" })
+        ]
+      }
+    ),
+    /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+      "button",
+      {
+        ref,
+        type: "button",
+        id,
+        disabled,
+        onClick: () => !disabled && setIsOpen(!isOpen),
         className: [
-          "absolute right-3 top-1/2 -translate-y-1/2 transition-transform",
-          isOpen ? "rotate-180" : ""
-        ].join(" "),
-        style: { color: "var(--ds-icon-secondary)" }
+          "ds-focus-ring w-full rounded-[var(--ds-radius-md)] bg-[var(--ds-input-bg)] text-left",
+          "transition-colors duration-[var(--ds-duration-normal)] relative cursor-pointer",
+          sizeStyles3[size],
+          disabled ? "opacity-50 cursor-not-allowed bg-[var(--ds-bg-disabled)]" : "",
+          selectedLabel ? "text-[var(--ds-text-primary)]" : "text-[var(--ds-text-placeholder)]",
+          className
+        ].filter(Boolean).join(" "),
+        style: { border: `1px solid ${borderColor}` },
+        "aria-haspopup": "listbox",
+        "aria-expanded": isOpen,
+        ...props,
+        children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "block truncate", children: selectedLabel || placeholder }),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            _lucidereact.ChevronDown,
+            {
+              size: 16,
+              className: [
+                "absolute right-3 top-1/2 -translate-y-1/2 transition-transform",
+                isOpen ? "rotate-180" : ""
+              ].join(" "),
+              style: { color: "var(--ds-icon-secondary)" }
+            }
+          )
+        ]
+      }
+    ),
+    isOpen && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+      "ul",
+      {
+        role: "listbox",
+        className: "absolute top-full left-0 right-0 mt-1 py-1 rounded-[var(--ds-radius-lg)] border overflow-auto max-h-60 ds-scrollbar",
+        style: {
+          zIndex: "var(--ds-z-dropdown)",
+          backgroundColor: "var(--ds-bg-primary)",
+          borderColor: "var(--ds-border-primary)",
+          boxShadow: "var(--ds-shadow-lg)"
+        },
+        children: [
+          options.map((opt) => {
+            const optValue = typeof opt === "string" ? opt : opt.value;
+            const optLabel = typeof opt === "string" ? opt : opt.label;
+            const optDisabled = typeof opt === "object" && opt.disabled;
+            const isSelected = optValue === value;
+            return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+              "li",
+              {
+                role: "option",
+                "aria-selected": isSelected,
+                onClick: () => !optDisabled && handleSelect(optValue),
+                className: [
+                  "flex items-center gap-2 px-3 py-2 text-[length:var(--ds-text-sm)] cursor-pointer",
+                  "transition-colors duration-[var(--ds-duration-fast)]",
+                  isSelected ? "bg-[var(--ds-bg-selected)] text-[var(--ds-text-brand)] font-medium" : "text-[var(--ds-text-primary)]",
+                  optDisabled ? "opacity-40 cursor-not-allowed" : "hover:bg-[var(--ds-bg-hover)]"
+                ].join(" "),
+                children: [
+                  /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "flex-1 truncate", children: optLabel }),
+                  isSelected && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.Check, { size: 16, style: { color: "var(--ds-icon-brand)" } })
+                ]
+              },
+              optValue
+            );
+          }),
+          options.length === 0 && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "li", { className: "px-3 py-2 text-[length:var(--ds-text-sm)] text-[var(--ds-text-tertiary)]", children: "No options available" })
+        ]
+      }
+    ),
+    (errorText || helperText) && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "p",
+      {
+        className: "text-[length:var(--ds-text-xs)]",
+        style: { color: hasError ? "var(--ds-text-danger)" : "var(--ds-text-secondary)" },
+        children: errorText || helperText
       }
     )
-  ), isOpen && /* @__PURE__ */ React.createElement(
-    "ul",
-    {
-      role: "listbox",
-      className: "absolute top-full left-0 right-0 mt-1 py-1 rounded-[var(--ds-radius-lg)] border overflow-auto max-h-60 ds-scrollbar",
-      style: {
-        zIndex: "var(--ds-z-dropdown)",
-        backgroundColor: "var(--ds-bg-primary)",
-        borderColor: "var(--ds-border-primary)",
-        boxShadow: "var(--ds-shadow-lg)"
-      }
-    },
-    options.map((opt) => {
-      const optValue = typeof opt === "string" ? opt : opt.value;
-      const optLabel = typeof opt === "string" ? opt : opt.label;
-      const optDisabled = typeof opt === "object" && opt.disabled;
-      const isSelected = optValue === value;
-      return /* @__PURE__ */ React.createElement(
-        "li",
-        {
-          key: optValue,
-          role: "option",
-          "aria-selected": isSelected,
-          onClick: () => !optDisabled && handleSelect(optValue),
-          className: [
-            "flex items-center gap-2 px-3 py-2 text-[length:var(--ds-text-sm)] cursor-pointer",
-            "transition-colors duration-[var(--ds-duration-fast)]",
-            isSelected ? "bg-[var(--ds-bg-selected)] text-[var(--ds-text-brand)] font-medium" : "text-[var(--ds-text-primary)]",
-            optDisabled ? "opacity-40 cursor-not-allowed" : "hover:bg-[var(--ds-bg-hover)]"
-          ].join(" ")
-        },
-        /* @__PURE__ */ React.createElement("span", { className: "flex-1 truncate" }, optLabel),
-        isSelected && /* @__PURE__ */ React.createElement(_lucidereact.Check, { size: 16, style: { color: "var(--ds-icon-brand)" } })
-      );
-    }),
-    options.length === 0 && /* @__PURE__ */ React.createElement("li", { className: "px-3 py-2 text-[length:var(--ds-text-sm)] text-[var(--ds-text-tertiary)]" }, "No options available")
-  ), (errorText || helperText) && /* @__PURE__ */ React.createElement(
-    "p",
-    {
-      className: "text-[length:var(--ds-text-xs)]",
-      style: { color: hasError ? "var(--ds-text-danger)" : "var(--ds-text-secondary)" }
-    },
-    errorText || helperText
-  ));
+  ] });
 });
 Dropdown.displayName = "Dropdown";
 var Dropdown_default = Dropdown;
 
 // src/components/OverflowMenu/OverflowMenu.js
+
 
 
 var OverflowMenu = _react.forwardRef.call(void 0, function OverflowMenu2({
@@ -1196,70 +1312,76 @@ var OverflowMenu = _react.forwardRef.call(void 0, function OverflowMenu2({
     }
   };
   const iconSize = size === "sm" ? 16 : size === "lg" ? 24 : 20;
-  return /* @__PURE__ */ React.createElement("div", { ref: containerRef, className: ["relative inline-flex", className].join(" "), ...props }, trigger ? /* @__PURE__ */ React.createElement("span", { onClick: () => setIsOpen(!isOpen), className: "cursor-pointer" }, trigger) : /* @__PURE__ */ React.createElement(
-    "button",
-    {
-      ref,
-      type: "button",
-      onClick: () => setIsOpen(!isOpen),
-      className: "ds-focus-ring p-1.5 rounded-[var(--ds-radius-md)] hover:bg-[var(--ds-bg-hover)] transition-colors cursor-pointer",
-      "aria-label": "More actions",
-      "aria-haspopup": "menu",
-      "aria-expanded": isOpen
-    },
-    /* @__PURE__ */ React.createElement(_lucidereact.MoreVertical, { size: iconSize, style: { color: "var(--ds-icon-secondary)" } })
-  ), isOpen && /* @__PURE__ */ React.createElement(
-    "div",
-    {
-      role: "menu",
-      className: [
-        "absolute top-full mt-1 min-w-[160px] py-1 rounded-[var(--ds-radius-lg)] border",
-        align === "right" ? "right-0" : "left-0"
-      ].join(" "),
-      style: {
-        zIndex: "var(--ds-z-dropdown)",
-        backgroundColor: "var(--ds-bg-primary)",
-        borderColor: "var(--ds-border-primary)",
-        boxShadow: "var(--ds-shadow-lg)"
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { ref: containerRef, className: ["relative inline-flex", className].join(" "), ...props, children: [
+    trigger ? /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { onClick: () => setIsOpen(!isOpen), className: "cursor-pointer", children: trigger }) : /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "button",
+      {
+        ref,
+        type: "button",
+        onClick: () => setIsOpen(!isOpen),
+        className: "ds-focus-ring p-1.5 rounded-[var(--ds-radius-md)] hover:bg-[var(--ds-bg-hover)] transition-colors cursor-pointer",
+        "aria-label": "More actions",
+        "aria-haspopup": "menu",
+        "aria-expanded": isOpen,
+        children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.MoreVertical, { size: iconSize, style: { color: "var(--ds-icon-secondary)" } })
       }
-    },
-    items.map((item, idx) => {
-      if (item.divider) {
-        return /* @__PURE__ */ React.createElement(
-          "div",
-          {
-            key: `divider-${idx}`,
-            className: "my-1 border-t",
-            style: { borderColor: "var(--ds-border-primary)" }
-          }
-        );
-      }
-      return /* @__PURE__ */ React.createElement(
-        "button",
-        {
-          key: item.label,
-          type: "button",
-          role: "menuitem",
-          disabled: item.disabled,
-          onClick: () => handleItemClick(item),
-          className: [
-            "flex items-center gap-2 w-full px-3 py-2 text-[length:var(--ds-text-sm)] text-left",
-            "transition-colors duration-[var(--ds-duration-fast)] cursor-pointer",
-            item.danger ? "text-[var(--ds-text-danger)]" : "text-[var(--ds-text-primary)]",
-            item.disabled ? "opacity-40 cursor-not-allowed" : item.danger ? "hover:bg-[var(--ds-bg-error)]" : "hover:bg-[var(--ds-bg-hover)]"
-          ].join(" ")
+    ),
+    isOpen && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "div",
+      {
+        role: "menu",
+        className: [
+          "absolute top-full mt-1 min-w-[160px] py-1 rounded-[var(--ds-radius-lg)] border",
+          align === "right" ? "right-0" : "left-0"
+        ].join(" "),
+        style: {
+          zIndex: "var(--ds-z-dropdown)",
+          backgroundColor: "var(--ds-bg-primary)",
+          borderColor: "var(--ds-border-primary)",
+          boxShadow: "var(--ds-shadow-lg)"
         },
-        item.icon && /* @__PURE__ */ React.createElement("span", { className: "shrink-0 w-4 h-4 flex items-center justify-center" }, item.icon),
-        /* @__PURE__ */ React.createElement("span", { className: "flex-1" }, item.label),
-        item.shortcut && /* @__PURE__ */ React.createElement("span", { className: "text-[length:var(--ds-text-xs)] text-[var(--ds-text-tertiary)]" }, item.shortcut)
-      );
-    })
-  ));
+        children: items.map((item, idx) => {
+          if (item.divider) {
+            return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+              "div",
+              {
+                className: "my-1 border-t",
+                style: { borderColor: "var(--ds-border-primary)" }
+              },
+              `divider-${idx}`
+            );
+          }
+          return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+            "button",
+            {
+              type: "button",
+              role: "menuitem",
+              disabled: item.disabled,
+              onClick: () => handleItemClick(item),
+              className: [
+                "flex items-center gap-2 w-full px-3 py-2 text-[length:var(--ds-text-sm)] text-left",
+                "transition-colors duration-[var(--ds-duration-fast)] cursor-pointer",
+                item.danger ? "text-[var(--ds-text-danger)]" : "text-[var(--ds-text-primary)]",
+                item.disabled ? "opacity-40 cursor-not-allowed" : item.danger ? "hover:bg-[var(--ds-bg-error)]" : "hover:bg-[var(--ds-bg-hover)]"
+              ].join(" "),
+              children: [
+                item.icon && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "shrink-0 w-4 h-4 flex items-center justify-center", children: item.icon }),
+                /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "flex-1", children: item.label }),
+                item.shortcut && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "text-[length:var(--ds-text-xs)] text-[var(--ds-text-tertiary)]", children: item.shortcut })
+              ]
+            },
+            item.label
+          );
+        })
+      }
+    )
+  ] });
 });
 OverflowMenu.displayName = "OverflowMenu";
 var OverflowMenu_default = OverflowMenu;
 
 // src/components/DatePicker/DatePicker.js
+
 
 
 var DAYS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
@@ -1402,136 +1524,163 @@ var DatePicker = _react.forwardRef.call(void 0, function DatePicker2({
     md: "h-[var(--ds-size-md)] text-[length:var(--ds-text-sm)] pl-3 pr-10",
     lg: "h-[var(--ds-size-lg)] text-[length:var(--ds-text-md)] pl-4 pr-12"
   };
-  return /* @__PURE__ */ React.createElement("div", { ref: containerRef, className: ["flex flex-col gap-1.5 relative", wrapperClassName].join(" ") }, label && /* @__PURE__ */ React.createElement("label", { htmlFor: id, className: "text-[length:var(--ds-text-sm)] font-medium text-[var(--ds-text-primary)]" }, label, required && /* @__PURE__ */ React.createElement("span", { className: "text-[var(--ds-text-danger)] ml-0.5" }, "*")), /* @__PURE__ */ React.createElement(
-    "button",
-    {
-      ref,
-      type: "button",
-      id,
-      disabled,
-      onClick: () => !disabled && setIsOpen(!isOpen),
-      className: [
-        "ds-focus-ring w-full rounded-[var(--ds-radius-md)] bg-[var(--ds-input-bg)] text-left relative cursor-pointer",
-        "transition-colors duration-[var(--ds-duration-normal)]",
-        sizeClasses[size],
-        disabled ? "opacity-50 cursor-not-allowed" : "",
-        displayValue ? "text-[var(--ds-text-primary)]" : "text-[var(--ds-text-placeholder)]",
-        className
-      ].join(" "),
-      style: { border: `1px solid ${borderColor}` },
-      ...props
-    },
-    /* @__PURE__ */ React.createElement("span", { className: "block truncate" }, displayValue || placeholder),
-    /* @__PURE__ */ React.createElement(
-      _lucidereact.Calendar,
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { ref: containerRef, className: ["flex flex-col gap-1.5 relative", wrapperClassName].join(" "), children: [
+    label && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "label", { htmlFor: id, className: "text-[length:var(--ds-text-sm)] font-medium text-[var(--ds-text-primary)]", children: [
+      label,
+      required && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "text-[var(--ds-text-danger)] ml-0.5", children: "*" })
+    ] }),
+    /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+      "button",
       {
-        size: 16,
-        className: "absolute right-3 top-1/2 -translate-y-1/2",
-        style: { color: "var(--ds-icon-secondary)" }
+        ref,
+        type: "button",
+        id,
+        disabled,
+        onClick: () => !disabled && setIsOpen(!isOpen),
+        className: [
+          "ds-focus-ring w-full rounded-[var(--ds-radius-md)] bg-[var(--ds-input-bg)] text-left relative cursor-pointer",
+          "transition-colors duration-[var(--ds-duration-normal)]",
+          sizeClasses[size],
+          disabled ? "opacity-50 cursor-not-allowed" : "",
+          displayValue ? "text-[var(--ds-text-primary)]" : "text-[var(--ds-text-placeholder)]",
+          className
+        ].join(" "),
+        style: { border: `1px solid ${borderColor}` },
+        ...props,
+        children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "block truncate", children: displayValue || placeholder }),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            _lucidereact.Calendar,
+            {
+              size: 16,
+              className: "absolute right-3 top-1/2 -translate-y-1/2",
+              style: { color: "var(--ds-icon-secondary)" }
+            }
+          )
+        ]
+      }
+    ),
+    isOpen && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+      "div",
+      {
+        className: "absolute top-full left-0 mt-1 p-3 rounded-[var(--ds-radius-lg)] border w-[280px]",
+        style: {
+          zIndex: "var(--ds-z-dropdown)",
+          backgroundColor: "var(--ds-bg-primary)",
+          borderColor: "var(--ds-border-primary)",
+          boxShadow: "var(--ds-shadow-lg)"
+        },
+        children: [
+          /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex items-center justify-between mb-3", children: [
+            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+              "button",
+              {
+                type: "button",
+                onClick: prevMonth,
+                className: "p-1 rounded-[var(--ds-radius-md)] hover:bg-[var(--ds-bg-hover)] transition-colors cursor-pointer",
+                children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ChevronLeft, { size: 16, style: { color: "var(--ds-icon-primary)" } })
+              }
+            ),
+            /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "span", { className: "text-[length:var(--ds-text-sm)] font-semibold text-[var(--ds-text-primary)]", children: [
+              MONTHS[viewMonth],
+              " ",
+              viewYear
+            ] }),
+            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+              "button",
+              {
+                type: "button",
+                onClick: nextMonth,
+                className: "p-1 rounded-[var(--ds-radius-md)] hover:bg-[var(--ds-bg-hover)] transition-colors cursor-pointer",
+                children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ChevronRight, { size: 16, style: { color: "var(--ds-icon-primary)" } })
+              }
+            )
+          ] }),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "grid grid-cols-7 gap-0 mb-1", children: DAYS.map((d) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "text-center text-[11px] font-medium text-[var(--ds-text-tertiary)] py-1", children: d }, d)) }),
+          /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "grid grid-cols-7 gap-0", children: [
+            Array.from({ length: firstDay }).map((_, i) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", {}, `empty-${i}`)),
+            Array.from({ length: daysInMonth }).map((_, i) => {
+              const day = i + 1;
+              const dateObj = new Date(viewYear, viewMonth, day);
+              const isSelected = isSameDay(dateObj, value) || isSameDay(dateObj, rangeEndInternal);
+              const isToday = isSameDay(dateObj, today);
+              const inRange = isInRange(day);
+              const dayDisabled = isDisabledDay(day);
+              return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                "button",
+                {
+                  type: "button",
+                  disabled: dayDisabled,
+                  onClick: () => handleDayClick(day),
+                  onMouseEnter: () => mode === "range" && rangeStart && !rangeEndInternal && setHoverDate(dateObj),
+                  className: [
+                    "w-9 h-9 text-[length:var(--ds-text-sm)] rounded-[var(--ds-radius-md)] transition-colors cursor-pointer",
+                    isSelected ? "bg-[var(--ds-bg-brand)] text-[var(--ds-text-on-brand)] font-semibold" : inRange ? "bg-[var(--ds-bg-selected)] text-[var(--ds-text-brand)]" : isToday ? "font-semibold text-[var(--ds-text-brand)] bg-[var(--ds-bg-selected)]" : "text-[var(--ds-text-primary)] hover:bg-[var(--ds-bg-hover)]",
+                    dayDisabled ? "opacity-30 cursor-not-allowed" : ""
+                  ].join(" "),
+                  children: day
+                },
+                day
+              );
+            })
+          ] }),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "mt-2 pt-2 border-t border-[var(--ds-border-primary)]", children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "button",
+            {
+              type: "button",
+              onClick: () => {
+                setViewYear(today.getFullYear());
+                setViewMonth(today.getMonth());
+                handleDayClick(today.getDate());
+              },
+              className: "w-full text-[length:var(--ds-text-xs)] text-[var(--ds-text-brand)] hover:underline py-1 cursor-pointer",
+              children: "Today"
+            }
+          ) })
+        ]
+      }
+    ),
+    (errorText || helperText) && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "p",
+      {
+        className: "text-[length:var(--ds-text-xs)]",
+        style: { color: hasError ? "var(--ds-text-danger)" : "var(--ds-text-secondary)" },
+        children: errorText || helperText
       }
     )
-  ), isOpen && /* @__PURE__ */ React.createElement(
-    "div",
-    {
-      className: "absolute top-full left-0 mt-1 p-3 rounded-[var(--ds-radius-lg)] border w-[280px]",
-      style: {
-        zIndex: "var(--ds-z-dropdown)",
-        backgroundColor: "var(--ds-bg-primary)",
-        borderColor: "var(--ds-border-primary)",
-        boxShadow: "var(--ds-shadow-lg)"
-      }
-    },
-    /* @__PURE__ */ React.createElement("div", { className: "flex items-center justify-between mb-3" }, /* @__PURE__ */ React.createElement(
-      "button",
-      {
-        type: "button",
-        onClick: prevMonth,
-        className: "p-1 rounded-[var(--ds-radius-md)] hover:bg-[var(--ds-bg-hover)] transition-colors cursor-pointer"
-      },
-      /* @__PURE__ */ React.createElement(_lucidereact.ChevronLeft, { size: 16, style: { color: "var(--ds-icon-primary)" } })
-    ), /* @__PURE__ */ React.createElement("span", { className: "text-[length:var(--ds-text-sm)] font-semibold text-[var(--ds-text-primary)]" }, MONTHS[viewMonth], " ", viewYear), /* @__PURE__ */ React.createElement(
-      "button",
-      {
-        type: "button",
-        onClick: nextMonth,
-        className: "p-1 rounded-[var(--ds-radius-md)] hover:bg-[var(--ds-bg-hover)] transition-colors cursor-pointer"
-      },
-      /* @__PURE__ */ React.createElement(_lucidereact.ChevronRight, { size: 16, style: { color: "var(--ds-icon-primary)" } })
-    )),
-    /* @__PURE__ */ React.createElement("div", { className: "grid grid-cols-7 gap-0 mb-1" }, DAYS.map((d) => /* @__PURE__ */ React.createElement("div", { key: d, className: "text-center text-[11px] font-medium text-[var(--ds-text-tertiary)] py-1" }, d))),
-    /* @__PURE__ */ React.createElement("div", { className: "grid grid-cols-7 gap-0" }, Array.from({ length: firstDay }).map((_, i) => /* @__PURE__ */ React.createElement("div", { key: `empty-${i}` })), Array.from({ length: daysInMonth }).map((_, i) => {
-      const day = i + 1;
-      const dateObj = new Date(viewYear, viewMonth, day);
-      const isSelected = isSameDay(dateObj, value) || isSameDay(dateObj, rangeEndInternal);
-      const isToday = isSameDay(dateObj, today);
-      const inRange = isInRange(day);
-      const dayDisabled = isDisabledDay(day);
-      return /* @__PURE__ */ React.createElement(
-        "button",
-        {
-          key: day,
-          type: "button",
-          disabled: dayDisabled,
-          onClick: () => handleDayClick(day),
-          onMouseEnter: () => mode === "range" && rangeStart && !rangeEndInternal && setHoverDate(dateObj),
-          className: [
-            "w-9 h-9 text-[length:var(--ds-text-sm)] rounded-[var(--ds-radius-md)] transition-colors cursor-pointer",
-            isSelected ? "bg-[var(--ds-bg-brand)] text-[var(--ds-text-on-brand)] font-semibold" : inRange ? "bg-[var(--ds-bg-selected)] text-[var(--ds-text-brand)]" : isToday ? "font-semibold text-[var(--ds-text-brand)] bg-[var(--ds-bg-selected)]" : "text-[var(--ds-text-primary)] hover:bg-[var(--ds-bg-hover)]",
-            dayDisabled ? "opacity-30 cursor-not-allowed" : ""
-          ].join(" ")
-        },
-        day
-      );
-    })),
-    /* @__PURE__ */ React.createElement("div", { className: "mt-2 pt-2 border-t border-[var(--ds-border-primary)]" }, /* @__PURE__ */ React.createElement(
-      "button",
-      {
-        type: "button",
-        onClick: () => {
-          setViewYear(today.getFullYear());
-          setViewMonth(today.getMonth());
-          handleDayClick(today.getDate());
-        },
-        className: "w-full text-[length:var(--ds-text-xs)] text-[var(--ds-text-brand)] hover:underline py-1 cursor-pointer"
-      },
-      "Today"
-    ))
-  ), (errorText || helperText) && /* @__PURE__ */ React.createElement(
-    "p",
-    {
-      className: "text-[length:var(--ds-text-xs)]",
-      style: { color: hasError ? "var(--ds-text-danger)" : "var(--ds-text-secondary)" }
-    },
-    errorText || helperText
-  ));
+  ] });
 });
 DatePicker.displayName = "DatePicker";
 var DatePicker_default = DatePicker;
 
 // src/components/Form/Form.js
 
+
 var Form = _react.forwardRef.call(void 0, function Form2({ children, onSubmit, className = "", ...props }, ref) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit == null ? void 0 : onSubmit(e);
   };
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
     "form",
     {
       ref,
       onSubmit: handleSubmit,
       className: ["flex flex-col gap-5", className].join(" "),
       noValidate: true,
-      ...props
-    },
-    children
+      ...props,
+      children
+    }
   );
 });
 function FormGroup({ legend, children, className = "" }) {
-  return /* @__PURE__ */ React.createElement("fieldset", { className: ["flex flex-col gap-4", className].join(" ") }, legend && /* @__PURE__ */ React.createElement("legend", { className: "text-[length:var(--ds-text-md)] font-semibold text-[var(--ds-text-primary)] mb-1" }, legend), children);
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "fieldset", { className: ["flex flex-col gap-4", className].join(" "), children: [
+    legend && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "legend", { className: "text-[length:var(--ds-text-md)] font-semibold text-[var(--ds-text-primary)] mb-1", children: legend }),
+    children
+  ] });
 }
 function FormRow({ children, className = "" }) {
-  return /* @__PURE__ */ React.createElement("div", { className: ["grid grid-cols-1 md:grid-cols-2 gap-4", className].join(" ") }, children);
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: ["grid grid-cols-1 md:grid-cols-2 gap-4", className].join(" "), children });
 }
 function FormActions({ children, align = "right", className = "" }) {
   const alignClass = {
@@ -1540,16 +1689,16 @@ function FormActions({ children, align = "right", className = "" }) {
     right: "justify-end",
     between: "justify-between"
   };
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
     "div",
     {
       className: [
         "flex items-center gap-3 pt-4 border-t border-[var(--ds-border-primary)]",
         alignClass[align],
         className
-      ].join(" ")
-    },
-    children
+      ].join(" "),
+      children
+    }
   );
 }
 Form.displayName = "Form";
@@ -1559,6 +1708,7 @@ FormActions.displayName = "FormActions";
 var Form_default = Form;
 
 // src/components/Search/Search.js
+
 
 
 var sizeStyles4 = {
@@ -1635,87 +1785,100 @@ var Search = _react.forwardRef.call(void 0, function Search2({
     setShowSuggestions(false);
   };
   const iconSize = size === "sm" ? 14 : size === "lg" ? 20 : 16;
-  return /* @__PURE__ */ React.createElement("div", { ref: containerRef, className: ["relative", wrapperClassName].join(" ") }, /* @__PURE__ */ React.createElement("div", { className: "relative" }, /* @__PURE__ */ React.createElement(
-    _lucidereact.Search,
-    {
-      size: iconSize,
-      className: "absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none",
-      style: { color: "var(--ds-icon-secondary)" }
-    }
-  ), scope && /* @__PURE__ */ React.createElement(
-    "span",
-    {
-      className: "absolute left-9 top-1/2 -translate-y-1/2 text-[length:var(--ds-text-xs)] font-medium px-1.5 py-0.5 rounded",
-      style: {
-        backgroundColor: "var(--ds-bg-tertiary)",
-        color: "var(--ds-text-secondary)"
-      }
-    },
-    scope
-  ), /* @__PURE__ */ React.createElement(
-    "input",
-    {
-      ref,
-      id,
-      type: "search",
-      value: searchValue,
-      onChange: handleChange,
-      onKeyDown: handleKeyDown,
-      onFocus: () => searchValue && suggestions.length > 0 && setShowSuggestions(true),
-      disabled,
-      placeholder,
-      className: [
-        "ds-focus-ring w-full rounded-[var(--ds-radius-md)] bg-[var(--ds-input-bg)] text-[var(--ds-text-primary)]",
-        "placeholder:text-[var(--ds-text-placeholder)]",
-        "transition-colors duration-[var(--ds-duration-normal)]",
-        "[&::-webkit-search-cancel-button]:hidden",
-        sizeStyles4[size],
-        scope ? "pl-20" : "",
-        disabled ? "opacity-50 cursor-not-allowed" : "",
-        className
-      ].join(" "),
-      style: { border: `1px solid var(--ds-input-border)` },
-      role: "searchbox",
-      "aria-label": placeholder,
-      ...props
-    }
-  ), /* @__PURE__ */ React.createElement("div", { className: "absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1" }, loading && /* @__PURE__ */ React.createElement(_lucidereact.Loader2, { size: iconSize, className: "animate-spin", style: { color: "var(--ds-icon-secondary)" } }), searchValue && !loading && /* @__PURE__ */ React.createElement(
-    "button",
-    {
-      type: "button",
-      onClick: handleClear,
-      className: "p-0.5 rounded hover:bg-[var(--ds-bg-hover)] transition-colors cursor-pointer",
-      "aria-label": "Clear search"
-    },
-    /* @__PURE__ */ React.createElement(_lucidereact.X, { size: iconSize, style: { color: "var(--ds-icon-secondary)" } })
-  ))), showSuggestions && suggestions.length > 0 && /* @__PURE__ */ React.createElement(
-    "ul",
-    {
-      className: "absolute top-full left-0 right-0 mt-1 py-1 rounded-[var(--ds-radius-lg)] border max-h-60 overflow-auto ds-scrollbar",
-      style: {
-        zIndex: "var(--ds-z-dropdown)",
-        backgroundColor: "var(--ds-bg-primary)",
-        borderColor: "var(--ds-border-primary)",
-        boxShadow: "var(--ds-shadow-lg)"
-      },
-      role: "listbox"
-    },
-    suggestions.map((s, i) => {
-      const label = typeof s === "string" ? s : s.label;
-      const desc = typeof s === "object" ? s.description : null;
-      return /* @__PURE__ */ React.createElement(
-        "li",
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { ref: containerRef, className: ["relative", wrapperClassName].join(" "), children: [
+    /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "relative", children: [
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        _lucidereact.Search,
         {
-          key: i,
-          role: "option",
-          onClick: () => handleSuggestionClick(s),
-          className: "px-3 py-2 cursor-pointer hover:bg-[var(--ds-bg-hover)] transition-colors"
+          size: iconSize,
+          className: "absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none",
+          style: { color: "var(--ds-icon-secondary)" }
+        }
+      ),
+      scope && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        "span",
+        {
+          className: "absolute left-9 top-1/2 -translate-y-1/2 text-[length:var(--ds-text-xs)] font-medium px-1.5 py-0.5 rounded",
+          style: {
+            backgroundColor: "var(--ds-bg-tertiary)",
+            color: "var(--ds-text-secondary)"
+          },
+          children: scope
+        }
+      ),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        "input",
+        {
+          ref,
+          id,
+          type: "search",
+          value: searchValue,
+          onChange: handleChange,
+          onKeyDown: handleKeyDown,
+          onFocus: () => searchValue && suggestions.length > 0 && setShowSuggestions(true),
+          disabled,
+          placeholder,
+          className: [
+            "ds-focus-ring w-full rounded-[var(--ds-radius-md)] bg-[var(--ds-input-bg)] text-[var(--ds-text-primary)]",
+            "placeholder:text-[var(--ds-text-placeholder)]",
+            "transition-colors duration-[var(--ds-duration-normal)]",
+            "[&::-webkit-search-cancel-button]:hidden",
+            sizeStyles4[size],
+            scope ? "pl-20" : "",
+            disabled ? "opacity-50 cursor-not-allowed" : "",
+            className
+          ].join(" "),
+          style: { border: `1px solid var(--ds-input-border)` },
+          role: "searchbox",
+          "aria-label": placeholder,
+          ...props
+        }
+      ),
+      /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1", children: [
+        loading && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.Loader2, { size: iconSize, className: "animate-spin", style: { color: "var(--ds-icon-secondary)" } }),
+        searchValue && !loading && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          "button",
+          {
+            type: "button",
+            onClick: handleClear,
+            className: "p-0.5 rounded hover:bg-[var(--ds-bg-hover)] transition-colors cursor-pointer",
+            "aria-label": "Clear search",
+            children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.X, { size: iconSize, style: { color: "var(--ds-icon-secondary)" } })
+          }
+        )
+      ] })
+    ] }),
+    showSuggestions && suggestions.length > 0 && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "ul",
+      {
+        className: "absolute top-full left-0 right-0 mt-1 py-1 rounded-[var(--ds-radius-lg)] border max-h-60 overflow-auto ds-scrollbar",
+        style: {
+          zIndex: "var(--ds-z-dropdown)",
+          backgroundColor: "var(--ds-bg-primary)",
+          borderColor: "var(--ds-border-primary)",
+          boxShadow: "var(--ds-shadow-lg)"
         },
-        /* @__PURE__ */ React.createElement("div", { className: "text-[length:var(--ds-text-sm)] text-[var(--ds-text-primary)]" }, label),
-        desc && /* @__PURE__ */ React.createElement("div", { className: "text-[length:var(--ds-text-xs)] text-[var(--ds-text-secondary)] mt-0.5" }, desc)
-      );
-    })
-  ));
+        role: "listbox",
+        children: suggestions.map((s, i) => {
+          const label = typeof s === "string" ? s : s.label;
+          const desc = typeof s === "object" ? s.description : null;
+          return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+            "li",
+            {
+              role: "option",
+              onClick: () => handleSuggestionClick(s),
+              className: "px-3 py-2 cursor-pointer hover:bg-[var(--ds-bg-hover)] transition-colors",
+              children: [
+                /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "text-[length:var(--ds-text-sm)] text-[var(--ds-text-primary)]", children: label }),
+                desc && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "text-[length:var(--ds-text-xs)] text-[var(--ds-text-secondary)] mt-0.5", children: desc })
+              ]
+            },
+            i
+          );
+        })
+      }
+    )
+  ] });
 });
 Search.displayName = "Search";
 var Search_default = Search;
@@ -1725,6 +1888,7 @@ var Search_default = Search;
 
 
 // src/components/Pagination/Pagination.js
+
 
 
 function getPageNumbers(currentPage, totalPages, siblingCount = 1) {
@@ -1779,92 +1943,113 @@ var Pagination = _react.forwardRef.call(void 0, function Pagination2({
   };
   const startItem = totalItems ? (currentPage - 1) * (pageSize || 10) + 1 : null;
   const endItem = totalItems ? Math.min(currentPage * (pageSize || 10), totalItems) : null;
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
     "div",
     {
       ref,
       className: ["flex items-center justify-between gap-4 flex-wrap", className].join(" "),
-      ...props
-    },
-    /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-4" }, showItemCount && totalItems != null && /* @__PURE__ */ React.createElement("span", { className: "text-[length:var(--ds-text-sm)] text-[var(--ds-text-secondary)]" }, startItem, "\u2013", endItem, " of ", totalItems), showPageSizeSelector && /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ React.createElement("span", { className: "text-[length:var(--ds-text-sm)] text-[var(--ds-text-secondary)]" }, "Rows:"), /* @__PURE__ */ React.createElement(
-      "select",
-      {
-        value: pageSize,
-        onChange: (e) => onPageSizeChange == null ? void 0 : onPageSizeChange(Number(e.target.value)),
-        className: "h-7 text-[length:var(--ds-text-xs)] px-2 rounded-[var(--ds-radius-md)] bg-[var(--ds-input-bg)] text-[var(--ds-text-primary)] border cursor-pointer",
-        style: { borderColor: "var(--ds-input-border)" }
-      },
-      pageSizeOptions.map((s) => /* @__PURE__ */ React.createElement("option", { key: s, value: s }, s))
-    ))),
-    /* @__PURE__ */ React.createElement("nav", { className: "flex items-center gap-1", "aria-label": "Pagination" }, /* @__PURE__ */ React.createElement(
-      "button",
-      {
-        type: "button",
-        onClick: () => handlePage(1),
-        disabled: currentPage === 1,
-        className: "ds-focus-ring p-1.5 rounded-[var(--ds-radius-md)] hover:bg-[var(--ds-bg-hover)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer",
-        "aria-label": "First page"
-      },
-      /* @__PURE__ */ React.createElement(_lucidereact.ChevronsLeft, { size: 16, style: { color: "var(--ds-icon-primary)" } })
-    ), /* @__PURE__ */ React.createElement(
-      "button",
-      {
-        type: "button",
-        onClick: () => handlePage(currentPage - 1),
-        disabled: currentPage === 1,
-        className: "ds-focus-ring p-1.5 rounded-[var(--ds-radius-md)] hover:bg-[var(--ds-bg-hover)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer",
-        "aria-label": "Previous page"
-      },
-      /* @__PURE__ */ React.createElement(_lucidereact.ChevronLeft, { size: 16, style: { color: "var(--ds-icon-primary)" } })
-    ), pages.map(
-      (page, idx) => page === "..." ? /* @__PURE__ */ React.createElement(
-        "span",
-        {
-          key: `ellipsis-${idx}`,
-          className: "w-8 h-8 flex items-center justify-center text-[length:var(--ds-text-sm)] text-[var(--ds-text-tertiary)]"
-        },
-        "..."
-      ) : /* @__PURE__ */ React.createElement(
-        "button",
-        {
-          key: page,
-          type: "button",
-          onClick: () => handlePage(page),
-          "aria-current": page === currentPage ? "page" : void 0,
-          className: [
-            "ds-focus-ring w-8 h-8 flex items-center justify-center rounded-[var(--ds-radius-md)] text-[length:var(--ds-text-sm)] font-medium transition-colors cursor-pointer",
-            page === currentPage ? "bg-[var(--ds-bg-brand)] text-[var(--ds-text-on-brand)]" : "text-[var(--ds-text-primary)] hover:bg-[var(--ds-bg-hover)]"
-          ].join(" ")
-        },
-        page
-      )
-    ), /* @__PURE__ */ React.createElement(
-      "button",
-      {
-        type: "button",
-        onClick: () => handlePage(currentPage + 1),
-        disabled: currentPage === totalPages,
-        className: "ds-focus-ring p-1.5 rounded-[var(--ds-radius-md)] hover:bg-[var(--ds-bg-hover)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer",
-        "aria-label": "Next page"
-      },
-      /* @__PURE__ */ React.createElement(_lucidereact.ChevronRight, { size: 16, style: { color: "var(--ds-icon-primary)" } })
-    ), /* @__PURE__ */ React.createElement(
-      "button",
-      {
-        type: "button",
-        onClick: () => handlePage(totalPages),
-        disabled: currentPage === totalPages,
-        className: "ds-focus-ring p-1.5 rounded-[var(--ds-radius-md)] hover:bg-[var(--ds-bg-hover)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer",
-        "aria-label": "Last page"
-      },
-      /* @__PURE__ */ React.createElement(_lucidereact.ChevronsRight, { size: 16, style: { color: "var(--ds-icon-primary)" } })
-    ))
+      ...props,
+      children: [
+        /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex items-center gap-4", children: [
+          showItemCount && totalItems != null && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "span", { className: "text-[length:var(--ds-text-sm)] text-[var(--ds-text-secondary)]", children: [
+            startItem,
+            "\u2013",
+            endItem,
+            " of ",
+            totalItems
+          ] }),
+          showPageSizeSelector && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex items-center gap-2", children: [
+            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "text-[length:var(--ds-text-sm)] text-[var(--ds-text-secondary)]", children: "Rows:" }),
+            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+              "select",
+              {
+                value: pageSize,
+                onChange: (e) => onPageSizeChange == null ? void 0 : onPageSizeChange(Number(e.target.value)),
+                className: "h-7 text-[length:var(--ds-text-xs)] px-2 rounded-[var(--ds-radius-md)] bg-[var(--ds-input-bg)] text-[var(--ds-text-primary)] border cursor-pointer",
+                style: { borderColor: "var(--ds-input-border)" },
+                children: pageSizeOptions.map((s) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "option", { value: s, children: s }, s))
+              }
+            )
+          ] })
+        ] }),
+        /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "nav", { className: "flex items-center gap-1", "aria-label": "Pagination", children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "button",
+            {
+              type: "button",
+              onClick: () => handlePage(1),
+              disabled: currentPage === 1,
+              className: "ds-focus-ring p-1.5 rounded-[var(--ds-radius-md)] hover:bg-[var(--ds-bg-hover)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer",
+              "aria-label": "First page",
+              children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ChevronsLeft, { size: 16, style: { color: "var(--ds-icon-primary)" } })
+            }
+          ),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "button",
+            {
+              type: "button",
+              onClick: () => handlePage(currentPage - 1),
+              disabled: currentPage === 1,
+              className: "ds-focus-ring p-1.5 rounded-[var(--ds-radius-md)] hover:bg-[var(--ds-bg-hover)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer",
+              "aria-label": "Previous page",
+              children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ChevronLeft, { size: 16, style: { color: "var(--ds-icon-primary)" } })
+            }
+          ),
+          pages.map(
+            (page, idx) => page === "..." ? /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+              "span",
+              {
+                className: "w-8 h-8 flex items-center justify-center text-[length:var(--ds-text-sm)] text-[var(--ds-text-tertiary)]",
+                children: "..."
+              },
+              `ellipsis-${idx}`
+            ) : /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+              "button",
+              {
+                type: "button",
+                onClick: () => handlePage(page),
+                "aria-current": page === currentPage ? "page" : void 0,
+                className: [
+                  "ds-focus-ring w-8 h-8 flex items-center justify-center rounded-[var(--ds-radius-md)] text-[length:var(--ds-text-sm)] font-medium transition-colors cursor-pointer",
+                  page === currentPage ? "bg-[var(--ds-bg-brand)] text-[var(--ds-text-on-brand)]" : "text-[var(--ds-text-primary)] hover:bg-[var(--ds-bg-hover)]"
+                ].join(" "),
+                children: page
+              },
+              page
+            )
+          ),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "button",
+            {
+              type: "button",
+              onClick: () => handlePage(currentPage + 1),
+              disabled: currentPage === totalPages,
+              className: "ds-focus-ring p-1.5 rounded-[var(--ds-radius-md)] hover:bg-[var(--ds-bg-hover)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer",
+              "aria-label": "Next page",
+              children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ChevronRight, { size: 16, style: { color: "var(--ds-icon-primary)" } })
+            }
+          ),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "button",
+            {
+              type: "button",
+              onClick: () => handlePage(totalPages),
+              disabled: currentPage === totalPages,
+              className: "ds-focus-ring p-1.5 rounded-[var(--ds-radius-md)] hover:bg-[var(--ds-bg-hover)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer",
+              "aria-label": "Last page",
+              children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ChevronsRight, { size: 16, style: { color: "var(--ds-icon-primary)" } })
+            }
+          )
+        ] })
+      ]
+    }
   );
 });
 Pagination.displayName = "Pagination";
 var Pagination_default = Pagination;
 
 // src/components/DataTable/DataTable.js
+
 var DataTable = _react.forwardRef.call(void 0, function DataTable2({
   columns = [],
   data = [],
@@ -1972,7 +2157,7 @@ var DataTable = _react.forwardRef.call(void 0, function DataTable2({
   };
   const cellPadding = compact ? "px-3 py-1.5" : "px-4 py-3";
   const textSize = compact ? "text-[length:var(--ds-text-xs)]" : "text-[length:var(--ds-text-sm)]";
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
     "div",
     {
       ref,
@@ -1981,165 +2166,190 @@ var DataTable = _react.forwardRef.call(void 0, function DataTable2({
         "bg-[var(--ds-bg-primary)] border-[var(--ds-table-border)]",
         className
       ].join(" "),
-      ...props
-    },
-    selectable && selectedRows.length > 0 && batchActions && /* @__PURE__ */ React.createElement(
-      "div",
-      {
-        className: "flex items-center gap-3 px-4 py-2 border-b",
-        style: {
-          backgroundColor: "var(--ds-bg-selected)",
-          borderColor: "var(--ds-table-border)"
-        }
-      },
-      /* @__PURE__ */ React.createElement("span", { className: "text-[length:var(--ds-text-sm)] font-medium text-[var(--ds-text-brand)]" }, selectedRows.length, " selected"),
-      /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, batchActions),
-      /* @__PURE__ */ React.createElement(
-        "button",
-        {
-          type: "button",
-          onClick: () => onSelectionChange == null ? void 0 : onSelectionChange([]),
-          className: "ml-auto text-[length:var(--ds-text-sm)] text-[var(--ds-text-secondary)] hover:text-[var(--ds-text-primary)] cursor-pointer"
-        },
-        "Clear selection"
-      )
-    ),
-    /* @__PURE__ */ React.createElement("div", { className: "overflow-x-auto ds-scrollbar" }, /* @__PURE__ */ React.createElement("table", { className: "w-full border-collapse" }, /* @__PURE__ */ React.createElement(
-      "thead",
-      {
-        className: stickyHeader ? "sticky top-0" : "",
-        style: { zIndex: stickyHeader ? 10 : void 0 }
-      },
-      /* @__PURE__ */ React.createElement("tr", { style: { backgroundColor: "var(--ds-table-header-bg)" } }, selectable && /* @__PURE__ */ React.createElement("th", { className: `${cellPadding} w-12` }, /* @__PURE__ */ React.createElement(
-        Checkbox_default,
-        {
-          checked: allSelected,
-          indeterminate: someSelected,
-          onChange: handleSelectAll,
-          size: "sm"
-        }
-      )), columns.map((col) => /* @__PURE__ */ React.createElement(
-        "th",
-        {
-          key: col.key,
-          className: [
-            cellPadding,
-            textSize,
-            "text-left font-semibold text-[var(--ds-text-secondary)] whitespace-nowrap",
-            sortable && col.sortable !== false ? "cursor-pointer select-none" : ""
-          ].join(" "),
-          style: {
-            width: col.width,
-            minWidth: col.minWidth,
-            borderBottom: `1px solid var(--ds-table-border)`
-          },
-          onClick: () => sortable && col.sortable !== false && handleSort(col.key)
-        },
-        /* @__PURE__ */ React.createElement("span", { className: "inline-flex items-center gap-1.5" }, col.header, sortable && col.sortable !== false && /* @__PURE__ */ React.createElement("span", { className: "inline-flex" }, sortColumn === col.key ? sortDirection === "asc" ? /* @__PURE__ */ React.createElement(_lucidereact.ArrowUp, { size: 14 }) : /* @__PURE__ */ React.createElement(_lucidereact.ArrowDown, { size: 14 }) : /* @__PURE__ */ React.createElement(_lucidereact.ArrowUpDown, { size: 14, className: "opacity-30" })))
-      )))
-    ), /* @__PURE__ */ React.createElement("tbody", null, paginatedData.length === 0 && !loading && /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement(
-      "td",
-      {
-        colSpan: columns.length + (selectable ? 1 : 0),
-        className: "px-4 py-12 text-center text-[length:var(--ds-text-sm)] text-[var(--ds-text-tertiary)]"
-      },
-      emptyMessage
-    )), paginatedData.map((row, rowIdx) => {
-      const globalIndex = paginated ? (currentPage - 1) * pageSize + rowIdx : rowIdx;
-      const isSelected = selectedRows.includes(globalIndex);
-      return /* @__PURE__ */ React.createElement(
-        "tr",
-        {
-          key: row.id || globalIndex,
-          className: "transition-colors",
-          style: {
-            backgroundColor: isSelected ? "var(--ds-table-row-selected)" : striped && rowIdx % 2 === 1 ? "var(--ds-bg-secondary)" : void 0
-          },
-          onMouseEnter: (e) => {
-            if (!isSelected) e.currentTarget.style.backgroundColor = "var(--ds-table-row-hover)";
-          },
-          onMouseLeave: (e) => {
-            if (!isSelected) {
-              e.currentTarget.style.backgroundColor = striped && rowIdx % 2 === 1 ? "var(--ds-bg-secondary)" : "";
-            }
-          }
-        },
-        selectable && /* @__PURE__ */ React.createElement(
-          "td",
+      ...props,
+      children: [
+        selectable && selectedRows.length > 0 && batchActions && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+          "div",
           {
-            className: cellPadding,
-            style: { borderBottom: "1px solid var(--ds-table-border)" }
-          },
-          /* @__PURE__ */ React.createElement(
-            Checkbox_default,
-            {
-              checked: isSelected,
-              onChange: () => handleSelectRow(globalIndex),
-              size: "sm"
-            }
-          )
-        ),
-        columns.map((col) => {
-          const cellValue = row[col.key];
-          const isEditing = (editingCell == null ? void 0 : editingCell.rowIndex) === globalIndex && (editingCell == null ? void 0 : editingCell.columnKey) === col.key;
-          const isEditable = editableColumns.includes(col.key);
-          return /* @__PURE__ */ React.createElement(
-            "td",
-            {
-              key: col.key,
-              className: [
-                cellPadding,
-                textSize,
-                "text-[var(--ds-text-primary)]"
-              ].join(" "),
-              style: { borderBottom: "1px solid var(--ds-table-border)" },
-              onDoubleClick: () => {
-                if (isEditable) startEditing(globalIndex, col.key, cellValue);
-              }
+            className: "flex items-center gap-3 px-4 py-2 border-b",
+            style: {
+              backgroundColor: "var(--ds-bg-selected)",
+              borderColor: "var(--ds-table-border)"
             },
-            isEditing ? /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-1" }, /* @__PURE__ */ React.createElement(
-              "input",
+            children: [
+              /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "span", { className: "text-[length:var(--ds-text-sm)] font-medium text-[var(--ds-text-brand)]", children: [
+                selectedRows.length,
+                " selected"
+              ] }),
+              /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "flex items-center gap-2", children: batchActions }),
+              /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                "button",
+                {
+                  type: "button",
+                  onClick: () => onSelectionChange == null ? void 0 : onSelectionChange([]),
+                  className: "ml-auto text-[length:var(--ds-text-sm)] text-[var(--ds-text-secondary)] hover:text-[var(--ds-text-primary)] cursor-pointer",
+                  children: "Clear selection"
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "overflow-x-auto ds-scrollbar", children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "table", { className: "w-full border-collapse", children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "thead",
+            {
+              className: stickyHeader ? "sticky top-0" : "",
+              style: { zIndex: stickyHeader ? 10 : void 0 },
+              children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "tr", { style: { backgroundColor: "var(--ds-table-header-bg)" }, children: [
+                selectable && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "th", { className: `${cellPadding} w-12`, children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                  Checkbox_default,
+                  {
+                    checked: allSelected,
+                    indeterminate: someSelected,
+                    onChange: handleSelectAll,
+                    size: "sm"
+                  }
+                ) }),
+                columns.map((col) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                  "th",
+                  {
+                    className: [
+                      cellPadding,
+                      textSize,
+                      "text-left font-semibold text-[var(--ds-text-secondary)] whitespace-nowrap",
+                      sortable && col.sortable !== false ? "cursor-pointer select-none" : ""
+                    ].join(" "),
+                    style: {
+                      width: col.width,
+                      minWidth: col.minWidth,
+                      borderBottom: `1px solid var(--ds-table-border)`
+                    },
+                    onClick: () => sortable && col.sortable !== false && handleSort(col.key),
+                    children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "span", { className: "inline-flex items-center gap-1.5", children: [
+                      col.header,
+                      sortable && col.sortable !== false && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "inline-flex", children: sortColumn === col.key ? sortDirection === "asc" ? /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ArrowUp, { size: 14 }) : /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ArrowDown, { size: 14 }) : /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ArrowUpDown, { size: 14, className: "opacity-30" }) })
+                    ] })
+                  },
+                  col.key
+                ))
+              ] })
+            }
+          ),
+          /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "tbody", { children: [
+            paginatedData.length === 0 && !loading && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "tr", { children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+              "td",
               {
-                type: "text",
-                value: editValue,
-                onChange: (e) => setEditValue(e.target.value),
-                onKeyDown: (e) => {
-                  if (e.key === "Enter") commitEdit();
-                  if (e.key === "Escape") cancelEdit();
-                },
-                className: "w-full px-2 py-1 text-[length:var(--ds-text-sm)] rounded border bg-[var(--ds-input-bg)] text-[var(--ds-text-primary)]",
-                style: { borderColor: "var(--ds-border-focus)" },
-                autoFocus: true
+                colSpan: columns.length + (selectable ? 1 : 0),
+                className: "px-4 py-12 text-center text-[length:var(--ds-text-sm)] text-[var(--ds-text-tertiary)]",
+                children: emptyMessage
               }
-            ), /* @__PURE__ */ React.createElement("button", { type: "button", onClick: commitEdit, className: "p-0.5 text-[var(--ds-icon-success)] cursor-pointer" }, /* @__PURE__ */ React.createElement(_lucidereact.Check, { size: 14 })), /* @__PURE__ */ React.createElement("button", { type: "button", onClick: cancelEdit, className: "p-0.5 text-[var(--ds-icon-danger)] cursor-pointer" }, /* @__PURE__ */ React.createElement(_lucidereact.X, { size: 14 }))) : col.render ? col.render(cellValue, row, globalIndex) : /* @__PURE__ */ React.createElement("span", null, cellValue)
-          );
-        })
-      );
-    })))),
-    paginated && /* @__PURE__ */ React.createElement(
-      "div",
-      {
-        className: "px-4 py-3 border-t",
-        style: { borderColor: "var(--ds-table-border)" }
-      },
-      /* @__PURE__ */ React.createElement(
-        Pagination_default,
-        {
-          currentPage,
-          totalPages,
-          totalItems: sortedData.length,
-          pageSize,
-          onPageChange: setCurrentPage,
-          onPageSizeChange: (size) => {
-            setPageSize(size);
-            setCurrentPage(1);
-          },
-          pageSizeOptions,
-          showPageSizeSelector: true,
-          showItemCount: true
-        }
-      )
-    )
+            ) }),
+            paginatedData.map((row, rowIdx) => {
+              const globalIndex = paginated ? (currentPage - 1) * pageSize + rowIdx : rowIdx;
+              const isSelected = selectedRows.includes(globalIndex);
+              return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+                "tr",
+                {
+                  className: "transition-colors",
+                  style: {
+                    backgroundColor: isSelected ? "var(--ds-table-row-selected)" : striped && rowIdx % 2 === 1 ? "var(--ds-bg-secondary)" : void 0
+                  },
+                  onMouseEnter: (e) => {
+                    if (!isSelected) e.currentTarget.style.backgroundColor = "var(--ds-table-row-hover)";
+                  },
+                  onMouseLeave: (e) => {
+                    if (!isSelected) {
+                      e.currentTarget.style.backgroundColor = striped && rowIdx % 2 === 1 ? "var(--ds-bg-secondary)" : "";
+                    }
+                  },
+                  children: [
+                    selectable && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                      "td",
+                      {
+                        className: cellPadding,
+                        style: { borderBottom: "1px solid var(--ds-table-border)" },
+                        children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                          Checkbox_default,
+                          {
+                            checked: isSelected,
+                            onChange: () => handleSelectRow(globalIndex),
+                            size: "sm"
+                          }
+                        )
+                      }
+                    ),
+                    columns.map((col) => {
+                      const cellValue = row[col.key];
+                      const isEditing = (editingCell == null ? void 0 : editingCell.rowIndex) === globalIndex && (editingCell == null ? void 0 : editingCell.columnKey) === col.key;
+                      const isEditable = editableColumns.includes(col.key);
+                      return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                        "td",
+                        {
+                          className: [
+                            cellPadding,
+                            textSize,
+                            "text-[var(--ds-text-primary)]"
+                          ].join(" "),
+                          style: { borderBottom: "1px solid var(--ds-table-border)" },
+                          onDoubleClick: () => {
+                            if (isEditable) startEditing(globalIndex, col.key, cellValue);
+                          },
+                          children: isEditing ? /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex items-center gap-1", children: [
+                            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                              "input",
+                              {
+                                type: "text",
+                                value: editValue,
+                                onChange: (e) => setEditValue(e.target.value),
+                                onKeyDown: (e) => {
+                                  if (e.key === "Enter") commitEdit();
+                                  if (e.key === "Escape") cancelEdit();
+                                },
+                                className: "w-full px-2 py-1 text-[length:var(--ds-text-sm)] rounded border bg-[var(--ds-input-bg)] text-[var(--ds-text-primary)]",
+                                style: { borderColor: "var(--ds-border-focus)" },
+                                autoFocus: true
+                              }
+                            ),
+                            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "button", { type: "button", onClick: commitEdit, className: "p-0.5 text-[var(--ds-icon-success)] cursor-pointer", children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.Check, { size: 14 }) }),
+                            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "button", { type: "button", onClick: cancelEdit, className: "p-0.5 text-[var(--ds-icon-danger)] cursor-pointer", children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.X, { size: 14 }) })
+                          ] }) : col.render ? col.render(cellValue, row, globalIndex) : /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { children: cellValue })
+                        },
+                        col.key
+                      );
+                    })
+                  ]
+                },
+                row.id || globalIndex
+              );
+            })
+          ] })
+        ] }) }),
+        paginated && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          "div",
+          {
+            className: "px-4 py-3 border-t",
+            style: { borderColor: "var(--ds-table-border)" },
+            children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+              Pagination_default,
+              {
+                currentPage,
+                totalPages,
+                totalItems: sortedData.length,
+                pageSize,
+                onPageChange: setCurrentPage,
+                onPageSizeChange: (size) => {
+                  setPageSize(size);
+                  setCurrentPage(1);
+                },
+                pageSizeOptions,
+                showPageSizeSelector: true,
+                showItemCount: true
+              }
+            )
+          }
+        )
+      ]
+    }
   );
 });
 DataTable.displayName = "DataTable";
@@ -2161,6 +2371,7 @@ var DataTable_default = DataTable;
 var _recharts = require('recharts');
 
 // src/components/Charts/chartTheme.js
+
 var CHART_COLORS = {
   blue: { 600: "#2563eb", 500: "#3b82f6", 400: "#60a5fa", 300: "#93c5fd", 200: "#bfdbfe", 100: "#dbeafe", 50: "#eff6ff" },
   teal: { 600: "#0d9488", 500: "#14b8a6", 400: "#2dd4bf", 300: "#5eead4", 200: "#99f6e4", 100: "#ccfbf1" },
@@ -2255,7 +2466,7 @@ function getLegendProps(isDark) {
   };
 }
 function ChartWrapper({ title, subtitle, children, className = "", style = {} }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
     "div",
     {
       className: `rounded-[var(--ds-radius-lg)] border p-5 ${className}`,
@@ -2263,28 +2474,34 @@ function ChartWrapper({ title, subtitle, children, className = "", style = {} })
         borderColor: "var(--ds-border-primary)",
         backgroundColor: "var(--ds-bg-primary)",
         ...style
-      }
-    },
-    (title || subtitle) && /* @__PURE__ */ React.createElement("div", { className: "mb-4" }, title && /* @__PURE__ */ React.createElement(
-      "h4",
-      {
-        className: "text-[length:var(--ds-text-sm)] font-semibold",
-        style: { color: "var(--ds-text-primary)" }
       },
-      title
-    ), subtitle && /* @__PURE__ */ React.createElement(
-      "p",
-      {
-        className: "text-[length:var(--ds-text-xs)] mt-0.5",
-        style: { color: "var(--ds-text-secondary)" }
-      },
-      subtitle
-    )),
-    children
+      children: [
+        (title || subtitle) && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "mb-4", children: [
+          title && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "h4",
+            {
+              className: "text-[length:var(--ds-text-sm)] font-semibold",
+              style: { color: "var(--ds-text-primary)" },
+              children: title
+            }
+          ),
+          subtitle && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "p",
+            {
+              className: "text-[length:var(--ds-text-xs)] mt-0.5",
+              style: { color: "var(--ds-text-secondary)" },
+              children: subtitle
+            }
+          )
+        ] }),
+        children
+      ]
+    }
   );
 }
 
 // src/components/Charts/BarChart.js
+
 function toPercentData(data, dataKeys) {
   return data.map((row) => {
     const total = dataKeys.reduce((sum, key) => sum + (Math.abs(Number(row[key])) || 0), 0);
@@ -2363,85 +2580,122 @@ function BarChart({
     return toWaterfallData(data, dataKeys[0]);
   }, [variant, data, dataKeys]);
   if (variant === "diverging") {
-    return /* @__PURE__ */ React.createElement(ChartWrapper, { title, subtitle, className }, /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(_recharts.BarChart, { data, ...rest }, showGrid && /* @__PURE__ */ React.createElement(_recharts.CartesianGrid, { ...gridProps }), /* @__PURE__ */ React.createElement(_recharts.XAxis, { dataKey: xAxisKey, ...axisProps }), /* @__PURE__ */ React.createElement(_recharts.YAxis, { ...axisProps }), showTooltip && /* @__PURE__ */ React.createElement(_recharts.Tooltip, { ...tooltipProps }), shouldShowLegend && /* @__PURE__ */ React.createElement(_recharts.Legend, { ...legendProps }), /* @__PURE__ */ React.createElement(_recharts.ReferenceLine, { y: 0, stroke: isDark ? "#6b7280" : "#9ca3af" }), dataKeys.map((key) => /* @__PURE__ */ React.createElement(_recharts.Bar, { key, dataKey: key, radius: verticalRadius }, data.map((entry, idx) => {
-      const val = Number(entry[key]) || 0;
-      return /* @__PURE__ */ React.createElement(
-        _recharts.Cell,
-        {
-          key: idx,
-          fill: val >= 0 ? CHART_COLORS.green[500] : CHART_COLORS.red[500]
-        }
-      );
-    }))))));
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ChartWrapper, { title, subtitle, className, children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _recharts.BarChart, { data, ...rest, children: [
+      showGrid && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.CartesianGrid, { ...gridProps }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.XAxis, { dataKey: xAxisKey, ...axisProps }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.YAxis, { ...axisProps }),
+      showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Tooltip, { ...tooltipProps }),
+      shouldShowLegend && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...legendProps }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ReferenceLine, { y: 0, stroke: isDark ? "#6b7280" : "#9ca3af" }),
+      dataKeys.map((key) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Bar, { dataKey: key, radius: verticalRadius, children: data.map((entry, idx) => {
+        const val = Number(entry[key]) || 0;
+        return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          _recharts.Cell,
+          {
+            fill: val >= 0 ? CHART_COLORS.green[500] : CHART_COLORS.red[500]
+          },
+          idx
+        );
+      }) }, key))
+    ] }) }) });
   }
   if (variant === "waterfall") {
-    return /* @__PURE__ */ React.createElement(ChartWrapper, { title, subtitle, className }, /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(_recharts.BarChart, { data: waterfallData, ...rest }, showGrid && /* @__PURE__ */ React.createElement(_recharts.CartesianGrid, { ...gridProps }), /* @__PURE__ */ React.createElement(_recharts.XAxis, { dataKey: xAxisKey, ...axisProps }), /* @__PURE__ */ React.createElement(_recharts.YAxis, { ...axisProps }), showTooltip && /* @__PURE__ */ React.createElement(
-      _recharts.Tooltip,
-      {
-        ...tooltipProps,
-        formatter: (value, name) => {
-          if (name === "__base") return [null, null];
-          return [value, dataKeys[0]];
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ChartWrapper, { title, subtitle, className, children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _recharts.BarChart, { data: waterfallData, ...rest, children: [
+      showGrid && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.CartesianGrid, { ...gridProps }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.XAxis, { dataKey: xAxisKey, ...axisProps }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.YAxis, { ...axisProps }),
+      showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        _recharts.Tooltip,
+        {
+          ...tooltipProps,
+          formatter: (value, name) => {
+            if (name === "__base") return [null, null];
+            return [value, dataKeys[0]];
+          }
         }
-      }
-    ), /* @__PURE__ */ React.createElement(_recharts.Bar, { dataKey: "__base", stackId: "waterfall", fill: "transparent", radius: 0 }), /* @__PURE__ */ React.createElement(_recharts.Bar, { dataKey: "__value", stackId: "waterfall", radius: verticalRadius }, waterfallData.map((entry, idx) => {
-      let fill = CHART_COLORS.blue[500];
-      if (!entry.__isTotal) {
-        fill = (_nullishCoalesce(entry.__rawValue, () => ( 0))) >= 0 ? CHART_COLORS.green[500] : CHART_COLORS.red[500];
-      }
-      return /* @__PURE__ */ React.createElement(_recharts.Cell, { key: idx, fill });
-    })))));
+      ),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Bar, { dataKey: "__base", stackId: "waterfall", fill: "transparent", radius: 0 }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Bar, { dataKey: "__value", stackId: "waterfall", radius: verticalRadius, children: waterfallData.map((entry, idx) => {
+        let fill = CHART_COLORS.blue[500];
+        if (!entry.__isTotal) {
+          fill = (_nullishCoalesce(entry.__rawValue, () => ( 0))) >= 0 ? CHART_COLORS.green[500] : CHART_COLORS.red[500];
+        }
+        return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Cell, { fill }, idx);
+      }) })
+    ] }) }) });
   }
   if (variant === "stacked-percent") {
-    return /* @__PURE__ */ React.createElement(ChartWrapper, { title, subtitle, className }, /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(_recharts.BarChart, { data: percentData, ...rest }, showGrid && /* @__PURE__ */ React.createElement(_recharts.CartesianGrid, { ...gridProps }), /* @__PURE__ */ React.createElement(_recharts.XAxis, { dataKey: xAxisKey, ...axisProps }), /* @__PURE__ */ React.createElement(_recharts.YAxis, { ...axisProps, domain: [0, 100], tickFormatter: (v) => `${v}%` }), showTooltip && /* @__PURE__ */ React.createElement(
-      _recharts.Tooltip,
-      {
-        ...tooltipProps,
-        formatter: (value, name, props) => {
-          var _a, _b;
-          const raw = (_b = (_a = props.payload) == null ? void 0 : _a.__raw) == null ? void 0 : _b[name];
-          if (raw !== void 0) {
-            return [`${raw} (${value.toFixed(1)}%)`, name];
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ChartWrapper, { title, subtitle, className, children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _recharts.BarChart, { data: percentData, ...rest, children: [
+      showGrid && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.CartesianGrid, { ...gridProps }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.XAxis, { dataKey: xAxisKey, ...axisProps }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.YAxis, { ...axisProps, domain: [0, 100], tickFormatter: (v) => `${v}%` }),
+      showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        _recharts.Tooltip,
+        {
+          ...tooltipProps,
+          formatter: (value, name, props) => {
+            var _a, _b;
+            const raw = (_b = (_a = props.payload) == null ? void 0 : _a.__raw) == null ? void 0 : _b[name];
+            if (raw !== void 0) {
+              return [`${raw} (${value.toFixed(1)}%)`, name];
+            }
+            return [`${value.toFixed(1)}%`, name];
           }
-          return [`${value.toFixed(1)}%`, name];
         }
-      }
-    ), shouldShowLegend && /* @__PURE__ */ React.createElement(_recharts.Legend, { ...legendProps }), dataKeys.map((key, i) => /* @__PURE__ */ React.createElement(
-      _recharts.Bar,
-      {
-        key,
-        dataKey: key,
-        stackId: "stack",
-        fill: palette[i % palette.length],
-        radius: i === dataKeys.length - 1 ? verticalRadius : 0
-      }
-    )))));
+      ),
+      shouldShowLegend && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...legendProps }),
+      dataKeys.map((key, i) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        _recharts.Bar,
+        {
+          dataKey: key,
+          stackId: "stack",
+          fill: palette[i % palette.length],
+          radius: i === dataKeys.length - 1 ? verticalRadius : 0
+        },
+        key
+      ))
+    ] }) }) });
   }
   if (isHorizontal) {
-    return /* @__PURE__ */ React.createElement(ChartWrapper, { title, subtitle, className }, /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(_recharts.BarChart, { data, layout: "vertical", ...rest }, showGrid && /* @__PURE__ */ React.createElement(_recharts.CartesianGrid, { ...gridProps, horizontal: false, vertical: true }), /* @__PURE__ */ React.createElement(_recharts.XAxis, { type: "number", ...axisProps }), /* @__PURE__ */ React.createElement(_recharts.YAxis, { type: "category", dataKey: xAxisKey, ...axisProps, width: 80 }), showTooltip && /* @__PURE__ */ React.createElement(_recharts.Tooltip, { ...tooltipProps }), shouldShowLegend && /* @__PURE__ */ React.createElement(_recharts.Legend, { ...legendProps }), dataKeys.map((key, i) => /* @__PURE__ */ React.createElement(
-      _recharts.Bar,
-      {
-        key,
-        dataKey: key,
-        fill: palette[i % palette.length],
-        radius: horizontalRadius
-      }
-    )))));
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ChartWrapper, { title, subtitle, className, children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _recharts.BarChart, { data, layout: "vertical", ...rest, children: [
+      showGrid && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.CartesianGrid, { ...gridProps, horizontal: false, vertical: true }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.XAxis, { type: "number", ...axisProps }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.YAxis, { type: "category", dataKey: xAxisKey, ...axisProps, width: 80 }),
+      showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Tooltip, { ...tooltipProps }),
+      shouldShowLegend && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...legendProps }),
+      dataKeys.map((key, i) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        _recharts.Bar,
+        {
+          dataKey: key,
+          fill: palette[i % palette.length],
+          radius: horizontalRadius
+        },
+        key
+      ))
+    ] }) }) });
   }
   const stackId = isStacked ? "stack" : void 0;
-  return /* @__PURE__ */ React.createElement(ChartWrapper, { title, subtitle, className }, /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(_recharts.BarChart, { data, ...rest }, showGrid && /* @__PURE__ */ React.createElement(_recharts.CartesianGrid, { ...gridProps }), /* @__PURE__ */ React.createElement(_recharts.XAxis, { dataKey: xAxisKey, ...axisProps }), /* @__PURE__ */ React.createElement(_recharts.YAxis, { ...axisProps }), showTooltip && /* @__PURE__ */ React.createElement(_recharts.Tooltip, { ...tooltipProps }), shouldShowLegend && /* @__PURE__ */ React.createElement(_recharts.Legend, { ...legendProps }), dataKeys.map((key, i) => /* @__PURE__ */ React.createElement(
-    _recharts.Bar,
-    {
-      key,
-      dataKey: key,
-      stackId,
-      fill: palette[i % palette.length],
-      radius: isStacked ? i === dataKeys.length - 1 ? verticalRadius : 0 : verticalRadius
-    }
-  )))));
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ChartWrapper, { title, subtitle, className, children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _recharts.BarChart, { data, ...rest, children: [
+    showGrid && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.CartesianGrid, { ...gridProps }),
+    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.XAxis, { dataKey: xAxisKey, ...axisProps }),
+    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.YAxis, { ...axisProps }),
+    showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Tooltip, { ...tooltipProps }),
+    shouldShowLegend && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...legendProps }),
+    dataKeys.map((key, i) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      _recharts.Bar,
+      {
+        dataKey: key,
+        stackId,
+        fill: palette[i % palette.length],
+        radius: isStacked ? i === dataKeys.length - 1 ? verticalRadius : 0 : verticalRadius
+      },
+      key
+    ))
+  ] }) }) });
 }
 
 // src/components/Charts/LineChart.js
+
 
 
 
@@ -2498,10 +2752,9 @@ function LineChart({
   const renderLines = () => dataKeys.map((key, index) => {
     const color = palette[index % palette.length];
     const isDashed = variant === "dashed-target" && key === resolvedTargetKey;
-    return /* @__PURE__ */ React.createElement(
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
       _recharts.Line,
       {
-        key,
         type: getLineType(),
         dataKey: key,
         stroke: color,
@@ -2510,26 +2763,36 @@ function LineChart({
         strokeOpacity: isDashed ? 0.6 : 1,
         dot: showDots ? DOT_PROPS : false,
         activeDot: showDots ? ACTIVE_DOT_PROPS : false
-      }
+      },
+      key
     );
   });
-  return /* @__PURE__ */ React.createElement(ChartWrapper, { title, subtitle, className }, /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(_recharts.LineChart, { data }, showGrid && /* @__PURE__ */ React.createElement(_recharts.CartesianGrid, { ...getGridProps(isDark) }), /* @__PURE__ */ React.createElement(_recharts.XAxis, { dataKey: xAxisKey, ...getAxisProps(isDark) }), /* @__PURE__ */ React.createElement(_recharts.YAxis, { ...getAxisProps(isDark) }), showTooltip && /* @__PURE__ */ React.createElement(_recharts.Tooltip, { ...getTooltipProps(isDark) }), legendVisible && /* @__PURE__ */ React.createElement(_recharts.Legend, { ...getLegendProps(isDark) }), variant === "with-threshold" && thresholdValue != null && /* @__PURE__ */ React.createElement(
-    _recharts.ReferenceLine,
-    {
-      y: thresholdValue,
-      stroke: CHART_COLORS.red[400],
-      strokeDasharray: "6 3",
-      label: {
-        value: thresholdLabel,
-        position: "insideTopRight",
-        fill: CHART_COLORS.red[400],
-        fontSize: 12
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ChartWrapper, { title, subtitle, className, children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _recharts.LineChart, { data, children: [
+    showGrid && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.CartesianGrid, { ...getGridProps(isDark) }),
+    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.XAxis, { dataKey: xAxisKey, ...getAxisProps(isDark) }),
+    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.YAxis, { ...getAxisProps(isDark) }),
+    showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Tooltip, { ...getTooltipProps(isDark) }),
+    legendVisible && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...getLegendProps(isDark) }),
+    variant === "with-threshold" && thresholdValue != null && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      _recharts.ReferenceLine,
+      {
+        y: thresholdValue,
+        stroke: CHART_COLORS.red[400],
+        strokeDasharray: "6 3",
+        label: {
+          value: thresholdLabel,
+          position: "insideTopRight",
+          fill: CHART_COLORS.red[400],
+          fontSize: 12
+        }
       }
-    }
-  ), renderLines())));
+    ),
+    renderLines()
+  ] }) }) });
 }
 
 // src/components/Charts/AreaChart.js
+
 
 
 
@@ -2596,11 +2859,17 @@ function AreaChart({
   const renderDefs = () => {
     if (variant === "single") {
       const color = palette[0];
-      return /* @__PURE__ */ React.createElement("defs", null, /* @__PURE__ */ React.createElement("linearGradient", { id: "area-gradient-0", x1: "0", y1: "0", x2: "0", y2: "1" }, /* @__PURE__ */ React.createElement("stop", { offset: "0%", stopColor: color, stopOpacity: 0.2 }), /* @__PURE__ */ React.createElement("stop", { offset: "100%", stopColor: color, stopOpacity: 0.02 })));
+      return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "defs", { children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "linearGradient", { id: "area-gradient-0", x1: "0", y1: "0", x2: "0", y2: "1", children: [
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "stop", { offset: "0%", stopColor: color, stopOpacity: 0.2 }),
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "stop", { offset: "100%", stopColor: color, stopOpacity: 0.02 })
+      ] }) });
     }
     if (variant === "gradient") {
       const color = palette[0];
-      return /* @__PURE__ */ React.createElement("defs", null, /* @__PURE__ */ React.createElement("linearGradient", { id: "area-gradient-prominent-0", x1: "0", y1: "0", x2: "0", y2: "1" }, /* @__PURE__ */ React.createElement("stop", { offset: "0%", stopColor: color, stopOpacity: 0.6 }), /* @__PURE__ */ React.createElement("stop", { offset: "100%", stopColor: color, stopOpacity: 0.05 })));
+      return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "defs", { children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "linearGradient", { id: "area-gradient-prominent-0", x1: "0", y1: "0", x2: "0", y2: "1", children: [
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "stop", { offset: "0%", stopColor: color, stopOpacity: 0.6 }),
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "stop", { offset: "100%", stopColor: color, stopOpacity: 0.05 })
+      ] }) });
     }
     return null;
   };
@@ -2608,7 +2877,7 @@ function AreaChart({
     if (variant === "single") {
       const color = palette[0];
       const key = dataKeys[0];
-      return /* @__PURE__ */ React.createElement(
+      return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
         _recharts.Area,
         {
           type: "monotone",
@@ -2622,10 +2891,9 @@ function AreaChart({
     if (variant === "stacked" || variant === "stacked-percent") {
       return dataKeys.map((key, index) => {
         const color = palette[index % palette.length];
-        return /* @__PURE__ */ React.createElement(
+        return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
           _recharts.Area,
           {
-            key,
             type: "monotone",
             dataKey: key,
             stackId: "stack",
@@ -2633,14 +2901,15 @@ function AreaChart({
             strokeWidth,
             fill: color,
             fillOpacity: 0.4
-          }
+          },
+          key
         );
       });
     }
     if (variant === "gradient") {
       const color = palette[0];
       const key = dataKeys[0];
-      return /* @__PURE__ */ React.createElement(
+      return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
         _recharts.Area,
         {
           type: "monotone",
@@ -2653,73 +2922,86 @@ function AreaChart({
     }
     if (variant === "range" && rangeKeys) {
       const color = palette[0];
-      return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(
-        _recharts.Area,
-        {
-          type: "monotone",
-          dataKey: rangeKeys.lower,
-          stackId: "range",
-          stroke: "transparent",
-          fill: "transparent",
-          fillOpacity: 0
-        }
-      ), /* @__PURE__ */ React.createElement(
-        _recharts.Area,
-        {
-          type: "monotone",
-          dataKey: "__rangeDelta",
-          stackId: "range",
-          stroke: color,
-          strokeWidth,
-          fill: color,
-          fillOpacity: 0.2,
-          name: "Range"
-        }
-      ), dataKeys[0] && /* @__PURE__ */ React.createElement(
-        _recharts.Area,
-        {
-          type: "monotone",
-          dataKey: dataKeys[0],
-          stroke: CHART_COLORS.blue[600],
-          strokeWidth,
-          fill: "none",
-          dot: { r: 3, fill: CHART_COLORS.blue[600] },
-          name: dataKeys[0]
-        }
-      ));
+      return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _jsxruntime.Fragment, { children: [
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          _recharts.Area,
+          {
+            type: "monotone",
+            dataKey: rangeKeys.lower,
+            stackId: "range",
+            stroke: "transparent",
+            fill: "transparent",
+            fillOpacity: 0
+          }
+        ),
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          _recharts.Area,
+          {
+            type: "monotone",
+            dataKey: "__rangeDelta",
+            stackId: "range",
+            stroke: color,
+            strokeWidth,
+            fill: color,
+            fillOpacity: 0.2,
+            name: "Range"
+          }
+        ),
+        dataKeys[0] && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          _recharts.Area,
+          {
+            type: "monotone",
+            dataKey: dataKeys[0],
+            stroke: CHART_COLORS.blue[600],
+            strokeWidth,
+            fill: "none",
+            dot: { r: 3, fill: CHART_COLORS.blue[600] },
+            name: dataKeys[0]
+          }
+        )
+      ] });
     }
     return dataKeys.map((key, index) => {
       const color = palette[index % palette.length];
-      return /* @__PURE__ */ React.createElement(
+      return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
         _recharts.Area,
         {
-          key,
           type: "monotone",
           dataKey: key,
           stroke: color,
           strokeWidth,
           fill: color,
           fillOpacity: 0.2
-        }
+        },
+        key
       );
     });
   };
-  return /* @__PURE__ */ React.createElement(ChartWrapper, { title, subtitle, className }, /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(_recharts.AreaChart, { data: chartData }, renderDefs(), showGrid && /* @__PURE__ */ React.createElement(_recharts.CartesianGrid, { ...getGridProps(isDark) }), /* @__PURE__ */ React.createElement(_recharts.XAxis, { dataKey: xAxisKey, ...getAxisProps(isDark) }), /* @__PURE__ */ React.createElement(
-    _recharts.YAxis,
-    {
-      ...getAxisProps(isDark),
-      ...variant === "stacked-percent" ? { domain: [0, 100], tickFormatter: (v) => `${v}%` } : {}
-    }
-  ), showTooltip && /* @__PURE__ */ React.createElement(
-    _recharts.Tooltip,
-    {
-      ...getTooltipProps(isDark),
-      ...variant === "stacked-percent" ? { formatter: (value) => `${value.toFixed(1)}%` } : {}
-    }
-  ), legendVisible && /* @__PURE__ */ React.createElement(_recharts.Legend, { ...getLegendProps(isDark) }), renderAreas())));
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ChartWrapper, { title, subtitle, className, children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _recharts.AreaChart, { data: chartData, children: [
+    renderDefs(),
+    showGrid && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.CartesianGrid, { ...getGridProps(isDark) }),
+    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.XAxis, { dataKey: xAxisKey, ...getAxisProps(isDark) }),
+    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      _recharts.YAxis,
+      {
+        ...getAxisProps(isDark),
+        ...variant === "stacked-percent" ? { domain: [0, 100], tickFormatter: (v) => `${v}%` } : {}
+      }
+    ),
+    showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      _recharts.Tooltip,
+      {
+        ...getTooltipProps(isDark),
+        ...variant === "stacked-percent" ? { formatter: (value) => `${value.toFixed(1)}%` } : {}
+      }
+    ),
+    legendVisible && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...getLegendProps(isDark) }),
+    renderAreas()
+  ] }) }) });
 }
 
 // src/components/Charts/PieChart.js
+
 
 
 
@@ -2735,7 +3017,7 @@ function renderCustomizedLabel({ cx, cy, midAngle, innerRadius, outerRadius, per
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
     "text",
     {
       x,
@@ -2744,9 +3026,9 @@ function renderCustomizedLabel({ cx, cy, midAngle, innerRadius, outerRadius, per
       textAnchor: "middle",
       dominantBaseline: "central",
       fontSize: 12,
-      fontWeight: 600
-    },
-    `${(percent * 100).toFixed(0)}%`
+      fontWeight: 600,
+      children: `${(percent * 100).toFixed(0)}%`
+    }
   );
 }
 function renderActiveShape(props) {
@@ -2762,30 +3044,33 @@ function renderActiveShape(props) {
     percent,
     value
   } = props;
-  return /* @__PURE__ */ React.createElement("g", null, /* @__PURE__ */ React.createElement(
-    _recharts.Sector,
-    {
-      cx,
-      cy,
-      innerRadius,
-      outerRadius: outerRadius + 6,
-      startAngle,
-      endAngle,
-      fill
-    }
-  ), innerRadius > 0 && /* @__PURE__ */ React.createElement(
-    _recharts.Sector,
-    {
-      cx,
-      cy,
-      innerRadius: innerRadius - 2,
-      outerRadius: innerRadius,
-      startAngle,
-      endAngle,
-      fill,
-      opacity: 0.3
-    }
-  ));
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "g", { children: [
+    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      _recharts.Sector,
+      {
+        cx,
+        cy,
+        innerRadius,
+        outerRadius: outerRadius + 6,
+        startAngle,
+        endAngle,
+        fill
+      }
+    ),
+    innerRadius > 0 && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      _recharts.Sector,
+      {
+        cx,
+        cy,
+        innerRadius: innerRadius - 2,
+        outerRadius: innerRadius,
+        startAngle,
+        endAngle,
+        fill,
+        opacity: 0.3
+      }
+    )
+  ] });
 }
 function PieChart({
   variant = "standard",
@@ -2838,30 +3123,33 @@ function PieChart({
   const onPieLeave = () => setActiveIndex(-1);
   const renderCenterText = (cx, cy) => {
     if (!centerValue && !centerLabel) return null;
-    return /* @__PURE__ */ React.createElement("g", null, centerValue != null && /* @__PURE__ */ React.createElement(
-      "text",
-      {
-        x: cx,
-        y: centerLabel ? cy - 10 : cy,
-        textAnchor: "middle",
-        dominantBaseline: "central",
-        fill: isDark ? "#f9fafb" : "#111827",
-        fontSize: 24,
-        fontWeight: 700
-      },
-      centerValue
-    ), centerLabel && /* @__PURE__ */ React.createElement(
-      "text",
-      {
-        x: cx,
-        y: centerValue != null ? cy + 16 : cy,
-        textAnchor: "middle",
-        dominantBaseline: "central",
-        fill: isDark ? "#9ca3af" : "#6b7280",
-        fontSize: 12
-      },
-      centerLabel
-    ));
+    return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "g", { children: [
+      centerValue != null && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        "text",
+        {
+          x: cx,
+          y: centerLabel ? cy - 10 : cy,
+          textAnchor: "middle",
+          dominantBaseline: "central",
+          fill: isDark ? "#f9fafb" : "#111827",
+          fontSize: 24,
+          fontWeight: 700,
+          children: centerValue
+        }
+      ),
+      centerLabel && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        "text",
+        {
+          x: cx,
+          y: centerValue != null ? cy + 16 : cy,
+          textAnchor: "middle",
+          dominantBaseline: "central",
+          fill: isDark ? "#9ca3af" : "#6b7280",
+          fontSize: 12,
+          children: centerLabel
+        }
+      )
+    ] });
   };
   const tooltipProps = getTooltipProps(isDark);
   const legendProps = getLegendProps(isDark);
@@ -2872,104 +3160,124 @@ function PieChart({
     const cyProp = variant === "semi" ? cyNum : "50%";
     switch (variant) {
       case "standard":
-        return /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(_recharts.PieChart, null, /* @__PURE__ */ React.createElement(
-          _recharts.Pie,
-          {
-            data,
-            cx,
-            cy: "50%",
-            outerRadius: 100,
-            dataKey: "value",
-            nameKey: "name",
-            activeIndex,
-            activeShape: renderActiveShape,
-            onMouseEnter: onPieEnter,
-            onMouseLeave: onPieLeave,
-            label: showLabels ? renderCustomizedLabel : false,
-            labelLine: false
-          },
-          data.map((entry, index) => /* @__PURE__ */ React.createElement(_recharts.Cell, { key: `cell-${index}`, fill: resolvedColors[index] }))
-        ), showTooltip && /* @__PURE__ */ React.createElement(_recharts.Tooltip, { ...tooltipProps }), showLegend && /* @__PURE__ */ React.createElement(_recharts.Legend, { ...legendProps })));
+        return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _recharts.PieChart, { children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            _recharts.Pie,
+            {
+              data,
+              cx,
+              cy: "50%",
+              outerRadius: 100,
+              dataKey: "value",
+              nameKey: "name",
+              activeIndex,
+              activeShape: renderActiveShape,
+              onMouseEnter: onPieEnter,
+              onMouseLeave: onPieLeave,
+              label: showLabels ? renderCustomizedLabel : false,
+              labelLine: false,
+              children: data.map((entry, index) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Cell, { fill: resolvedColors[index] }, `cell-${index}`))
+            }
+          ),
+          showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Tooltip, { ...tooltipProps }),
+          showLegend && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...legendProps })
+        ] }) });
       case "donut":
-        return /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(_recharts.PieChart, null, /* @__PURE__ */ React.createElement(
-          _recharts.Pie,
-          {
-            data,
-            cx,
-            cy: "50%",
-            innerRadius: 60,
-            outerRadius: 100,
-            dataKey: "value",
-            nameKey: "name",
-            activeIndex,
-            activeShape: renderActiveShape,
-            onMouseEnter: onPieEnter,
-            onMouseLeave: onPieLeave,
-            label: showLabels ? renderCustomizedLabel : false,
-            labelLine: false
-          },
-          data.map((entry, index) => /* @__PURE__ */ React.createElement(_recharts.Cell, { key: `cell-${index}`, fill: resolvedColors[index] }))
-        ), renderCenterText("50%", height / 2 - (showLegend ? 15 : 0)), showTooltip && /* @__PURE__ */ React.createElement(_recharts.Tooltip, { ...tooltipProps }), showLegend && /* @__PURE__ */ React.createElement(_recharts.Legend, { ...legendProps })));
+        return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _recharts.PieChart, { children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            _recharts.Pie,
+            {
+              data,
+              cx,
+              cy: "50%",
+              innerRadius: 60,
+              outerRadius: 100,
+              dataKey: "value",
+              nameKey: "name",
+              activeIndex,
+              activeShape: renderActiveShape,
+              onMouseEnter: onPieEnter,
+              onMouseLeave: onPieLeave,
+              label: showLabels ? renderCustomizedLabel : false,
+              labelLine: false,
+              children: data.map((entry, index) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Cell, { fill: resolvedColors[index] }, `cell-${index}`))
+            }
+          ),
+          renderCenterText("50%", height / 2 - (showLegend ? 15 : 0)),
+          showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Tooltip, { ...tooltipProps }),
+          showLegend && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...legendProps })
+        ] }) });
       case "semi":
-        return /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(_recharts.PieChart, null, /* @__PURE__ */ React.createElement(
-          _recharts.Pie,
-          {
-            data,
-            cx,
-            cy: cyNum,
-            startAngle: 180,
-            endAngle: 0,
-            innerRadius: 60,
-            outerRadius: 100,
-            dataKey: "value",
-            nameKey: "name",
-            activeIndex,
-            activeShape: renderActiveShape,
-            onMouseEnter: onPieEnter,
-            onMouseLeave: onPieLeave,
-            label: showLabels ? renderCustomizedLabel : false,
-            labelLine: false
-          },
-          data.map((entry, index) => /* @__PURE__ */ React.createElement(_recharts.Cell, { key: `cell-${index}`, fill: resolvedColors[index] }))
-        ), renderCenterText("50%", cyNum), showTooltip && /* @__PURE__ */ React.createElement(_recharts.Tooltip, { ...tooltipProps }), showLegend && /* @__PURE__ */ React.createElement(_recharts.Legend, { ...legendProps })));
+        return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _recharts.PieChart, { children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            _recharts.Pie,
+            {
+              data,
+              cx,
+              cy: cyNum,
+              startAngle: 180,
+              endAngle: 0,
+              innerRadius: 60,
+              outerRadius: 100,
+              dataKey: "value",
+              nameKey: "name",
+              activeIndex,
+              activeShape: renderActiveShape,
+              onMouseEnter: onPieEnter,
+              onMouseLeave: onPieLeave,
+              label: showLabels ? renderCustomizedLabel : false,
+              labelLine: false,
+              children: data.map((entry, index) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Cell, { fill: resolvedColors[index] }, `cell-${index}`))
+            }
+          ),
+          renderCenterText("50%", cyNum),
+          showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Tooltip, { ...tooltipProps }),
+          showLegend && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...legendProps })
+        ] }) });
       case "nested":
-        return /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(_recharts.PieChart, null, /* @__PURE__ */ React.createElement(
-          _recharts.Pie,
-          {
-            data,
-            cx,
-            cy: "50%",
-            innerRadius: 40,
-            outerRadius: 65,
-            dataKey: "value",
-            nameKey: "name",
-            activeIndex,
-            activeShape: renderActiveShape,
-            onMouseEnter: onPieEnter,
-            onMouseLeave: onPieLeave
-          },
-          data.map((entry, index) => /* @__PURE__ */ React.createElement(_recharts.Cell, { key: `inner-${index}`, fill: resolvedColors[index] }))
-        ), /* @__PURE__ */ React.createElement(
-          _recharts.Pie,
-          {
-            data: outerData,
-            cx,
-            cy: "50%",
-            innerRadius: 75,
-            outerRadius: 100,
-            dataKey: "value",
-            nameKey: "name"
-          },
-          outerData.map((entry, index) => /* @__PURE__ */ React.createElement(_recharts.Cell, { key: `outer-${index}`, fill: resolvedOuterColors[index] }))
-        ), showTooltip && /* @__PURE__ */ React.createElement(_recharts.Tooltip, { ...tooltipProps }), showLegend && /* @__PURE__ */ React.createElement(_recharts.Legend, { ...legendProps })));
+        return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _recharts.PieChart, { children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            _recharts.Pie,
+            {
+              data,
+              cx,
+              cy: "50%",
+              innerRadius: 40,
+              outerRadius: 65,
+              dataKey: "value",
+              nameKey: "name",
+              activeIndex,
+              activeShape: renderActiveShape,
+              onMouseEnter: onPieEnter,
+              onMouseLeave: onPieLeave,
+              children: data.map((entry, index) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Cell, { fill: resolvedColors[index] }, `inner-${index}`))
+            }
+          ),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            _recharts.Pie,
+            {
+              data: outerData,
+              cx,
+              cy: "50%",
+              innerRadius: 75,
+              outerRadius: 100,
+              dataKey: "value",
+              nameKey: "name",
+              children: outerData.map((entry, index) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Cell, { fill: resolvedOuterColors[index] }, `outer-${index}`))
+            }
+          ),
+          showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Tooltip, { ...tooltipProps }),
+          showLegend && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...legendProps })
+        ] }) });
       default:
         return null;
     }
   };
-  return /* @__PURE__ */ React.createElement(ChartWrapper, { title, subtitle, className }, renderChart());
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ChartWrapper, { title, subtitle, className, children: renderChart() });
 }
 
 // src/components/Charts/ComposedChart.js
+
 
 
 
@@ -3028,137 +3336,164 @@ function ComposedChart({
       const offset = barKeys.length + i;
       return colors && colors[offset] ? colors[offset] : CHART_COLORS.amber[500];
     };
-    return /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(_recharts.ComposedChart, { data }, showGrid && /* @__PURE__ */ React.createElement(_recharts.CartesianGrid, { ...gridProps }), /* @__PURE__ */ React.createElement(_recharts.XAxis, { dataKey: xAxisKey, ...axisProps }), /* @__PURE__ */ React.createElement(
-      _recharts.YAxis,
-      {
-        yAxisId: "left",
-        ...axisProps,
-        label: yAxisLabel ? { value: yAxisLabel, angle: -90, position: "insideLeft", style: { fill: axisProps.tick.fill, fontSize: 12 } } : void 0
-      }
-    ), /* @__PURE__ */ React.createElement(
-      _recharts.YAxis,
-      {
-        yAxisId: "right",
-        orientation: "right",
-        ...axisProps,
-        label: yAxisRightLabel ? { value: yAxisRightLabel, angle: 90, position: "insideRight", style: { fill: axisProps.tick.fill, fontSize: 12 } } : void 0
-      }
-    ), showTooltip && /* @__PURE__ */ React.createElement(_recharts.Tooltip, { ...tooltipProps }), showLegend && /* @__PURE__ */ React.createElement(_recharts.Legend, { ...legendProps }), barKeys.map((key, i) => /* @__PURE__ */ React.createElement(
-      _recharts.Bar,
-      {
-        key,
-        dataKey: key,
-        yAxisId: "left",
-        fill: barColor(i),
-        radius: [barRadius, barRadius, 0, 0]
-      }
-    )), lineKeys.map((key, i) => /* @__PURE__ */ React.createElement(
-      _recharts.Line,
-      {
-        key,
-        dataKey: key,
-        yAxisId: "right",
-        type: "monotone",
-        stroke: lineColor(i),
-        strokeWidth: 2,
-        dot: { r: 3 }
-      }
-    ))));
-  };
-  const renderBarArea = () => {
-    let colorIndex = 0;
-    return /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(_recharts.ComposedChart, { data }, showGrid && /* @__PURE__ */ React.createElement(_recharts.CartesianGrid, { ...gridProps }), /* @__PURE__ */ React.createElement(_recharts.XAxis, { dataKey: xAxisKey, ...axisProps }), /* @__PURE__ */ React.createElement(
-      _recharts.YAxis,
-      {
-        ...axisProps,
-        label: yAxisLabel ? { value: yAxisLabel, angle: -90, position: "insideLeft", style: { fill: axisProps.tick.fill, fontSize: 12 } } : void 0
-      }
-    ), showTooltip && /* @__PURE__ */ React.createElement(_recharts.Tooltip, { ...tooltipProps }), showLegend && /* @__PURE__ */ React.createElement(_recharts.Legend, { ...legendProps }), areaKeys.map((key) => {
-      const c = getColor(colorIndex++);
-      return /* @__PURE__ */ React.createElement(
-        _recharts.Area,
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _recharts.ComposedChart, { data, children: [
+      showGrid && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.CartesianGrid, { ...gridProps }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.XAxis, { dataKey: xAxisKey, ...axisProps }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        _recharts.YAxis,
         {
-          key,
-          dataKey: key,
-          type: "monotone",
-          fill: c,
-          stroke: c,
-          fillOpacity: 0.15,
-          strokeWidth: 2
+          yAxisId: "left",
+          ...axisProps,
+          label: yAxisLabel ? { value: yAxisLabel, angle: -90, position: "insideLeft", style: { fill: axisProps.tick.fill, fontSize: 12 } } : void 0
         }
-      );
-    }), barKeys.map((key) => {
-      const c = getColor(colorIndex++);
-      return /* @__PURE__ */ React.createElement(
+      ),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        _recharts.YAxis,
+        {
+          yAxisId: "right",
+          orientation: "right",
+          ...axisProps,
+          label: yAxisRightLabel ? { value: yAxisRightLabel, angle: 90, position: "insideRight", style: { fill: axisProps.tick.fill, fontSize: 12 } } : void 0
+        }
+      ),
+      showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Tooltip, { ...tooltipProps }),
+      showLegend && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...legendProps }),
+      barKeys.map((key, i) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
         _recharts.Bar,
         {
-          key,
-          dataKey: key,
-          fill: c,
-          radius: [barRadius, barRadius, 0, 0]
-        }
-      );
-    })));
-  };
-  const renderMultiAxis = () => {
-    let colorIndex = 0;
-    return /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(_recharts.ComposedChart, { data }, showGrid && /* @__PURE__ */ React.createElement(_recharts.CartesianGrid, { ...gridProps }), /* @__PURE__ */ React.createElement(_recharts.XAxis, { dataKey: xAxisKey, ...axisProps }), /* @__PURE__ */ React.createElement(
-      _recharts.YAxis,
-      {
-        yAxisId: "left",
-        ...axisProps,
-        label: yAxisLabel ? { value: yAxisLabel, angle: -90, position: "insideLeft", style: { fill: axisProps.tick.fill, fontSize: 12 } } : void 0
-      }
-    ), /* @__PURE__ */ React.createElement(
-      _recharts.YAxis,
-      {
-        yAxisId: "right",
-        orientation: "right",
-        ...axisProps,
-        label: yAxisRightLabel ? { value: yAxisRightLabel, angle: 90, position: "insideRight", style: { fill: axisProps.tick.fill, fontSize: 12 } } : void 0
-      }
-    ), showTooltip && /* @__PURE__ */ React.createElement(_recharts.Tooltip, { ...tooltipProps }), showLegend && /* @__PURE__ */ React.createElement(_recharts.Legend, { ...legendProps }), areaKeys.map((key) => {
-      const c = getColor(colorIndex++);
-      return /* @__PURE__ */ React.createElement(
-        _recharts.Area,
-        {
-          key,
           dataKey: key,
           yAxisId: "left",
-          type: "monotone",
-          fill: c,
-          stroke: c,
-          fillOpacity: 0.15,
-          strokeWidth: 2
-        }
-      );
-    }), barKeys.map((key) => {
-      const c = getColor(colorIndex++);
-      return /* @__PURE__ */ React.createElement(
-        _recharts.Bar,
-        {
-          key,
-          dataKey: key,
-          yAxisId: "left",
-          fill: c,
+          fill: barColor(i),
           radius: [barRadius, barRadius, 0, 0]
-        }
-      );
-    }), lineKeys.map((key) => {
-      const c = getColor(colorIndex++);
-      return /* @__PURE__ */ React.createElement(
+        },
+        key
+      )),
+      lineKeys.map((key, i) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
         _recharts.Line,
         {
-          key,
           dataKey: key,
           yAxisId: "right",
           type: "monotone",
-          stroke: c,
+          stroke: lineColor(i),
           strokeWidth: 2,
           dot: { r: 3 }
+        },
+        key
+      ))
+    ] }) });
+  };
+  const renderBarArea = () => {
+    let colorIndex = 0;
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _recharts.ComposedChart, { data, children: [
+      showGrid && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.CartesianGrid, { ...gridProps }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.XAxis, { dataKey: xAxisKey, ...axisProps }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        _recharts.YAxis,
+        {
+          ...axisProps,
+          label: yAxisLabel ? { value: yAxisLabel, angle: -90, position: "insideLeft", style: { fill: axisProps.tick.fill, fontSize: 12 } } : void 0
         }
-      );
-    })));
+      ),
+      showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Tooltip, { ...tooltipProps }),
+      showLegend && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...legendProps }),
+      areaKeys.map((key) => {
+        const c = getColor(colorIndex++);
+        return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          _recharts.Area,
+          {
+            dataKey: key,
+            type: "monotone",
+            fill: c,
+            stroke: c,
+            fillOpacity: 0.15,
+            strokeWidth: 2
+          },
+          key
+        );
+      }),
+      barKeys.map((key) => {
+        const c = getColor(colorIndex++);
+        return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          _recharts.Bar,
+          {
+            dataKey: key,
+            fill: c,
+            radius: [barRadius, barRadius, 0, 0]
+          },
+          key
+        );
+      })
+    ] }) });
+  };
+  const renderMultiAxis = () => {
+    let colorIndex = 0;
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _recharts.ComposedChart, { data, children: [
+      showGrid && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.CartesianGrid, { ...gridProps }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.XAxis, { dataKey: xAxisKey, ...axisProps }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        _recharts.YAxis,
+        {
+          yAxisId: "left",
+          ...axisProps,
+          label: yAxisLabel ? { value: yAxisLabel, angle: -90, position: "insideLeft", style: { fill: axisProps.tick.fill, fontSize: 12 } } : void 0
+        }
+      ),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        _recharts.YAxis,
+        {
+          yAxisId: "right",
+          orientation: "right",
+          ...axisProps,
+          label: yAxisRightLabel ? { value: yAxisRightLabel, angle: 90, position: "insideRight", style: { fill: axisProps.tick.fill, fontSize: 12 } } : void 0
+        }
+      ),
+      showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Tooltip, { ...tooltipProps }),
+      showLegend && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...legendProps }),
+      areaKeys.map((key) => {
+        const c = getColor(colorIndex++);
+        return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          _recharts.Area,
+          {
+            dataKey: key,
+            yAxisId: "left",
+            type: "monotone",
+            fill: c,
+            stroke: c,
+            fillOpacity: 0.15,
+            strokeWidth: 2
+          },
+          key
+        );
+      }),
+      barKeys.map((key) => {
+        const c = getColor(colorIndex++);
+        return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          _recharts.Bar,
+          {
+            dataKey: key,
+            yAxisId: "left",
+            fill: c,
+            radius: [barRadius, barRadius, 0, 0]
+          },
+          key
+        );
+      }),
+      lineKeys.map((key) => {
+        const c = getColor(colorIndex++);
+        return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          _recharts.Line,
+          {
+            dataKey: key,
+            yAxisId: "right",
+            type: "monotone",
+            stroke: c,
+            strokeWidth: 2,
+            dot: { r: 3 }
+          },
+          key
+        );
+      })
+    ] }) });
   };
   const renderChart = () => {
     switch (variant) {
@@ -3171,10 +3506,11 @@ function ComposedChart({
         return renderBarLine();
     }
   };
-  return /* @__PURE__ */ React.createElement(ChartWrapper, { title, subtitle, className }, renderChart());
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ChartWrapper, { title, subtitle, className, children: renderChart() });
 }
 
 // src/components/Charts/RadialChart.js
+
 
 
 
@@ -3197,35 +3533,38 @@ function getGaugeColor(percentage) {
 function CenterLabel({ viewBox, value, label, isDark }) {
   if (!viewBox) return null;
   const { cx, cy } = viewBox;
-  return /* @__PURE__ */ React.createElement("g", null, /* @__PURE__ */ React.createElement(
-    "text",
-    {
-      x: cx,
-      y: cy - 8,
-      textAnchor: "middle",
-      dominantBaseline: "central",
-      style: {
-        fontSize: 32,
-        fontWeight: 700,
-        fill: isDark ? "#f9fafb" : "#111827"
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "g", { children: [
+    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "text",
+      {
+        x: cx,
+        y: cy - 8,
+        textAnchor: "middle",
+        dominantBaseline: "central",
+        style: {
+          fontSize: 32,
+          fontWeight: 700,
+          fill: isDark ? "#f9fafb" : "#111827"
+        },
+        children: value
       }
-    },
-    value
-  ), label && /* @__PURE__ */ React.createElement(
-    "text",
-    {
-      x: cx,
-      y: cy + 24,
-      textAnchor: "middle",
-      dominantBaseline: "central",
-      style: {
-        fontSize: 13,
-        fontWeight: 400,
-        fill: isDark ? "#9ca3af" : "#6b7280"
+    ),
+    label && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "text",
+      {
+        x: cx,
+        y: cy + 24,
+        textAnchor: "middle",
+        dominantBaseline: "central",
+        style: {
+          fontSize: 13,
+          fontWeight: 400,
+          fill: isDark ? "#9ca3af" : "#6b7280"
+        },
+        children: label
       }
-    },
-    label
-  ));
+    )
+  ] });
 }
 function RadialChart({
   variant = "gauge",
@@ -3261,7 +3600,7 @@ function RadialChart({
     const percentage = clampedValue / maxValue * 100;
     const gaugeColor = getGaugeColor(percentage);
     const chartData = [{ name: "value", value: clampedValue, fill: gaugeColor }];
-    return /* @__PURE__ */ React.createElement(ChartWrapper, { title, subtitle, className }, /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ChartWrapper, { title, subtitle, className, children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
       _recharts.RadialBarChart,
       {
         cx: "50%",
@@ -3271,43 +3610,45 @@ function RadialChart({
         startAngle: 210,
         endAngle: -30,
         data: chartData,
-        barSize: 16
-      },
-      /* @__PURE__ */ React.createElement(
-        _recharts.PolarAngleAxis,
-        {
-          type: "number",
-          domain: [0, maxValue],
-          angleAxisId: 0,
-          tick: false
-        }
-      ),
-      /* @__PURE__ */ React.createElement(
-        _recharts.RadialBar,
-        {
-          background: { fill: trackFill },
-          dataKey: "value",
-          angleAxisId: 0,
-          cornerRadius: 10,
-          label: /* @__PURE__ */ React.createElement(
-            CenterLabel,
+        barSize: 16,
+        children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            _recharts.PolarAngleAxis,
             {
-              value: clampedValue,
-              label,
-              isDark
+              type: "number",
+              domain: [0, maxValue],
+              angleAxisId: 0,
+              tick: false
             }
-          )
-        }
-      ),
-      showTooltip && /* @__PURE__ */ React.createElement(_recharts.Tooltip, { ...getTooltipProps(isDark) }),
-      showLegend && /* @__PURE__ */ React.createElement(_recharts.Legend, { ...getLegendProps(isDark) })
-    )));
+          ),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            _recharts.RadialBar,
+            {
+              background: { fill: trackFill },
+              dataKey: "value",
+              angleAxisId: 0,
+              cornerRadius: 10,
+              label: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                CenterLabel,
+                {
+                  value: clampedValue,
+                  label,
+                  isDark
+                }
+              )
+            }
+          ),
+          showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Tooltip, { ...getTooltipProps(isDark) }),
+          showLegend && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...getLegendProps(isDark) })
+        ]
+      }
+    ) }) });
   }
   if (variant === "progress") {
     const clampedValue = Math.min(Math.max(value, 0), maxValue);
     const percentage = Math.round(clampedValue / maxValue * 100);
     const chartData = [{ name: "progress", value: clampedValue, fill: CHART_COLORS.blue[500] }];
-    return /* @__PURE__ */ React.createElement(ChartWrapper, { title, subtitle, className }, /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ChartWrapper, { title, subtitle, className, children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
       _recharts.RadialBarChart,
       {
         cx: "50%",
@@ -3317,44 +3658,46 @@ function RadialChart({
         startAngle: 90,
         endAngle: -270,
         data: chartData,
-        barSize: 16
-      },
-      /* @__PURE__ */ React.createElement(
-        _recharts.PolarAngleAxis,
-        {
-          type: "number",
-          domain: [0, maxValue],
-          angleAxisId: 0,
-          tick: false
-        }
-      ),
-      /* @__PURE__ */ React.createElement(
-        _recharts.RadialBar,
-        {
-          background: { fill: trackFill },
-          dataKey: "value",
-          angleAxisId: 0,
-          cornerRadius: 10,
-          label: /* @__PURE__ */ React.createElement(
-            CenterLabel,
+        barSize: 16,
+        children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            _recharts.PolarAngleAxis,
             {
-              value: `${percentage}%`,
-              label,
-              isDark
+              type: "number",
+              domain: [0, maxValue],
+              angleAxisId: 0,
+              tick: false
             }
-          )
-        }
-      ),
-      showTooltip && /* @__PURE__ */ React.createElement(_recharts.Tooltip, { ...getTooltipProps(isDark) }),
-      showLegend && /* @__PURE__ */ React.createElement(_recharts.Legend, { ...getLegendProps(isDark) })
-    )));
+          ),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            _recharts.RadialBar,
+            {
+              background: { fill: trackFill },
+              dataKey: "value",
+              angleAxisId: 0,
+              cornerRadius: 10,
+              label: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                CenterLabel,
+                {
+                  value: `${percentage}%`,
+                  label,
+                  isDark
+                }
+              )
+            }
+          ),
+          showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Tooltip, { ...getTooltipProps(isDark) }),
+          showLegend && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...getLegendProps(isDark) })
+        ]
+      }
+    ) }) });
   }
   if (variant === "multi-ring") {
     const ringData = [...data].sort((a, b) => b.value - a.value).map((entry, i) => ({
       ...entry,
       fill: entry.fill || palette[i % palette.length]
     }));
-    return /* @__PURE__ */ React.createElement(ChartWrapper, { title, subtitle, className }, /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ChartWrapper, { title, subtitle, className, children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
       _recharts.RadialBarChart,
       {
         cx: "50%",
@@ -3364,75 +3707,88 @@ function RadialChart({
         startAngle: 90,
         endAngle: -270,
         data: ringData,
-        barSize: 14
-      },
-      /* @__PURE__ */ React.createElement(
-        _recharts.PolarAngleAxis,
-        {
-          type: "number",
-          domain: [0, maxValue],
-          angleAxisId: 0,
-          tick: false
-        }
-      ),
-      /* @__PURE__ */ React.createElement(
-        _recharts.RadialBar,
-        {
-          background: { fill: trackFill },
-          dataKey: "value",
-          angleAxisId: 0,
-          cornerRadius: 10
-        },
-        ringData.map((entry, i) => /* @__PURE__ */ React.createElement(_recharts.Cell, { key: `cell-${i}`, fill: entry.fill }))
-      ),
-      showTooltip && /* @__PURE__ */ React.createElement(_recharts.Tooltip, { ...getTooltipProps(isDark) }),
-      /* @__PURE__ */ React.createElement(_recharts.Legend, { ...getLegendProps(isDark) })
-    )));
+        barSize: 14,
+        children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            _recharts.PolarAngleAxis,
+            {
+              type: "number",
+              domain: [0, maxValue],
+              angleAxisId: 0,
+              tick: false
+            }
+          ),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            _recharts.RadialBar,
+            {
+              background: { fill: trackFill },
+              dataKey: "value",
+              angleAxisId: 0,
+              cornerRadius: 10,
+              children: ringData.map((entry, i) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Cell, { fill: entry.fill }, `cell-${i}`))
+            }
+          ),
+          showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Tooltip, { ...getTooltipProps(isDark) }),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...getLegendProps(isDark) })
+        ]
+      }
+    ) }) });
   }
   if (variant === "radar") {
-    return /* @__PURE__ */ React.createElement(ChartWrapper, { title, subtitle, className }, /* @__PURE__ */ React.createElement(_recharts.ResponsiveContainer, { width: "100%", height }, /* @__PURE__ */ React.createElement(_recharts.RadarChart, { cx: "50%", cy: "50%", outerRadius: "75%", data }, /* @__PURE__ */ React.createElement(
-      _recharts.PolarGrid,
-      {
-        stroke: isDark ? "#374151" : "#e5e7eb",
-        gridType: "polygon"
-      }
-    ), /* @__PURE__ */ React.createElement(
-      _recharts.PolarAngleAxis,
-      {
-        dataKey: "subject",
-        tick: {
-          fill: isDark ? "#9ca3af" : "#6b7280",
-          fontSize: 12
-        }
-      }
-    ), /* @__PURE__ */ React.createElement(
-      _recharts.PolarRadiusAxis,
-      {
-        tick: {
-          fill: isDark ? "#9ca3af" : "#6b7280",
-          fontSize: 10
-        },
-        axisLine: false
-      }
-    ), dataKeys.map((key, i) => {
-      const color = palette[i % palette.length];
-      return /* @__PURE__ */ React.createElement(
-        _recharts.Radar,
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ChartWrapper, { title, subtitle, className, children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.ResponsiveContainer, { width: "100%", height, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _recharts.RadarChart, { cx: "50%", cy: "50%", outerRadius: "75%", data, children: [
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        _recharts.PolarGrid,
         {
-          key,
-          name: key,
-          dataKey: key,
-          stroke: color,
-          fill: color,
-          fillOpacity: 0.2
+          stroke: isDark ? "#374151" : "#e5e7eb",
+          gridType: "polygon"
         }
-      );
-    }), showTooltip && /* @__PURE__ */ React.createElement(_recharts.Tooltip, { ...getTooltipProps(isDark) }), showLegend && /* @__PURE__ */ React.createElement(_recharts.Legend, { ...getLegendProps(isDark) }))));
+      ),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        _recharts.PolarAngleAxis,
+        {
+          dataKey: "subject",
+          tick: {
+            fill: isDark ? "#9ca3af" : "#6b7280",
+            fontSize: 12
+          }
+        }
+      ),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        _recharts.PolarRadiusAxis,
+        {
+          tick: {
+            fill: isDark ? "#9ca3af" : "#6b7280",
+            fontSize: 10
+          },
+          axisLine: false
+        }
+      ),
+      dataKeys.map((key, i) => {
+        const color = palette[i % palette.length];
+        return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          _recharts.Radar,
+          {
+            name: key,
+            dataKey: key,
+            stroke: color,
+            fill: color,
+            fillOpacity: 0.2
+          },
+          key
+        );
+      }),
+      showTooltip && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Tooltip, { ...getTooltipProps(isDark) }),
+      showLegend && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _recharts.Legend, { ...getLegendProps(isDark) })
+    ] }) }) });
   }
-  return /* @__PURE__ */ React.createElement(ChartWrapper, { title, subtitle, className }, /* @__PURE__ */ React.createElement("p", { style: { color: isDark ? "#9ca3af" : "#6b7280", fontSize: 14 } }, "Unknown variant: ", /* @__PURE__ */ React.createElement("code", null, variant)));
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ChartWrapper, { title, subtitle, className, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "p", { style: { color: isDark ? "#9ca3af" : "#6b7280", fontSize: 14 }, children: [
+    "Unknown variant: ",
+    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "code", { children: variant })
+  ] }) });
 }
 
 // src/components/KpiCard/KpiCard.js
+
 
 
 function Sparkline({ data = [], width = 80, height = 28, color = "var(--ds-text-brand)" }) {
@@ -3452,7 +3808,7 @@ function Sparkline({ data = [], width = 80, height = 28, color = "var(--ds-text-
       setTooltip({ x: idx * step, y: height - (data[idx] - min) / range * height, value: data[idx] });
     }
   };
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
     "svg",
     {
       ref: svgRef,
@@ -3461,42 +3817,48 @@ function Sparkline({ data = [], width = 80, height = 28, color = "var(--ds-text-
       className: "shrink-0",
       onMouseMove: handleMouseMove,
       onMouseLeave: () => setTooltip(null),
-      style: { overflow: "visible" }
-    },
-    /* @__PURE__ */ React.createElement(
-      "polyline",
-      {
-        points,
-        fill: "none",
-        stroke: color,
-        strokeWidth: "1.5",
-        strokeLinecap: "round",
-        strokeLinejoin: "round"
-      }
-    ),
-    tooltip && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("circle", { cx: tooltip.x, cy: tooltip.y, r: "3", fill: color }), /* @__PURE__ */ React.createElement(
-      "rect",
-      {
-        x: tooltip.x - 16,
-        y: tooltip.y - 20,
-        width: "32",
-        height: "16",
-        rx: "3",
-        fill: "var(--ds-bg-tertiary)",
-        stroke: "var(--ds-border-primary)",
-        strokeWidth: "0.5"
-      }
-    ), /* @__PURE__ */ React.createElement(
-      "text",
-      {
-        x: tooltip.x,
-        y: tooltip.y - 9,
-        textAnchor: "middle",
-        fontSize: "9",
-        fill: "var(--ds-text-primary)"
-      },
-      tooltip.value
-    ))
+      style: { overflow: "visible" },
+      children: [
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          "polyline",
+          {
+            points,
+            fill: "none",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        tooltip && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _jsxruntime.Fragment, { children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "circle", { cx: tooltip.x, cy: tooltip.y, r: "3", fill: color }),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "rect",
+            {
+              x: tooltip.x - 16,
+              y: tooltip.y - 20,
+              width: "32",
+              height: "16",
+              rx: "3",
+              fill: "var(--ds-bg-tertiary)",
+              stroke: "var(--ds-border-primary)",
+              strokeWidth: "0.5"
+            }
+          ),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "text",
+            {
+              x: tooltip.x,
+              y: tooltip.y - 9,
+              textAnchor: "middle",
+              fontSize: "9",
+              fill: "var(--ds-text-primary)",
+              children: tooltip.value
+            }
+          )
+        ] })
+      ]
+    }
   );
 }
 function ProgressRing({ value = 0, size = 40, strokeWidth = 4, color = "var(--ds-text-brand)" }) {
@@ -3504,51 +3866,54 @@ function ProgressRing({ value = 0, size = 40, strokeWidth = 4, color = "var(--ds
   const circumference = 2 * Math.PI * radius;
   const clamped = Math.min(Math.max(value, 0), 100);
   const offset = circumference - clamped / 100 * circumference;
-  return /* @__PURE__ */ React.createElement("svg", { width: size, height: size, className: "shrink-0 -rotate-90" }, /* @__PURE__ */ React.createElement(
-    "circle",
-    {
-      cx: size / 2,
-      cy: size / 2,
-      r: radius,
-      fill: "none",
-      stroke: "var(--ds-border-primary)",
-      strokeWidth
-    }
-  ), /* @__PURE__ */ React.createElement(
-    "circle",
-    {
-      cx: size / 2,
-      cy: size / 2,
-      r: radius,
-      fill: "none",
-      stroke: color,
-      strokeWidth,
-      strokeDasharray: circumference,
-      strokeDashoffset: offset,
-      strokeLinecap: "round",
-      style: { transition: "stroke-dashoffset 0.4s ease" }
-    }
-  ));
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "svg", { width: size, height: size, className: "shrink-0 -rotate-90", children: [
+    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "circle",
+      {
+        cx: size / 2,
+        cy: size / 2,
+        r: radius,
+        fill: "none",
+        stroke: "var(--ds-border-primary)",
+        strokeWidth
+      }
+    ),
+    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "circle",
+      {
+        cx: size / 2,
+        cy: size / 2,
+        r: radius,
+        fill: "none",
+        stroke: color,
+        strokeWidth,
+        strokeDasharray: circumference,
+        strokeDashoffset: offset,
+        strokeLinecap: "round",
+        style: { transition: "stroke-dashoffset 0.4s ease" }
+      }
+    )
+  ] });
 }
 function ProgressBar({ value = 0, color = "var(--ds-text-brand)" }) {
   const clamped = Math.min(Math.max(value, 0), 100);
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
     "div",
     {
       className: "w-full h-1.5 rounded-full overflow-hidden mt-2",
-      style: { backgroundColor: "var(--ds-bg-tertiary)" }
-    },
-    /* @__PURE__ */ React.createElement(
-      "div",
-      {
-        className: "h-full rounded-full",
-        style: {
-          width: `${clamped}%`,
-          backgroundColor: color,
-          transition: "width 0.4s ease"
+      style: { backgroundColor: "var(--ds-bg-tertiary)" },
+      children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        "div",
+        {
+          className: "h-full rounded-full",
+          style: {
+            width: `${clamped}%`,
+            backgroundColor: color,
+            transition: "width 0.4s ease"
+          }
         }
-      }
-    )
+      )
+    }
   );
 }
 function DeltaIndicator({ value, format = "percentage" }) {
@@ -3558,7 +3923,10 @@ function DeltaIndicator({ value, format = "percentage" }) {
   const Icon = isPositive ? _lucidereact.TrendingUp : isNeutral ? _lucidereact.Minus : _lucidereact.TrendingDown;
   const color = isPositive ? "var(--ds-text-success)" : isNeutral ? "var(--ds-text-secondary)" : "var(--ds-text-danger)";
   const display = format === "percentage" ? `${isPositive ? "+" : ""}${value}%` : `${isPositive ? "+" : ""}${value}`;
-  return /* @__PURE__ */ React.createElement("span", { className: "inline-flex items-center gap-1 text-[length:var(--ds-text-xs)] font-medium", style: { color } }, /* @__PURE__ */ React.createElement(Icon, { size: 12 }), display);
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "span", { className: "inline-flex items-center gap-1 text-[length:var(--ds-text-xs)] font-medium", style: { color }, children: [
+    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, Icon, { size: 12 }),
+    display
+  ] });
 }
 var KpiCard = _react.forwardRef.call(void 0, function KpiCard2({
   // Core
@@ -3589,7 +3957,7 @@ var KpiCard = _react.forwardRef.call(void 0, function KpiCard2({
   className = "",
   ...props
 }, ref) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
     "div",
     {
       ref,
@@ -3603,57 +3971,80 @@ var KpiCard = _react.forwardRef.call(void 0, function KpiCard2({
         backgroundColor: "var(--ds-bg-primary)",
         borderColor: "var(--ds-border-primary)"
       },
-      ...props
-    },
-    /* @__PURE__ */ React.createElement("div", { className: "flex items-start justify-between gap-3" }, /* @__PURE__ */ React.createElement("div", { className: "flex-1 min-w-0" }, /* @__PURE__ */ React.createElement(
-      "p",
-      {
-        className: "text-[length:var(--ds-text-xs)] font-medium uppercase tracking-wider truncate",
-        style: { color: "var(--ds-text-secondary)" }
-      },
-      label
-    ), /* @__PURE__ */ React.createElement("div", { className: "flex items-end gap-2 mt-1" }, /* @__PURE__ */ React.createElement(
-      "span",
-      {
-        className: "text-[length:var(--ds-text-2xl)] font-bold leading-none",
-        style: { color: "var(--ds-text-primary)" }
-      },
-      value
-    ), variant === "with-delta" && /* @__PURE__ */ React.createElement(DeltaIndicator, { value: delta, format: deltaFormat })), variant === "with-delta" && deltaLabel && /* @__PURE__ */ React.createElement(
-      "p",
-      {
-        className: "text-[length:var(--ds-text-xs)] mt-1",
-        style: { color: "var(--ds-text-tertiary)" }
-      },
-      deltaLabel
-    ), variant === "with-progress" && progressType === "bar" && /* @__PURE__ */ React.createElement("div", { className: "mt-1" }, /* @__PURE__ */ React.createElement(ProgressBar, { value: progress, color: progressColor || "var(--ds-text-brand)" }), target != null && /* @__PURE__ */ React.createElement(
-      "p",
-      {
-        className: "text-[length:var(--ds-text-xs)] mt-1",
-        style: { color: "var(--ds-text-tertiary)" }
-      },
-      progress,
-      "% of ",
-      target
-    ))), variant === "with-icon" && icon && /* @__PURE__ */ React.createElement(
-      "div",
-      {
-        className: "shrink-0 w-10 h-10 rounded-[var(--ds-radius-md)] flex items-center justify-center",
-        style: {
-          backgroundColor: iconColor ? `${iconColor}18` : "var(--ds-bg-selected)",
-          color: iconColor || "var(--ds-text-brand)"
-        }
-      },
-      icon
-    ), variant === "with-trend" && trendData && /* @__PURE__ */ React.createElement(Sparkline, { data: trendData, color: trendColor || "var(--ds-text-brand)" }), variant === "with-progress" && progressType === "ring" && /* @__PURE__ */ React.createElement("div", { className: "shrink-0 relative flex items-center justify-center" }, /* @__PURE__ */ React.createElement(ProgressRing, { value: progress, color: progressColor || "var(--ds-text-brand)" }), /* @__PURE__ */ React.createElement(
-      "span",
-      {
-        className: "absolute text-[length:9px] font-bold",
-        style: { color: "var(--ds-text-primary)" }
-      },
-      progress,
-      "%"
-    )))
+      ...props,
+      children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex items-start justify-between gap-3", children: [
+        /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex-1 min-w-0", children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "p",
+            {
+              className: "text-[length:var(--ds-text-xs)] font-medium uppercase tracking-wider truncate",
+              style: { color: "var(--ds-text-secondary)" },
+              children: label
+            }
+          ),
+          /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex items-end gap-2 mt-1", children: [
+            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+              "span",
+              {
+                className: "text-[length:var(--ds-text-2xl)] font-bold leading-none",
+                style: { color: "var(--ds-text-primary)" },
+                children: value
+              }
+            ),
+            variant === "with-delta" && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, DeltaIndicator, { value: delta, format: deltaFormat })
+          ] }),
+          variant === "with-delta" && deltaLabel && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "p",
+            {
+              className: "text-[length:var(--ds-text-xs)] mt-1",
+              style: { color: "var(--ds-text-tertiary)" },
+              children: deltaLabel
+            }
+          ),
+          variant === "with-progress" && progressType === "bar" && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "mt-1", children: [
+            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ProgressBar, { value: progress, color: progressColor || "var(--ds-text-brand)" }),
+            target != null && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+              "p",
+              {
+                className: "text-[length:var(--ds-text-xs)] mt-1",
+                style: { color: "var(--ds-text-tertiary)" },
+                children: [
+                  progress,
+                  "% of ",
+                  target
+                ]
+              }
+            )
+          ] })
+        ] }),
+        variant === "with-icon" && icon && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          "div",
+          {
+            className: "shrink-0 w-10 h-10 rounded-[var(--ds-radius-md)] flex items-center justify-center",
+            style: {
+              backgroundColor: iconColor ? `${iconColor}18` : "var(--ds-bg-selected)",
+              color: iconColor || "var(--ds-text-brand)"
+            },
+            children: icon
+          }
+        ),
+        variant === "with-trend" && trendData && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, Sparkline, { data: trendData, color: trendColor || "var(--ds-text-brand)" }),
+        variant === "with-progress" && progressType === "ring" && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "shrink-0 relative flex items-center justify-center", children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ProgressRing, { value: progress, color: progressColor || "var(--ds-text-brand)" }),
+          /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+            "span",
+            {
+              className: "absolute text-[length:9px] font-bold",
+              style: { color: "var(--ds-text-primary)" },
+              children: [
+                progress,
+                "%"
+              ]
+            }
+          )
+        ] })
+      ] })
+    }
   );
 });
 KpiCard.displayName = "KpiCard";
@@ -3670,8 +4061,9 @@ var KpiCard_default = KpiCard;
 
 
 
+
 var ActivityFeed = _react.forwardRef.call(void 0, function ActivityFeed2({ items = [], maxHeight, className = "", ...props }, ref) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
     "div",
     {
       ref,
@@ -3682,29 +4074,35 @@ var ActivityFeed = _react.forwardRef.call(void 0, function ActivityFeed2({ items
         overflowY: maxHeight ? "auto" : void 0,
         "--tw-divide-color": "var(--ds-border-primary)"
       },
-      ...props
-    },
-    items.map((item, i) => /* @__PURE__ */ React.createElement("div", { key: _nullishCoalesce(item.id, () => ( i)), className: "flex gap-3 py-3 px-2" }, /* @__PURE__ */ React.createElement("div", { className: "shrink-0 mt-1.5" }, /* @__PURE__ */ React.createElement(
-      "div",
-      {
-        className: "w-2 h-2 rounded-full",
-        style: { backgroundColor: item.color || "var(--ds-text-brand)" }
-      }
-    )), /* @__PURE__ */ React.createElement("div", { className: "flex-1 min-w-0" }, /* @__PURE__ */ React.createElement(
-      "p",
-      {
-        className: "text-[length:var(--ds-text-sm)]",
-        style: { color: "var(--ds-text-primary)" }
-      },
-      item.content
-    ), item.timestamp && /* @__PURE__ */ React.createElement(
-      "p",
-      {
-        className: "text-[length:var(--ds-text-xs)] mt-0.5",
-        style: { color: "var(--ds-text-tertiary)" }
-      },
-      item.timestamp
-    ))))
+      ...props,
+      children: items.map((item, i) => /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex gap-3 py-3 px-2", children: [
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "shrink-0 mt-1.5", children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          "div",
+          {
+            className: "w-2 h-2 rounded-full",
+            style: { backgroundColor: item.color || "var(--ds-text-brand)" }
+          }
+        ) }),
+        /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex-1 min-w-0", children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "p",
+            {
+              className: "text-[length:var(--ds-text-sm)]",
+              style: { color: "var(--ds-text-primary)" },
+              children: item.content
+            }
+          ),
+          item.timestamp && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "p",
+            {
+              className: "text-[length:var(--ds-text-xs)] mt-0.5",
+              style: { color: "var(--ds-text-tertiary)" },
+              children: item.timestamp
+            }
+          )
+        ] })
+      ] }, _nullishCoalesce(item.id, () => ( i))))
+    }
   );
 });
 var severityConfig = {
@@ -3714,7 +4112,7 @@ var severityConfig = {
   success: { icon: _lucidereact.CheckCircle2, color: "var(--ds-icon-success)", bg: "var(--ds-bg-success)" }
 };
 var NotificationList = _react.forwardRef.call(void 0, function NotificationList2({ items = [], maxHeight, onItemClick, className = "", ...props }, ref) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
     "div",
     {
       ref,
@@ -3724,168 +4122,186 @@ var NotificationList = _react.forwardRef.call(void 0, function NotificationList2
         overflowY: maxHeight ? "auto" : void 0,
         "--tw-divide-color": "var(--ds-border-primary)"
       },
-      ...props
-    },
-    items.map((item, i) => {
-      const sev = severityConfig[item.severity || "info"];
-      const Icon = sev.icon;
-      return /* @__PURE__ */ React.createElement(
-        "div",
-        {
-          key: _nullishCoalesce(item.id, () => ( i)),
-          className: [
-            "flex gap-3 py-3 px-3 transition-colors",
-            onItemClick ? "cursor-pointer hover:bg-[var(--ds-bg-hover)]" : "",
-            item.unread ? "bg-[var(--ds-bg-selected)]" : ""
-          ].join(" "),
-          onClick: () => onItemClick == null ? void 0 : onItemClick(item, i),
-          role: onItemClick ? "button" : void 0,
-          tabIndex: onItemClick ? 0 : void 0
-        },
-        /* @__PURE__ */ React.createElement(
+      ...props,
+      children: items.map((item, i) => {
+        const sev = severityConfig[item.severity || "info"];
+        const Icon = sev.icon;
+        return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
           "div",
           {
-            className: "shrink-0 w-7 h-7 rounded-full flex items-center justify-center mt-0.5",
-            style: { backgroundColor: sev.bg }
-          },
-          /* @__PURE__ */ React.createElement(Icon, { size: 14, style: { color: sev.color } })
-        ),
-        /* @__PURE__ */ React.createElement("div", { className: "flex-1 min-w-0" }, /* @__PURE__ */ React.createElement(
-          "p",
-          {
             className: [
-              "text-[length:var(--ds-text-sm)]",
-              item.unread ? "font-semibold" : ""
+              "flex gap-3 py-3 px-3 transition-colors",
+              onItemClick ? "cursor-pointer hover:bg-[var(--ds-bg-hover)]" : "",
+              item.unread ? "bg-[var(--ds-bg-selected)]" : ""
             ].join(" "),
-            style: { color: "var(--ds-text-primary)" }
+            onClick: () => onItemClick == null ? void 0 : onItemClick(item, i),
+            role: onItemClick ? "button" : void 0,
+            tabIndex: onItemClick ? 0 : void 0,
+            children: [
+              /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                "div",
+                {
+                  className: "shrink-0 w-7 h-7 rounded-full flex items-center justify-center mt-0.5",
+                  style: { backgroundColor: sev.bg },
+                  children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, Icon, { size: 14, style: { color: sev.color } })
+                }
+              ),
+              /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex-1 min-w-0", children: [
+                /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                  "p",
+                  {
+                    className: [
+                      "text-[length:var(--ds-text-sm)]",
+                      item.unread ? "font-semibold" : ""
+                    ].join(" "),
+                    style: { color: "var(--ds-text-primary)" },
+                    children: item.title
+                  }
+                ),
+                item.description && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                  "p",
+                  {
+                    className: "text-[length:var(--ds-text-xs)] mt-0.5 line-clamp-2",
+                    style: { color: "var(--ds-text-secondary)" },
+                    children: item.description
+                  }
+                ),
+                item.timestamp && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                  "p",
+                  {
+                    className: "text-[length:var(--ds-text-xs)] mt-1",
+                    style: { color: "var(--ds-text-tertiary)" },
+                    children: item.timestamp
+                  }
+                )
+              ] }),
+              item.unread && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "shrink-0 mt-2", children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "w-2 h-2 rounded-full", style: { backgroundColor: "var(--ds-text-brand)" } }) })
+            ]
           },
-          item.title
-        ), item.description && /* @__PURE__ */ React.createElement(
-          "p",
-          {
-            className: "text-[length:var(--ds-text-xs)] mt-0.5 line-clamp-2",
-            style: { color: "var(--ds-text-secondary)" }
-          },
-          item.description
-        ), item.timestamp && /* @__PURE__ */ React.createElement(
-          "p",
-          {
-            className: "text-[length:var(--ds-text-xs)] mt-1",
-            style: { color: "var(--ds-text-tertiary)" }
-          },
-          item.timestamp
-        )),
-        item.unread && /* @__PURE__ */ React.createElement("div", { className: "shrink-0 mt-2" }, /* @__PURE__ */ React.createElement("div", { className: "w-2 h-2 rounded-full", style: { backgroundColor: "var(--ds-text-brand)" } }))
-      );
-    })
+          _nullishCoalesce(item.id, () => ( i))
+        );
+      })
+    }
   );
 });
 var RankedList = _react.forwardRef.call(void 0, function RankedList2({ items = [], valueLabel, className = "", ...props }, ref) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
     "div",
     {
       ref,
       className: ["flex flex-col divide-y", className].join(" "),
       style: { "--tw-divide-color": "var(--ds-border-primary)" },
-      ...props
-    },
-    items.map((item, i) => /* @__PURE__ */ React.createElement("div", { key: _nullishCoalesce(item.id, () => ( i)), className: "flex items-center gap-3 py-2.5 px-2" }, /* @__PURE__ */ React.createElement(
-      "span",
-      {
-        className: "shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[length:var(--ds-text-xs)] font-bold",
-        style: {
-          backgroundColor: i < 3 ? "var(--ds-bg-selected)" : "var(--ds-bg-tertiary)",
-          color: i < 3 ? "var(--ds-text-brand)" : "var(--ds-text-secondary)"
-        }
-      },
-      i + 1
-    ), /* @__PURE__ */ React.createElement("div", { className: "flex-1 min-w-0" }, /* @__PURE__ */ React.createElement(
-      "p",
-      {
-        className: "text-[length:var(--ds-text-sm)] font-medium truncate",
-        style: { color: "var(--ds-text-primary)" }
-      },
-      item.label
-    ), item.sublabel && /* @__PURE__ */ React.createElement(
-      "p",
-      {
-        className: "text-[length:var(--ds-text-xs)] truncate",
-        style: { color: "var(--ds-text-tertiary)" }
-      },
-      item.sublabel
-    )), item.value != null && /* @__PURE__ */ React.createElement(
-      "span",
-      {
-        className: "shrink-0 text-[length:var(--ds-text-sm)] font-semibold tabular-nums",
-        style: { color: "var(--ds-text-primary)" }
-      },
-      item.value
-    )))
+      ...props,
+      children: items.map((item, i) => /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex items-center gap-3 py-2.5 px-2", children: [
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          "span",
+          {
+            className: "shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[length:var(--ds-text-xs)] font-bold",
+            style: {
+              backgroundColor: i < 3 ? "var(--ds-bg-selected)" : "var(--ds-bg-tertiary)",
+              color: i < 3 ? "var(--ds-text-brand)" : "var(--ds-text-secondary)"
+            },
+            children: i + 1
+          }
+        ),
+        /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex-1 min-w-0", children: [
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "p",
+            {
+              className: "text-[length:var(--ds-text-sm)] font-medium truncate",
+              style: { color: "var(--ds-text-primary)" },
+              children: item.label
+            }
+          ),
+          item.sublabel && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "p",
+            {
+              className: "text-[length:var(--ds-text-xs)] truncate",
+              style: { color: "var(--ds-text-tertiary)" },
+              children: item.sublabel
+            }
+          )
+        ] }),
+        item.value != null && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          "span",
+          {
+            className: "shrink-0 text-[length:var(--ds-text-sm)] font-semibold tabular-nums",
+            style: { color: "var(--ds-text-primary)" },
+            children: item.value
+          }
+        )
+      ] }, _nullishCoalesce(item.id, () => ( i))))
+    }
   );
 });
 var AvatarList = _react.forwardRef.call(void 0, function AvatarList2({ items = [], onItemClick, className = "", ...props }, ref) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
     "div",
     {
       ref,
       className: ["flex flex-col divide-y", className].join(" "),
       style: { "--tw-divide-color": "var(--ds-border-primary)" },
-      ...props
-    },
-    items.map((item, i) => /* @__PURE__ */ React.createElement(
-      "div",
-      {
-        key: _nullishCoalesce(item.id, () => ( i)),
-        className: [
-          "flex items-center gap-3 py-2.5 px-2 transition-colors",
-          onItemClick ? "cursor-pointer hover:bg-[var(--ds-bg-hover)]" : ""
-        ].join(" "),
-        onClick: () => onItemClick == null ? void 0 : onItemClick(item, i),
-        role: onItemClick ? "button" : void 0,
-        tabIndex: onItemClick ? 0 : void 0
-      },
-      item.avatar ? /* @__PURE__ */ React.createElement(
-        "img",
-        {
-          src: item.avatar,
-          alt: item.name || "",
-          className: "shrink-0 w-8 h-8 rounded-full object-cover"
-        }
-      ) : /* @__PURE__ */ React.createElement(
+      ...props,
+      children: items.map((item, i) => /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
         "div",
         {
-          className: "shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-[length:var(--ds-text-xs)] font-bold uppercase",
-          style: {
-            backgroundColor: "var(--ds-bg-selected)",
-            color: "var(--ds-text-brand)"
-          }
+          className: [
+            "flex items-center gap-3 py-2.5 px-2 transition-colors",
+            onItemClick ? "cursor-pointer hover:bg-[var(--ds-bg-hover)]" : ""
+          ].join(" "),
+          onClick: () => onItemClick == null ? void 0 : onItemClick(item, i),
+          role: onItemClick ? "button" : void 0,
+          tabIndex: onItemClick ? 0 : void 0,
+          children: [
+            item.avatar ? /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+              "img",
+              {
+                src: item.avatar,
+                alt: item.name || "",
+                className: "shrink-0 w-8 h-8 rounded-full object-cover"
+              }
+            ) : /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+              "div",
+              {
+                className: "shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-[length:var(--ds-text-xs)] font-bold uppercase",
+                style: {
+                  backgroundColor: "var(--ds-bg-selected)",
+                  color: "var(--ds-text-brand)"
+                },
+                children: (item.name || "?").slice(0, 2)
+              }
+            ),
+            /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex-1 min-w-0", children: [
+              /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                "p",
+                {
+                  className: "text-[length:var(--ds-text-sm)] font-medium truncate",
+                  style: { color: "var(--ds-text-primary)" },
+                  children: item.name
+                }
+              ),
+              item.description && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+                "p",
+                {
+                  className: "text-[length:var(--ds-text-xs)] truncate",
+                  style: { color: "var(--ds-text-secondary)" },
+                  children: item.description
+                }
+              )
+            ] }),
+            item.meta && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+              "span",
+              {
+                className: "shrink-0 text-[length:var(--ds-text-xs)]",
+                style: { color: "var(--ds-text-tertiary)" },
+                children: item.meta
+              }
+            )
+          ]
         },
-        (item.name || "?").slice(0, 2)
-      ),
-      /* @__PURE__ */ React.createElement("div", { className: "flex-1 min-w-0" }, /* @__PURE__ */ React.createElement(
-        "p",
-        {
-          className: "text-[length:var(--ds-text-sm)] font-medium truncate",
-          style: { color: "var(--ds-text-primary)" }
-        },
-        item.name
-      ), item.description && /* @__PURE__ */ React.createElement(
-        "p",
-        {
-          className: "text-[length:var(--ds-text-xs)] truncate",
-          style: { color: "var(--ds-text-secondary)" }
-        },
-        item.description
-      )),
-      item.meta && /* @__PURE__ */ React.createElement(
-        "span",
-        {
-          className: "shrink-0 text-[length:var(--ds-text-xs)]",
-          style: { color: "var(--ds-text-tertiary)" }
-        },
-        item.meta
-      )
-    ))
+        _nullishCoalesce(item.id, () => ( i))
+      ))
+    }
   );
 });
 var TableList = _react.forwardRef.call(void 0, function TableList2({
@@ -3924,79 +4340,92 @@ var TableList = _react.forwardRef.call(void 0, function TableList2({
   }, [data, sortCol, sortDir]);
   const SortIcon = ({ colKey }) => {
     if (!sortable) return null;
-    if (sortCol !== colKey) return /* @__PURE__ */ React.createElement(_lucidereact.ChevronsUpDown, { size: 12, style: { color: "var(--ds-icon-secondary)", opacity: 0.5 } });
-    return sortDir === "asc" ? /* @__PURE__ */ React.createElement(_lucidereact.ChevronUp, { size: 12, style: { color: "var(--ds-text-brand)" } }) : /* @__PURE__ */ React.createElement(_lucidereact.ChevronDown, { size: 12, style: { color: "var(--ds-text-brand)" } });
+    if (sortCol !== colKey) return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ChevronsUpDown, { size: 12, style: { color: "var(--ds-icon-secondary)", opacity: 0.5 } });
+    return sortDir === "asc" ? /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ChevronUp, { size: 12, style: { color: "var(--ds-text-brand)" } }) : /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ChevronDown, { size: 12, style: { color: "var(--ds-text-brand)" } });
   };
-  return /* @__PURE__ */ React.createElement("div", { ref, className, ...props }, actions && /* @__PURE__ */ React.createElement(
-    "div",
-    {
-      className: "flex items-center gap-2 flex-wrap pb-3 mb-3 border-b",
-      style: { borderColor: "var(--ds-border-primary)" }
-    },
-    actions
-  ), /* @__PURE__ */ React.createElement("div", { className: "overflow-x-auto" }, /* @__PURE__ */ React.createElement("table", { className: "w-full border-collapse text-left" }, /* @__PURE__ */ React.createElement("thead", null, /* @__PURE__ */ React.createElement(
-    "tr",
-    {
-      className: "border-b",
-      style: { borderColor: "var(--ds-border-primary)" }
-    },
-    columns.map((col) => /* @__PURE__ */ React.createElement(
-      "th",
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { ref, className, ...props, children: [
+    actions && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "div",
       {
-        key: col.key,
-        className: [
-          "py-2 px-3 text-[length:var(--ds-text-xs)] font-semibold uppercase tracking-wider whitespace-nowrap",
-          sortable ? "cursor-pointer select-none hover:bg-[var(--ds-bg-hover)]" : ""
-        ].join(" "),
-        style: {
-          color: "var(--ds-text-secondary)",
-          width: col.width,
-          minWidth: col.minWidth
-        },
-        onClick: () => handleSort(col.key)
-      },
-      /* @__PURE__ */ React.createElement("span", { className: "inline-flex items-center gap-1" }, col.icon && /* @__PURE__ */ React.createElement("span", { className: "shrink-0" }, col.icon), col.header, /* @__PURE__ */ React.createElement(SortIcon, { colKey: col.key }))
-    ))
-  )), /* @__PURE__ */ React.createElement("tbody", null, sortedData.map((row, ri) => /* @__PURE__ */ React.createElement(
-    "tr",
-    {
-      key: _nullishCoalesce(row.id, () => ( ri)),
-      className: "border-b last:border-b-0 transition-colors hover:bg-[var(--ds-bg-hover)]",
-      style: { borderColor: "var(--ds-border-primary)" }
-    },
-    columns.map((col) => /* @__PURE__ */ React.createElement(
-      "td",
-      {
-        key: col.key,
-        className: "py-2 px-3 text-[length:var(--ds-text-sm)]",
-        style: { color: "var(--ds-text-primary)" }
-      },
-      col.render ? col.render(row[col.key], row, ri) : row[col.key]
-    ))
-  )), sortedData.length === 0 && /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement(
-    "td",
-    {
-      colSpan: columns.length,
-      className: "py-8 text-center text-[length:var(--ds-text-sm)]",
-      style: { color: "var(--ds-text-tertiary)" }
-    },
-    "No items"
-  ))))));
+        className: "flex items-center gap-2 flex-wrap pb-3 mb-3 border-b",
+        style: { borderColor: "var(--ds-border-primary)" },
+        children: actions
+      }
+    ),
+    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "overflow-x-auto", children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "table", { className: "w-full border-collapse text-left", children: [
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "thead", { children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        "tr",
+        {
+          className: "border-b",
+          style: { borderColor: "var(--ds-border-primary)" },
+          children: columns.map((col) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "th",
+            {
+              className: [
+                "py-2 px-3 text-[length:var(--ds-text-xs)] font-semibold uppercase tracking-wider whitespace-nowrap",
+                sortable ? "cursor-pointer select-none hover:bg-[var(--ds-bg-hover)]" : ""
+              ].join(" "),
+              style: {
+                color: "var(--ds-text-secondary)",
+                width: col.width,
+                minWidth: col.minWidth
+              },
+              onClick: () => handleSort(col.key),
+              children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "span", { className: "inline-flex items-center gap-1", children: [
+                col.icon && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "shrink-0", children: col.icon }),
+                col.header,
+                /* @__PURE__ */ _jsxruntime.jsx.call(void 0, SortIcon, { colKey: col.key })
+              ] })
+            },
+            col.key
+          ))
+        }
+      ) }),
+      /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "tbody", { children: [
+        sortedData.map((row, ri) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          "tr",
+          {
+            className: "border-b last:border-b-0 transition-colors hover:bg-[var(--ds-bg-hover)]",
+            style: { borderColor: "var(--ds-border-primary)" },
+            children: columns.map((col) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+              "td",
+              {
+                className: "py-2 px-3 text-[length:var(--ds-text-sm)]",
+                style: { color: "var(--ds-text-primary)" },
+                children: col.render ? col.render(row[col.key], row, ri) : row[col.key]
+              },
+              col.key
+            ))
+          },
+          _nullishCoalesce(row.id, () => ( ri))
+        )),
+        sortedData.length === 0 && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "tr", { children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          "td",
+          {
+            colSpan: columns.length,
+            className: "py-8 text-center text-[length:var(--ds-text-sm)]",
+            style: { color: "var(--ds-text-tertiary)" },
+            children: "No items"
+          }
+        ) })
+      ] })
+    ] }) })
+  ] });
 });
 var List = _react.forwardRef.call(void 0, function List2({ variant = "activity-feed", ...props }, ref) {
   switch (variant) {
     case "activity-feed":
-      return /* @__PURE__ */ React.createElement(ActivityFeed, { ref, ...props });
+      return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ActivityFeed, { ref, ...props });
     case "notification":
-      return /* @__PURE__ */ React.createElement(NotificationList, { ref, ...props });
+      return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, NotificationList, { ref, ...props });
     case "ranked":
-      return /* @__PURE__ */ React.createElement(RankedList, { ref, ...props });
+      return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, RankedList, { ref, ...props });
     case "with-avatar":
-      return /* @__PURE__ */ React.createElement(AvatarList, { ref, ...props });
+      return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, AvatarList, { ref, ...props });
     case "with-table":
-      return /* @__PURE__ */ React.createElement(TableList, { ref, ...props });
+      return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, TableList, { ref, ...props });
     default:
-      return /* @__PURE__ */ React.createElement(ActivityFeed, { ref, ...props });
+      return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ActivityFeed, { ref, ...props });
   }
 });
 ActivityFeed.displayName = "ActivityFeed";
@@ -4008,6 +4437,7 @@ List.displayName = "List";
 var List_default = List;
 
 // src/context/ThemeProvider.js
+
 
 var ThemeContext = _react.createContext.call(void 0, null);
 function ThemeProvider({ children, defaultTheme = "light", themes = ["light", "dark"] }) {
@@ -4037,7 +4467,7 @@ function ThemeProvider({ children, defaultTheme = "light", themes = ["light", "d
       return themes[(idx + 1) % themes.length];
     });
   }, [themes]);
-  return /* @__PURE__ */ React.createElement(ThemeContext.Provider, { value: { theme, setTheme, toggleTheme, themes } }, children);
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, ThemeContext.Provider, { value: { theme, setTheme, toggleTheme, themes }, children });
 }
 function useTheme() {
   const context = _react.useContext.call(void 0, ThemeContext);

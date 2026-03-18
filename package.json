@@ -1,6 +1,6 @@
 {
   "name": "aopends",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -9,6 +9,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./styles.css": "./dist/styles.css",
+    "./utilities.css": "./dist/utilities.css",
     "./base.css": "./dist/tokens/base.css",
     "./themes/light": "./dist/themes/light.css",
     "./themes/dark": "./dist/themes/dark.css",
@@ -18,8 +20,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup && cp -r src/themes dist/themes && cp -r src/tokens dist/tokens",
-    "dev": "tsup --watch"
+    "build": "tsup && cp -r src/themes/* dist/themes/ && cp -r src/tokens/* dist/tokens/ && npx tailwindcss -i src/styles/tailwind-input.css -o dist/utilities.css --minify && cat dist/tokens/base.css dist/themes/light.css dist/themes/dark.css dist/themes/high-contrast.css dist/utilities.css > dist/styles.css",
+    "dev": "tsup --watch",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "lucide-react": ">=0.300.0",
@@ -28,10 +31,14 @@
     "recharts": ">=2.0.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.27",
     "lucide-react": "^0.577.0",
+    "postcss": "^8.5.8",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "recharts": "^3.8.0",
+    "tailwindcss": "^3.4.19",
+    "tailwindcss-animate": "^1.0.7",
     "tsup": "^8.0.0",
     "typescript": "^5.9.3"
   }

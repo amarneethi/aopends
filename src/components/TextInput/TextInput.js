@@ -72,7 +72,7 @@ const TextInput = forwardRef(function TextInput(
             'ds-focus-ring w-full rounded-[var(--ds-radius-md)] bg-[var(--ds-input-bg)] text-[var(--ds-text-primary)]',
             'placeholder:text-[var(--ds-text-placeholder)]',
             'transition-colors duration-[var(--ds-duration-normal)]',
-            `border border-[${borderColor}]`,
+            'border',
             `hover:border-[var(--ds-input-border-hover)]`,
             sizeStyles[size],
             icon ? 'pl-10' : '',
