@@ -1,6 +1,6 @@
 {
   "name": "aopends",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -29,6 +29,10 @@
     "react": ">=18",
     "react-dom": ">=18",
     "recharts": ">=2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amarneethi/aopends.git"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.27",

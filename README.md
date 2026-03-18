@@ -12,13 +12,13 @@ npm install aopends
 
 ```js
 // layout.js
-import 'aopends/base.css'
-import 'aopends/themes/glass'
+import 'aopends/styles.css'
+import 'aopends/themes/light'
 import { ThemeProvider } from 'aopends'
 
 export default function Layout({ children }) {
   return (
-    <ThemeProvider defaultTheme="light">
+    <ThemeProvider>
       {children}
     </ThemeProvider>
   )
@@ -30,7 +30,7 @@ export default function Layout({ children }) {
 import { Button, DataTable, Modal } from 'aopends'
 
 function MyPage() {
-  return <Button>Sign up</Button>
+  return <Button variant="primary">Sign up</Button>
 }
 ```
 
