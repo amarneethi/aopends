@@ -13,11 +13,11 @@ const Search = forwardRef(function Search(
   {
     value: controlledValue,
     onChange,
-    onSearch,
+    onSubmit,
     onClear,
     placeholder = 'Search...',
-    suggestions = [],
-    onSuggestionSelect,
+    options = [],
+    onOptionSelect,
     loading = false,
     size = 'md',
     disabled = false,
@@ -33,7 +33,7 @@ const Search = forwardRef(function Search(
   const autoId = useId();
   const id = idProp || autoId;
   const [internalValue, setInternalValue] = useState('');
-  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [showOptions, setShowOptions] = useState(false);
   const containerRef = useRef(null);
   const debounceRef = useRef(null);
 
@@ -42,7 +42,7 @@ const Search = forwardRef(function Search(
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (containerRef.current && !containerRef.current.contains(e.target)) {
-        setShowSuggestions(false);
+        setShowOptions(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -56,37 +56,37 @@ const Search = forwardRef(function Search(
 
     if (debounceRef.current) clearTimeout(debounceRef.current);
     debounceRef.current = setTimeout(() => {
-      onSearch?.(val);
+      onSubmit?.(val);
     }, debounceMs);
 
-    setShowSuggestions(val.length > 0 && suggestions.length > 0);
-  }, [onChange, onSearch, debounceMs, suggestions.length]);
+    setShowOptions(val.length > 0 && options.length > 0);
+  }, [onChange, onSubmit, debounceMs, options.length]);
 
   const handleClear = () => {
     setInternalValue('');
     onChange?.('');
     onClear?.();
-    setShowSuggestions(false);
+    setShowOptions(false);
   };
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
       if (debounceRef.current) clearTimeout(debounceRef.current);
-      onSearch?.(searchValue);
-      setShowSuggestions(false);
+      onSubmit?.(searchValue);
+      setShowOptions(false);
     }
     if (e.key === 'Escape') {
-      setShowSuggestions(false);
+      setShowOptions(false);
     }
   };
 
-  const handleSuggestionClick = (suggestion) => {
-    const val = typeof suggestion === 'string' ? suggestion : suggestion.label;
+  const handleOptionClick = (option) => {
+    const val = typeof option === 'string' ? option : option.label;
     setInternalValue(val);
     onChange?.(val);
-    onSuggestionSelect?.(suggestion);
-    setShowSuggestions(false);
+    onOptionSelect?.(option);
+    setShowOptions(false);
   };
 
   const iconSize = size === 'sm' ? 14 : size === 'lg' ? 20 : 16;
@@ -117,7 +117,7 @@ const Search = forwardRef(function Search(
           value={searchValue}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
-          onFocus={() => searchValue && suggestions.length > 0 && setShowSuggestions(true)}
+          onFocus={() => searchValue && options.length > 0 && setShowOptions(true)}
           disabled={disabled}
           placeholder={placeholder}
           className={[
@@ -150,8 +150,8 @@ const Search = forwardRef(function Search(
         </div>
       </div>
 
-      {/* Typeahead suggestions */}
-      {showSuggestions && suggestions.length > 0 && (
+      {/* Typeahead options */}
+      {showOptions && options.length > 0 && (
         <ul
           className="absolute top-full left-0 right-0 mt-1 py-1 rounded-[var(--ds-radius-lg)] border max-h-60 overflow-auto ds-scrollbar"
           style={{
@@ -162,14 +162,14 @@ const Search = forwardRef(function Search(
           }}
           role="listbox"
         >
-          {suggestions.map((s, i) => {
-            const label = typeof s === 'string' ? s : s.label;
-            const desc = typeof s === 'object' ? s.description : null;
+          {options.map((option, i) => {
+            const label = typeof option === 'string' ? option : option.label;
+            const desc = typeof option === 'object' ? option.description : null;
             return (
               <li
                 key={i}
                 role="option"
-                onClick={() => handleSuggestionClick(s)}
+                onClick={() => handleOptionClick(option)}
                 className="px-3 py-2 cursor-pointer hover:bg-[var(--ds-bg-hover)] transition-colors"
               >
                 <div className="text-[length:var(--ds-text-sm)] text-[var(--ds-text-primary)]">{label}</div>

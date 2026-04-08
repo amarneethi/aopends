@@ -6,13 +6,15 @@ import { Check, Minus } from 'lucide-react';
 const Checkbox = forwardRef(function Checkbox(
   {
     label,
-    checked = false,
+    checked,
+    defaultChecked = false,
     indeterminate = false,
     disabled = false,
     size = 'md',
     onChange,
     id: idProp,
     className = '',
+    wrapperClassName = '',
     ...props
   },
   ref
@@ -23,7 +25,8 @@ const Checkbox = forwardRef(function Checkbox(
   const boxSize = size === 'sm' ? 'w-4 h-4' : size === 'lg' ? 'w-6 h-6' : 'w-5 h-5';
   const iconSize = size === 'sm' ? 12 : size === 'lg' ? 18 : 14;
 
-  const isChecked = indeterminate || checked;
+  const isControlled = checked !== undefined;
+  const isChecked = indeterminate || (isControlled ? checked : defaultChecked);
 
   return (
     <label
@@ -31,6 +34,7 @@ const Checkbox = forwardRef(function Checkbox(
       className={[
         'inline-flex items-center gap-2 cursor-pointer select-none',
         disabled ? 'opacity-50 cursor-not-allowed' : '',
+        wrapperClassName,
         className,
       ]
         .filter(Boolean)
@@ -41,11 +45,12 @@ const Checkbox = forwardRef(function Checkbox(
           ref={ref}
           type="checkbox"
           id={id}
-          checked={checked}
+          checked={isControlled ? checked : undefined}
+          defaultChecked={isControlled ? undefined : defaultChecked}
           disabled={disabled}
-          onChange={onChange}
+          onChange={isControlled ? (e) => onChange?.(e.target.checked) : (e) => onChange?.(e.target.checked)}
           className="ds-sr-only peer"
-          aria-checked={indeterminate ? 'mixed' : checked}
+          aria-checked={indeterminate ? 'mixed' : isControlled ? checked : undefined}
           {...props}
         />
         <span
@@ -61,7 +66,7 @@ const Checkbox = forwardRef(function Checkbox(
         >
           {indeterminate ? (
             <Minus size={iconSize} strokeWidth={3} />
-          ) : checked ? (
+          ) : isChecked ? (
             <Check size={iconSize} strokeWidth={3} />
           ) : null}
         </span>

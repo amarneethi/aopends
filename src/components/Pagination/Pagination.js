@@ -40,11 +40,11 @@ function getPageNumbers(currentPage, totalPages, siblingCount = 1) {
 
 const Pagination = forwardRef(function Pagination(
   {
-    currentPage = 1,
+    value: currentPage = 1,
     totalPages = 1,
     totalItems,
     pageSize,
-    onPageChange,
+    onChange: onPageChange,
     onPageSizeChange,
     pageSizeOptions = [10, 25, 50, 100],
     siblingCount = 1,

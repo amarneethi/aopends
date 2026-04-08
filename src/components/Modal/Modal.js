@@ -22,7 +22,7 @@ const Modal = forwardRef(function Modal(
     size = 'md',
     closeOnOverlay = true,
     closeOnEsc = true,
-    showCloseButton = true,
+    closable = true,
     className = '',
     ...props
   },
@@ -80,7 +80,7 @@ const Modal = forwardRef(function Modal(
         {...props}
       >
         {/* Header */}
-        {(title || showCloseButton) && (
+        {(title || closable) && (
           <div className="flex items-center justify-between px-6 py-4 border-b border-[var(--ds-border-primary)] shrink-0">
             {title && (
               <h2
@@ -90,7 +90,7 @@ const Modal = forwardRef(function Modal(
                 {title}
               </h2>
             )}
-            {showCloseButton && (
+            {closable && (
               <button
                 type="button"
                 onClick={onClose}

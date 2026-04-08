@@ -51,7 +51,7 @@ const Select = forwardRef(function Select(
           disabled={disabled}
           required={required}
           value={value}
-          onChange={onChange}
+          onChange={(e) => onChange?.(e.target.value)}
           aria-invalid={hasError}
           className={[
             'ds-focus-ring w-full rounded-[var(--ds-radius-md)] bg-[var(--ds-input-bg)] text-[var(--ds-text-primary)]',

@@ -36,7 +36,6 @@ const DatePicker = forwardRef(function DatePicker(
     value,
     onChange,
     rangeEnd,
-    onRangeChange,
     mode = 'single',
     placeholder = 'Select date',
     disabled = false,
@@ -109,15 +108,13 @@ const DatePicker = forwardRef(function DatePicker(
       if (!rangeStart || rangeEndInternal) {
         setRangeStart(selected);
         setRangeEndInternal(null);
-        onChange?.(formatDate(selected));
-        onRangeChange?.(formatDate(selected), null);
+        onChange?.({ start: formatDate(selected), end: null });
       } else {
         const end = selected < rangeStart ? rangeStart : selected;
         const start = selected < rangeStart ? selected : rangeStart;
         setRangeStart(start);
         setRangeEndInternal(end);
-        onChange?.(formatDate(start));
-        onRangeChange?.(formatDate(start), formatDate(end));
+        onChange?.({ start: formatDate(start), end: formatDate(end) });
         setIsOpen(false);
       }
     } else {

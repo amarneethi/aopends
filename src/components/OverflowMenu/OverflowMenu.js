@@ -75,11 +75,14 @@ const OverflowMenu = forwardRef(function OverflowMenu(
           {items.map((item, idx) => {
             if (item.divider) {
               return (
-                <div
-                  key={`divider-${idx}`}
-                  className="my-1 border-t"
-                  style={{ borderColor: 'var(--ds-border-primary)' }}
-                />
+                <div key={`divider-${idx}`} className="my-1">
+                  {item.dividerLabel && (
+                    <span className="block px-3 pt-1 pb-0.5 text-[length:var(--ds-text-xs)] font-semibold uppercase tracking-wider text-[var(--ds-text-tertiary)]">
+                      {item.dividerLabel}
+                    </span>
+                  )}
+                  <div className="border-t" style={{ borderColor: 'var(--ds-border-primary)' }} />
+                </div>
               );
             }
             return (

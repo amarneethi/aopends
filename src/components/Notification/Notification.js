@@ -3,7 +3,7 @@
 import { forwardRef, useState, useEffect } from 'react';
 import { X, CheckCircle2, AlertTriangle, AlertCircle, Info } from 'lucide-react';
 
-const typeConfig = {
+const intentConfig = {
   success: {
     icon: CheckCircle2,
     bg: 'var(--ds-bg-success)',
@@ -37,17 +37,17 @@ const typeConfig = {
 /** Inline notification — renders in-page */
 const Notification = forwardRef(function Notification(
   {
-    type = 'info',
+    intent = 'info',
     title,
     children,
-    dismissible = true,
-    onDismiss,
+    closable = true,
+    onClose,
     className = '',
     ...props
   },
   ref
 ) {
-  const config = typeConfig[type];
+  const config = intentConfig[intent];
   const Icon = config.icon;
 
   return (
@@ -80,10 +80,10 @@ const Notification = forwardRef(function Notification(
           </div>
         )}
       </div>
-      {dismissible && (
+      {closable && (
         <button
           type="button"
-          onClick={onDismiss}
+          onClick={onClose}
           className="shrink-0 p-1 rounded-[var(--ds-radius-sm)] hover:bg-black/10 transition-colors cursor-pointer"
           aria-label="Dismiss"
         >
@@ -95,21 +95,21 @@ const Notification = forwardRef(function Notification(
 });
 
 /** Toast notification — appears as a floating alert */
-export function Toast({ type = 'info', title, children, duration = 5000, onClose, visible = true }) {
-  const [show, setShow] = useState(visible);
-  const config = typeConfig[type];
+export function Toast({ intent = 'info', title, children, duration = 5000, onClose, open = true }) {
+  const [show, setShow] = useState(open);
+  const config = intentConfig[intent];
   const Icon = config.icon;
 
   useEffect(() => {
-    setShow(visible);
-    if (visible && duration > 0) {
+    setShow(open);
+    if (open && duration > 0) {
       const timer = setTimeout(() => {
         setShow(false);
         onClose?.();
       }, duration);
       return () => clearTimeout(timer);
     }
-  }, [visible, duration, onClose]);
+  }, [open, duration, onClose]);
 
   if (!show) return null;
 
@@ -156,8 +156,8 @@ export function Toast({ type = 'info', title, children, duration = 5000, onClose
 }
 
 /** Banner notification — full-width at the top of a page */
-export function Banner({ type = 'info', children, dismissible = true, onDismiss, className = '' }) {
-  const config = typeConfig[type];
+export function Banner({ intent = 'info', children, closable = true, onClose, className = '' }) {
+  const config = intentConfig[intent];
   const Icon = config.icon;
 
   return (
@@ -173,10 +173,10 @@ export function Banner({ type = 'info', children, dismissible = true, onDismiss,
       <div className="flex-1 text-[length:var(--ds-text-sm)]" style={{ color: config.text }}>
         {children}
       </div>
-      {dismissible && (
+      {closable && (
         <button
           type="button"
-          onClick={onDismiss}
+          onClick={onClose}
           className="shrink-0 p-1 rounded-[var(--ds-radius-sm)] hover:bg-black/10 transition-colors cursor-pointer"
           aria-label="Dismiss"
         >

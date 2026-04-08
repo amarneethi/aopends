@@ -103,13 +103,15 @@
 ```jsx
 <Checkbox
   label="Accept terms"
-  checked={false}
+  checked={false}            // controlled checked state
+  defaultChecked={false}     // uncontrolled initial state
   indeterminate={false}      // indeterminate (mixed) state
   disabled={false}
   size="md"                  // "sm" | "md" | "lg"
-  onChange={fn}
+  onChange={fn}              // (checked: boolean) => void
   id="terms-checkbox"        // auto-generated if omitted
   className=""
+  wrapperClassName=""
 />
 ```
 
@@ -118,12 +120,14 @@
 ```jsx
 <Toggle
   label="Dark mode"
-  checked={false}
+  checked={false}            // controlled checked state
+  defaultChecked={false}     // uncontrolled initial state
   disabled={false}
   size="md"                  // "sm" | "md" | "lg"
-  onChange={fn}
+  onChange={fn}              // (checked: boolean) => void
   id="dark-mode-toggle"      // auto-generated if omitted
   className=""
+  wrapperClassName=""
 />
 ```
 
@@ -143,7 +147,7 @@
   className=""
   wrapperClassName=""
   value=""                   // controlled value
-  onChange={fn}
+  onChange={fn}              // (value: string) => void
 />
 ```
 
@@ -151,10 +155,10 @@
 
 ```jsx
 <Tag
-  color="default"            // "default" | "brand" | "success" | "warning" | "danger" | "info"
+  intent="default"           // "default" | "brand" | "success" | "warning" | "danger" | "info"
   size="md"                  // "sm" | "md" | "lg"
-  dismissible={false}        // shows a dismiss button
-  onDismiss={fn}
+  closable={false}           // shows a close button
+  onClose={fn}
   icon={<TagIcon />}
   outline={false}            // renders as outlined style
   className=""
@@ -167,10 +171,10 @@
 
 ```jsx
 <Notification
-  type="info"                // "success" | "warning" | "error" | "info"
+  intent="info"              // "success" | "warning" | "error" | "info"
   title="Heads up"
-  dismissible={true}         // shows dismiss button
-  onDismiss={fn}
+  closable={true}            // shows close button
+  onClose={fn}
   className=""
 >
   Body content here.
@@ -181,11 +185,11 @@
 
 ```jsx
 <Toast
-  type="info"                // "success" | "warning" | "error" | "info"
+  intent="info"              // "success" | "warning" | "error" | "info"
   title="Saved"
   duration={5000}            // auto-dismiss duration in ms
   onClose={fn}
-  visible={true}
+  open={true}
 >
   Body content here.
 </Toast>
@@ -195,9 +199,9 @@
 
 ```jsx
 <Banner
-  type="info"                // "success" | "warning" | "error" | "info"
-  dismissible={true}         // shows dismiss button
-  onDismiss={fn}
+  intent="info"              // "success" | "warning" | "error" | "info"
+  closable={true}            // shows close button
+  onClose={fn}
   className=""
 >
   Banner content here.
@@ -251,7 +255,7 @@
 <Header
   logo={<LogoComponent />}   // logo element
   productName="Product"
-  navItems={[                 // Array<{ label, href?, onClick?, icon?, active? }>
+  items={[                    // Array<{ label, href?, onClick?, icon?, active? }>
     { label: "Dashboard", href: "/", active: true },
     { label: "Settings", href: "/settings", icon: <GearIcon /> }
   ]}
@@ -264,12 +268,12 @@
 
 ```jsx
 <SideNav
-  items={[                    // Array<{ label, href?, onClick?, icon?, active?, badge?, children?, divider?, defaultExpanded? }>
+  items={[                    // Array<{ label, href?, onClick?, icon?, active?, badge?, children?, expanded?, divider?, dividerLabel? }>
     { label: "Home", href: "/", icon: <HomeIcon />, active: true },
     { label: "Reports", icon: <ChartIcon />, badge: "3",
       children: [{ label: "Monthly", href: "/reports/monthly" }],
-      defaultExpanded: false },
-    { divider: true }
+      expanded: false },
+    { divider: true, dividerLabel: "Section" }
   ]}
   header={<Logo />}           // header slot
   footer={<UserMenu />}       // footer slot
@@ -296,14 +300,14 @@
 
 ```jsx
 <Tabs
-  tabs={[                     // Array<{ id, label, content, icon?, badge?, disabled? }>
-    { id: "tab1", label: "Overview", content: <Overview /> },
-    { id: "tab2", label: "Details", content: <Details />, badge: "New" },
-    { id: "tab3", label: "Disabled", content: null, disabled: true }
+  items={[                    // Array<{ value, label, content?, icon?, badge?, disabled? }>
+    { value: "tab1", label: "Overview", content: <Overview /> },
+    { value: "tab2", label: "Details", content: <Details />, badge: "New" },
+    { value: "tab3", label: "Disabled", content: null, disabled: true }
   ]}
-  defaultActiveTab="tab1"     // initially active tab (first tab if omitted)
-  activeTab=""                // controlled active tab
-  onChange={fn}
+  defaultValue="tab1"         // initially active tab (first tab if omitted)
+  value=""                    // controlled active tab
+  onChange={fn}               // (value: string) => void
   variant="underline"         // "underline" | "pill"
   size="md"                   // "sm" | "md" | "lg"
   fullWidth={false}           // stretches tabs to fill width
@@ -322,7 +326,7 @@
   size="md"                   // "sm" | "md" | "lg" | "xl" | "full"
   closeOnOverlay={true}       // close when clicking overlay
   closeOnEsc={true}           // close on Escape key
-  showCloseButton={true}      // shows close (X) button
+  closable={true}             // shows close (X) button
   className=""
 >
   Dialog body content.
@@ -353,9 +357,9 @@
 
 ```jsx
 <OverflowMenu
-  items={[                    // Array<{ label, onClick?, icon?, shortcut?, danger?, disabled?, divider? }>
+  items={[                    // Array<{ label, onClick?, icon?, shortcut?, danger?, disabled?, divider?, dividerLabel? }>
     { label: "Edit", onClick: fn, icon: <EditIcon />, shortcut: "⌘E" },
-    { divider: true },
+    { divider: true, dividerLabel: "Danger zone" },
     { label: "Delete", onClick: fn, danger: true }
   ]}
   trigger={<IconButton />}    // custom trigger element (defaults to vertical dots icon)
@@ -370,10 +374,9 @@
 ```jsx
 <DatePicker
   label="Start Date"
-  value=""                    // selected date (YYYY-MM-DD)
-  onChange={fn}
-  rangeEnd=""                 // end date for range mode
-  onRangeChange={fn}          // range change handler (start, end)
+  value=""                    // selected date (YYYY-MM-DD) — or start date in range mode
+  onChange={fn}               // single: (value: string) => void  |  range: ({ start, end }) => void
+  rangeEnd=""                 // end date for range mode (display only)
   mode="single"               // "single" | "range"
   placeholder="Select date"
   disabled={false}
@@ -435,15 +438,15 @@
 ```jsx
 <Search
   value=""                    // controlled search value
-  onChange={fn}               // input change handler
-  onSearch={fn}               // search trigger callback (debounced/Enter)
+  onChange={fn}               // (value: string) => void — input change
+  onSubmit={fn}               // (value: string) => void — debounced + Enter
   onClear={fn}
   placeholder="Search..."
-  suggestions={[              // Array<string | { label, description? }>
+  options={[                  // Array<string | { value, label, description?, disabled? }>
     "Dashboard",
-    { label: "Users", description: "Manage user accounts" }
+    { value: "users", label: "Users", description: "Manage user accounts" }
   ]}
-  onSuggestionSelect={fn}
+  onOptionSelect={fn}         // called when a suggestion option is clicked
   loading={false}             // shows a loading spinner
   size="md"                   // "sm" | "md" | "lg"
   disabled={false}
@@ -451,7 +454,7 @@
   id="global-search"          // auto-generated if omitted
   className=""
   wrapperClassName=""
-  debounceMs={300}            // debounce delay for onSearch
+  debounceMs={300}            // debounce delay for onSubmit
 />
 ```
 
@@ -465,25 +468,24 @@
   ]}
   data={[{ name: "Alice", status: "Active" }]}
   sortable={true}             // enables column sorting
-  defaultSortColumn=""        // initially sorted column key
-  defaultSortDirection="asc"  // "asc" | "desc"
-  onSort={fn}
+  defaultSort={{ column: "", direction: "asc" }}  // initial sort state
+  onSort={fn}                 // ({ column, direction }) => void
   selectable={false}          // enables row selection
   selectedRows={[]}           // selected row indices
-  onSelectionChange={fn}
+  onSelectionChange={fn}      // (indices: number[]) => void
   paginated={false}           // enables pagination
   pageSize={undefined}        // controlled page size
   defaultPageSize={10}
   pageSizeOptions={[10, 25, 50, 100]}
   editableColumns={[]}        // column keys that are inline-editable
-  onCellEdit={fn}             // cell edit handler (rowIndex, columnKey, value)
+  onCellEdit={fn}             // ({ rowIndex, column, value }) => void
   batchActions={<Button />}   // batch action buttons when rows are selected
   filterValue=""              // external filter value
   onFilterChange={fn}
   loading={false}
   emptyMessage="No data available"
   stickyHeader={false}        // makes header sticky
-  compact={false}             // compact row padding
+  size="md"                   // "sm" (compact) | "md" (default)
   striped={false}             // alternating row backgrounds
   className=""
 />
@@ -493,12 +495,12 @@
 
 ```jsx
 <Pagination
-  currentPage={1}
+  value={1}                   // current page (controlled)
   totalPages={1}
   totalItems={100}
   pageSize={10}
-  onPageChange={fn}
-  onPageSizeChange={fn}
+  onChange={fn}               // (page: number) => void
+  onPageSizeChange={fn}       // (size: number) => void
   pageSizeOptions={[10, 25, 50, 100]}
   siblingCount={1}            // pages shown beside current
   showPageSizeSelector={false}

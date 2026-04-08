@@ -3,7 +3,7 @@ import { forwardRef, useState } from 'react';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 
 function NavItem({ item, collapsed, depth = 0 }) {
-  const [expanded, setExpanded] = useState(item.defaultExpanded || false);
+  const [expanded, setExpanded] = useState(item.expanded || false);
   const hasChildren = item.children && item.children.length > 0;
 
   const handleClick = (e) => {
@@ -95,10 +95,10 @@ const SideNav = forwardRef(function SideNav(
           {items.map((item) => {
             if (item.divider) {
               return (
-                <li key={item.label || 'divider'} className="my-2">
-                  {!collapsed && item.label && (
+                <li key={item.dividerLabel || 'divider'} className="my-2">
+                  {!collapsed && item.dividerLabel && (
                     <span className="px-3 text-[length:11px] font-semibold uppercase tracking-[var(--ds-tracking-widest)] text-[color:var(--ds-sidebar-text)] opacity-80">
-                      {item.label}
+                      {item.dividerLabel}
                     </span>
                   )}
                   <div className="mt-1 border-t" style={{ borderColor: 'var(--ds-sidebar-border)' }} />

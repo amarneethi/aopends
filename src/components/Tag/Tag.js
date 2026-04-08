@@ -3,7 +3,7 @@
 import { forwardRef } from 'react';
 import { X } from 'lucide-react';
 
-const colorMap = {
+const intentMap = {
   default: {
     bg: 'var(--ds-bg-tertiary)',
     text: 'var(--ds-text-primary)',
@@ -45,10 +45,10 @@ const sizes = {
 const Tag = forwardRef(function Tag(
   {
     children,
-    color = 'default',
+    intent = 'default',
     size = 'md',
-    dismissible = false,
-    onDismiss,
+    closable = false,
+    onClose,
     icon,
     outline = false,
     className = '',
@@ -56,7 +56,7 @@ const Tag = forwardRef(function Tag(
   },
   ref
 ) {
-  const c = colorMap[color] || colorMap.default;
+  const c = intentMap[intent] || intentMap.default;
 
   return (
     <span
@@ -78,10 +78,10 @@ const Tag = forwardRef(function Tag(
     >
       {icon && <span className="shrink-0 flex items-center">{icon}</span>}
       <span>{children}</span>
-      {dismissible && (
+      {closable && (
         <button
           type="button"
-          onClick={onDismiss}
+          onClick={onClose}
           className="shrink-0 rounded-full p-0.5 hover:bg-black/10 transition-colors cursor-pointer"
           aria-label="Remove"
         >

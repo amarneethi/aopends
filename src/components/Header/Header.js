@@ -6,7 +6,7 @@ const Header = forwardRef(function Header(
   {
     logo,
     productName = 'Product',
-    navItems = [],
+    items: navItems = [],
     actions,
     className = '',
     ...props

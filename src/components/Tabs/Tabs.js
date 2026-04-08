@@ -4,9 +4,9 @@ import { forwardRef, useState, useId } from 'react';
 
 const Tabs = forwardRef(function Tabs(
   {
-    tabs = [],
-    defaultActiveTab,
-    activeTab: controlledActiveTab,
+    items = [],
+    defaultValue,
+    value: controlledValue,
     onChange,
     variant = 'underline',
     size = 'md',
@@ -17,12 +17,12 @@ const Tabs = forwardRef(function Tabs(
   ref
 ) {
   const baseId = useId();
-  const [internalTab, setInternalTab] = useState(defaultActiveTab || tabs[0]?.id);
-  const activeTab = controlledActiveTab ?? internalTab;
+  const [internalTab, setInternalTab] = useState(defaultValue || items[0]?.value);
+  const activeTab = controlledValue ?? internalTab;
 
-  const handleTabClick = (tabId) => {
-    setInternalTab(tabId);
-    onChange?.(tabId);
+  const handleTabClick = (tabValue) => {
+    setInternalTab(tabValue);
+    onChange?.(tabValue);
   };
 
   const sizeClasses = {
@@ -31,7 +31,7 @@ const Tabs = forwardRef(function Tabs(
     lg: 'text-[length:var(--ds-text-md)] px-5 py-2.5',
   };
 
-  const activeContent = tabs.find((t) => t.id === activeTab);
+  const activeContent = items.find((t) => t.value === activeTab);
 
   return (
     <div ref={ref} className={className} {...props}>
@@ -43,18 +43,18 @@ const Tabs = forwardRef(function Tabs(
           variant === 'underline' ? 'border-b border-[var(--ds-border-primary)]' : 'gap-1 p-1 bg-[var(--ds-bg-tertiary)] rounded-[var(--ds-radius-lg)]',
         ].join(' ')}
       >
-        {tabs.map((tab) => {
-          const isActive = tab.id === activeTab;
+        {items.map((tab) => {
+          const isActive = tab.value === activeTab;
           return (
             <button
-              key={tab.id}
+              key={tab.value}
               role="tab"
               type="button"
-              id={`${baseId}-tab-${tab.id}`}
+              id={`${baseId}-tab-${tab.value}`}
               aria-selected={isActive}
-              aria-controls={`${baseId}-panel-${tab.id}`}
+              aria-controls={`${baseId}-panel-${tab.value}`}
               disabled={tab.disabled}
-              onClick={() => handleTabClick(tab.id)}
+              onClick={() => handleTabClick(tab.value)}
               className={[
                 'ds-focus-ring font-medium transition-all duration-[var(--ds-duration-normal)] whitespace-nowrap cursor-pointer',
                 sizeClasses[size],
@@ -99,8 +99,8 @@ const Tabs = forwardRef(function Tabs(
       {activeContent && (
         <div
           role="tabpanel"
-          id={`${baseId}-panel-${activeContent.id}`}
-          aria-labelledby={`${baseId}-tab-${activeContent.id}`}
+          id={`${baseId}-panel-${activeContent.value}`}
+          aria-labelledby={`${baseId}-tab-${activeContent.value}`}
           className="pt-4"
         >
           {activeContent.content}

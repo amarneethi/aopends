@@ -11,12 +11,14 @@ const sizes = {
 const Toggle = forwardRef(function Toggle(
   {
     label,
-    checked = false,
+    checked,
+    defaultChecked = false,
     disabled = false,
     size = 'md',
     onChange,
     id: idProp,
     className = '',
+    wrapperClassName = '',
     ...props
   },
   ref
@@ -25,12 +27,16 @@ const Toggle = forwardRef(function Toggle(
   const id = idProp || autoId;
   const s = sizes[size];
 
+  const isControlled = checked !== undefined;
+  const isChecked = isControlled ? checked : defaultChecked;
+
   return (
     <label
       htmlFor={id}
       className={[
         'inline-flex items-center gap-3 cursor-pointer select-none',
         disabled ? 'opacity-50 cursor-not-allowed' : '',
+        wrapperClassName,
         className,
       ]
         .filter(Boolean)
@@ -42,9 +48,10 @@ const Toggle = forwardRef(function Toggle(
           type="checkbox"
           role="switch"
           id={id}
-          checked={checked}
+          checked={isControlled ? checked : undefined}
+          defaultChecked={isControlled ? undefined : defaultChecked}
           disabled={disabled}
-          onChange={onChange}
+          onChange={(e) => onChange?.(e.target.checked)}
           className="ds-sr-only peer"
           {...props}
         />
@@ -53,7 +60,7 @@ const Toggle = forwardRef(function Toggle(
             s.track,
             'rounded-full transition-colors duration-[var(--ds-duration-normal)]',
             'peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-[var(--ds-focus-ring-color)] peer-focus-visible:outline-offset-2',
-            checked ? 'bg-[var(--ds-bg-brand)]' : 'bg-[var(--ds-border-secondary)]',
+            isChecked ? 'bg-[var(--ds-bg-brand)]' : 'bg-[var(--ds-border-secondary)]',
           ].join(' ')}
         />
         <span
@@ -61,7 +68,7 @@ const Toggle = forwardRef(function Toggle(
             s.thumb,
             'absolute left-0.5 top-1/2 -translate-y-1/2 rounded-full bg-white shadow-sm',
             'transition-transform duration-[var(--ds-duration-normal)]',
-            checked ? s.translate : 'translate-x-0',
+            isChecked ? s.translate : 'translate-x-0',
           ].join(' ')}
         />
       </span>

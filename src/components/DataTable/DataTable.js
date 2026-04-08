@@ -11,8 +11,7 @@ const DataTable = forwardRef(function DataTable(
     data = [],
     // Sorting
     sortable = true,
-    defaultSortColumn,
-    defaultSortDirection = 'asc',
+    defaultSort,
     onSort,
     // Selection
     selectable = false,
@@ -35,7 +34,7 @@ const DataTable = forwardRef(function DataTable(
     loading = false,
     emptyMessage = 'No data available',
     stickyHeader = false,
-    compact = false,
+    size = 'md',
     striped = false,
     className = '',
     ...props
@@ -43,8 +42,8 @@ const DataTable = forwardRef(function DataTable(
   ref
 ) {
   // Sorting state
-  const [sortColumn, setSortColumn] = useState(defaultSortColumn || null);
-  const [sortDirection, setSortDirection] = useState(defaultSortDirection);
+  const [sortColumn, setSortColumn] = useState(defaultSort?.column || null);
+  const [sortDirection, setSortDirection] = useState(defaultSort?.direction || 'asc');
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
@@ -82,7 +81,7 @@ const DataTable = forwardRef(function DataTable(
       const newDir = sortColumn === columnKey && sortDirection === 'asc' ? 'desc' : 'asc';
       setSortColumn(columnKey);
       setSortDirection(newDir);
-      onSort?.(columnKey, newDir);
+      onSort?.({ column: columnKey, direction: newDir });
     },
     [sortable, sortColumn, sortDirection, onSort]
   );
@@ -125,7 +124,7 @@ const DataTable = forwardRef(function DataTable(
 
   const commitEdit = () => {
     if (editingCell) {
-      onCellEdit?.(editingCell.rowIndex, editingCell.columnKey, editValue);
+      onCellEdit?.({ rowIndex: editingCell.rowIndex, column: editingCell.columnKey, value: editValue });
       setEditingCell(null);
     }
   };
@@ -135,6 +134,7 @@ const DataTable = forwardRef(function DataTable(
     setEditValue('');
   };
 
+  const compact = size === 'sm';
   const cellPadding = compact ? 'px-3 py-1.5' : 'px-4 py-3';
   const textSize = compact ? 'text-[length:var(--ds-text-xs)]' : 'text-[length:var(--ds-text-sm)]';
 
@@ -337,13 +337,13 @@ const DataTable = forwardRef(function DataTable(
           style={{ borderColor: 'var(--ds-table-border)' }}
         >
           <Pagination
-            currentPage={currentPage}
+            value={currentPage}
             totalPages={totalPages}
             totalItems={sortedData.length}
             pageSize={pageSize}
-            onPageChange={setCurrentPage}
-            onPageSizeChange={(size) => {
-              setPageSize(size);
+            onChange={setCurrentPage}
+            onPageSizeChange={(s) => {
+              setPageSize(s);
               setCurrentPage(1);
             }}
             pageSizeOptions={pageSizeOptions}
