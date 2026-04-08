@@ -1,0 +1,125 @@
+/* ============================================================
+   SEMANTIC TOKENS — GLASS THEME (modifier)
+   Layers on top of light.css or dark.css.
+   Requires a base theme to be loaded — glass.css alone is not usable.
+   Activated via [data-glass] attribute on :root.
+   ============================================================ */
+
+/* --- Light-base glass tokens --- */
+[data-glass] {
+  /* Effect */
+  --ds-glass-blur: 12px;
+  --ds-glass-saturate: 180%;
+
+  /* Primary (brand) button gradient */
+  --ds-glass-btn-from: #93c5fd;
+  --ds-glass-btn-to: #2563eb;
+  --ds-glass-btn-hover-from: #a5d0ff;
+  --ds-glass-btn-hover-to: #1d4ed8;
+
+  /* Secondary button gradient */
+  --ds-glass-btn-secondary-from: rgb(255 255 255 / 0.35);
+  --ds-glass-btn-secondary-to: rgb(200 210 230 / 0.5);
+  --ds-glass-btn-secondary-hover-from: rgb(255 255 255 / 0.45);
+  --ds-glass-btn-secondary-hover-to: rgb(200 210 230 / 0.6);
+
+  /* Tertiary button gradient */
+  --ds-glass-btn-tertiary-from: rgb(255 255 255 / 0.3);
+  --ds-glass-btn-tertiary-to: rgb(220 220 230 / 0.4);
+  --ds-glass-btn-tertiary-hover-from: rgb(255 255 255 / 0.4);
+  --ds-glass-btn-tertiary-hover-to: rgb(220 220 230 / 0.5);
+
+  /* Danger button gradient */
+  --ds-glass-btn-danger-from: #fca5a5;
+  --ds-glass-btn-danger-to: #dc2626;
+  --ds-glass-btn-danger-hover-from: #fbb5b5;
+  --ds-glass-btn-danger-hover-to: #b91c1c;
+
+  /* Ghost button */
+  --ds-glass-btn-ghost-bg: transparent;
+  --ds-glass-btn-ghost-hover-from: rgb(255 255 255 / 0.2);
+  --ds-glass-btn-ghost-hover-to: rgb(255 255 255 / 0.05);
+
+  /* Inner highlight */
+  --ds-glass-highlight-from: rgb(255 255 255 / 0.7);
+  --ds-glass-highlight-to: rgb(255 255 255 / 0.05);
+
+  /* Border */
+  --ds-glass-border: rgb(255 255 255 / 0.4);
+  --ds-glass-border-brand: rgb(147 197 253 / 0.6);
+  --ds-glass-border-danger: rgb(252 165 165 / 0.6);
+
+  /* Shadows */
+  --ds-glass-shadow: 0 4px 16px rgb(37 99 235 / 0.25), 0 1px 3px rgb(0 0 0 / 0.1);
+  --ds-glass-shadow-danger: 0 4px 16px rgb(220 38 38 / 0.25), 0 1px 3px rgb(0 0 0 / 0.1);
+  --ds-glass-shadow-neutral: 0 4px 16px rgb(0 0 0 / 0.1), 0 1px 3px rgb(0 0 0 / 0.06);
+  --ds-glass-shadow-inset: inset 0 1px 1px rgb(255 255 255 / 0.3);
+
+  /* Text */
+  --ds-glass-text-on-brand: var(--ds-gray-900);
+  --ds-glass-text-on-danger: var(--ds-gray-0);
+}
+
+/* --- Dark-base glass tokens --- */
+[data-theme="dark"][data-glass] {
+  /* Primary (brand) button gradient */
+  --ds-glass-btn-from: rgb(96 165 250 / 0.5);
+  --ds-glass-btn-to: rgb(37 99 235 / 0.6);
+  --ds-glass-btn-hover-from: rgb(96 165 250 / 0.6);
+  --ds-glass-btn-hover-to: rgb(37 99 235 / 0.7);
+
+  /* Secondary button gradient */
+  --ds-glass-btn-secondary-from: rgb(255 255 255 / 0.12);
+  --ds-glass-btn-secondary-to: rgb(255 255 255 / 0.04);
+  --ds-glass-btn-secondary-hover-from: rgb(255 255 255 / 0.18);
+  --ds-glass-btn-secondary-hover-to: rgb(255 255 255 / 0.08);
+
+  /* Tertiary button gradient */
+  --ds-glass-btn-tertiary-from: rgb(255 255 255 / 0.08);
+  --ds-glass-btn-tertiary-to: rgb(255 255 255 / 0.02);
+  --ds-glass-btn-tertiary-hover-from: rgb(255 255 255 / 0.14);
+  --ds-glass-btn-tertiary-hover-to: rgb(255 255 255 / 0.06);
+
+  /* Danger button gradient */
+  --ds-glass-btn-danger-from: rgb(248 113 113 / 0.45);
+  --ds-glass-btn-danger-to: rgb(220 38 38 / 0.55);
+  --ds-glass-btn-danger-hover-from: rgb(248 113 113 / 0.55);
+  --ds-glass-btn-danger-hover-to: rgb(220 38 38 / 0.65);
+
+  /* Ghost button */
+  --ds-glass-btn-ghost-hover-from: rgb(255 255 255 / 0.1);
+  --ds-glass-btn-ghost-hover-to: rgb(255 255 255 / 0.02);
+
+  /* Inner highlight */
+  --ds-glass-highlight-from: rgb(255 255 255 / 0.35);
+  --ds-glass-highlight-to: rgb(255 255 255 / 0.02);
+
+  /* Border */
+  --ds-glass-border: rgb(255 255 255 / 0.15);
+  --ds-glass-border-brand: rgb(96 165 250 / 0.35);
+  --ds-glass-border-danger: rgb(248 113 113 / 0.35);
+
+  /* Shadows */
+  --ds-glass-shadow: 0 4px 16px rgb(0 0 0 / 0.35), 0 1px 3px rgb(0 0 0 / 0.2);
+  --ds-glass-shadow-danger: 0 4px 16px rgb(220 38 38 / 0.3), 0 1px 3px rgb(0 0 0 / 0.2);
+  --ds-glass-shadow-neutral: 0 4px 16px rgb(0 0 0 / 0.25), 0 1px 3px rgb(0 0 0 / 0.15);
+  --ds-glass-shadow-inset: inset 0 1px 1px rgb(255 255 255 / 0.1);
+
+  /* Text */
+  --ds-glass-text-on-brand: var(--ds-gray-0);
+  --ds-glass-text-on-danger: var(--ds-gray-0);
+}
+
+/* --- Glass highlight utility (inner reflection element) --- */
+.ds-glass-highlight {
+  position: absolute;
+  inset: 3px 8px auto 8px;
+  height: 40%;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to bottom,
+    var(--ds-glass-highlight-from),
+    var(--ds-glass-highlight-to)
+  );
+  pointer-events: none;
+}
