@@ -4,6 +4,18 @@
    These are not theme-specific.
    ============================================================ */
 
+/* Initialize Tailwind v3 transform variables that components depend on.
+   Normally set by Tailwind preflight, but the library ships without it. */
+*, ::before, ::after {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+}
+
 /* ----------------------------------------
    PRIMITIVE TOKENS — Raw color palette
    These are not used directly in components.
