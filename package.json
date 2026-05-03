@@ -20,7 +20,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup && cp -r src/themes/* dist/themes/ && cp -r src/tokens/* dist/tokens/ && npx tailwindcss -i src/styles/tailwind-input.css -o dist/utilities.css --minify && cat dist/tokens/base.css dist/themes/light.css dist/themes/dark.css dist/themes/high-contrast.css dist/utilities.css > dist/styles.css",
+    "build": "tsup && mkdir -p dist/themes dist/tokens && cp -r src/themes/* dist/themes/ && cp -r src/tokens/* dist/tokens/ && npx tailwindcss -i src/styles/tailwind-input.css -o dist/utilities.css --minify && cat dist/tokens/base.css dist/themes/light.css dist/themes/dark.css dist/themes/high-contrast.css dist/utilities.css > dist/styles.css",
     "dev": "tsup --watch",
     "prepublishOnly": "npm run build"
   },

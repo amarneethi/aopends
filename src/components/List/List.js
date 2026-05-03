@@ -14,17 +14,15 @@ export const ActivityFeed = forwardRef(function ActivityFeed(
   return (
     <div
       ref={ref}
-      className={['flex flex-col divide-y', className].join(' ')}
+      className={['flex flex-col', className].join(' ')}
       style={{
-        borderColor: 'var(--ds-border-primary)',
         maxHeight,
         overflowY: maxHeight ? 'auto' : undefined,
-        '--tw-divide-color': 'var(--ds-border-primary)',
       }}
       {...props}
     >
       {items.map((item, i) => (
-        <div key={item.id ?? i} className="flex gap-3 py-3 px-2">
+        <div key={item.id ?? i} className="flex gap-3 py-3 px-2" style={i > 0 ? { borderTop: '1px solid var(--ds-border-primary)' } : {}}>
           {/* Timeline dot */}
           <div className="shrink-0 mt-1.5">
             <div
@@ -69,11 +67,10 @@ export const NotificationList = forwardRef(function NotificationList(
   return (
     <div
       ref={ref}
-      className={['flex flex-col divide-y', className].join(' ')}
+      className={['flex flex-col', className].join(' ')}
       style={{
         maxHeight,
         overflowY: maxHeight ? 'auto' : undefined,
-        '--tw-divide-color': 'var(--ds-border-primary)',
       }}
       {...props}
     >
@@ -88,6 +85,7 @@ export const NotificationList = forwardRef(function NotificationList(
               onItemClick ? 'cursor-pointer hover:bg-[var(--ds-bg-hover)]' : '',
               item.unread ? 'bg-[var(--ds-bg-selected)]' : '',
             ].join(' ')}
+            style={i > 0 ? { borderTop: '1px solid var(--ds-border-primary)' } : {}}
             onClick={() => onItemClick?.(item, i)}
             role={onItemClick ? 'button' : undefined}
             tabIndex={onItemClick ? 0 : undefined}
@@ -145,12 +143,11 @@ export const RankedList = forwardRef(function RankedList(
   return (
     <div
       ref={ref}
-      className={['flex flex-col divide-y', className].join(' ')}
-      style={{ '--tw-divide-color': 'var(--ds-border-primary)' }}
+      className={['flex flex-col', className].join(' ')}
       {...props}
     >
       {items.map((item, i) => (
-        <div key={item.id ?? i} className="flex items-center gap-3 py-2.5 px-2">
+        <div key={item.id ?? i} className="flex items-center gap-3 py-2.5 px-2" style={i > 0 ? { borderTop: '1px solid var(--ds-border-primary)' } : {}}>
           <span
             className="shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[length:var(--ds-text-xs)] font-bold"
             style={{
@@ -198,8 +195,7 @@ export const AvatarList = forwardRef(function AvatarList(
   return (
     <div
       ref={ref}
-      className={['flex flex-col divide-y', className].join(' ')}
-      style={{ '--tw-divide-color': 'var(--ds-border-primary)' }}
+      className={['flex flex-col', className].join(' ')}
       {...props}
     >
       {items.map((item, i) => (
@@ -209,6 +205,7 @@ export const AvatarList = forwardRef(function AvatarList(
             'flex items-center gap-3 py-2.5 px-2 transition-colors',
             onItemClick ? 'cursor-pointer hover:bg-[var(--ds-bg-hover)]' : '',
           ].join(' ')}
+          style={i > 0 ? { borderTop: '1px solid var(--ds-border-primary)' } : {}}
           onClick={() => onItemClick?.(item, i)}
           role={onItemClick ? 'button' : undefined}
           tabIndex={onItemClick ? 0 : undefined}
