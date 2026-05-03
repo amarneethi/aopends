@@ -57,7 +57,7 @@ const TextInput = forwardRef(function TextInput(
       )}
       <div className="relative">
         {icon && (
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--ds-icon-secondary)] pointer-events-none">
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 inline-flex items-center text-[var(--ds-icon-secondary)] pointer-events-none">
             {icon}
           </span>
         )}

@@ -1,6 +1,7 @@
 {
   "name": "aopends",
-  "version": "0.2.1",
+  "version": "0.2.2",
+  "description": "A React design system aimed to work with Agents and AI",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",

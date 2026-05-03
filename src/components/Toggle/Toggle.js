@@ -66,7 +66,7 @@ const Toggle = forwardRef(function Toggle(
         <span
           className={[
             s.thumb,
-            'absolute left-0.5 top-1/2 -translate-y-1/2 rounded-full bg-white shadow-sm',
+            'absolute left-0.5 top-0.5 rounded-full bg-white shadow-sm',
             'transition-transform duration-[var(--ds-duration-normal)]',
             isChecked ? s.translate : 'translate-x-0',
           ].join(' ')}
